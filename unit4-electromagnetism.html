@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Unit 4: Electromagnetism — AP Physics C E&M</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  <script defer src="js/app.js"></script>
+</head>
+<body>
+
+  <div class="bg-orbs"><div class="bg-orb"></div><div class="bg-orb"></div><div class="bg-orb"></div></div>
+  <a href="#main" class="skip-link">Skip to content</a>
+
+  <nav class="glass-nav">
+    <a href="index.html" class="nav-brand"><span class="brand-icon">⚡</span><span>AP Physics C: E&M</span></a>
+    <div class="nav-links">
+      <a href="index.html" class="nav-link">Home</a>
+      <a href="unit1-electrostatics.html" class="nav-link"><span class="unit-badge">1</span> Electrostatics</a>
+      <a href="unit2-circuits.html" class="nav-link"><span class="unit-badge">2</span> Circuits</a>
+      <a href="unit3-magnetism.html" class="nav-link"><span class="unit-badge">3</span> Magnetism</a>
+      <a href="unit4-electromagnetism.html" class="nav-link active"><span class="unit-badge">4</span> EM Induction</a>
+      <a href="unit5-maxwell.html" class="nav-link"><span class="unit-badge">5</span> Maxwell</a>
+    </div>
+    <div class="nav-actions">
+      <div class="search-wrapper"><span class="search-icon">🔍</span><input type="text" class="search-input" placeholder="Search unit..." aria-label="Search"></div>
+      <button class="btn-icon theme-toggle" aria-label="Toggle dark mode" title="Toggle dark mode (T)">🌙</button>
+      <button class="btn-icon mobile-menu-btn" aria-label="Menu">☰</button>
+    </div>
+  </nav>
+
+  <div class="app-shell">
+    <aside class="sidebar"><div class="sidebar-title">On This Page</div><ul class="sidebar-toc"></ul></aside>
+    <main class="main-content" id="main">
+
+      <h1>Unit 4: Electromagnetism</h1>
+      <p class="text-muted" style="margin-bottom:var(--space-lg)">14–20% of AP Exam · 6 Topics · ~15 Practice Questions</p>
+      <div class="progress-bar-wrapper"><div class="progress-bar"><div class="progress-fill"></div></div><span class="progress-label">0% Complete</span></div>
+
+      <!-- 4.1 -->
+      <section id="4.1-magnetic-flux" class="glass-card content-section">
+        <div class="section-header">
+          <input type="checkbox" class="progress-check" data-section="4.1" aria-label="Mark 4.1 complete">
+          <h2>4.1 Magnetic Flux</h2>
+          <button class="collapse-toggle" aria-label="Toggle section">▼</button>
+        </div>
+        <div class="section-body">
+          <p><strong>Magnetic flux</strong> measures the total B-field piercing a surface:</p>
+          <div class="equation-block">$$\Phi_B = \int \vec{B} \cdot d\vec{A}$$</div>
+          <p>For uniform field and flat surface: \(\Phi_B = BA\cos\theta\), where \(\theta\) is the angle between \(\vec{B}\) and the surface normal \(\hat{n}\). Units: webers (Wb = T·m²).</p>
+          <ul>
+            <li>\(\theta = 0°\) (B ∥ normal): max flux \(\Phi_B = BA\)</li>
+            <li>\(\theta = 90°\) (B ∥ surface): zero flux</li>
+            <li>\(\theta = 180°\) (B anti-parallel): \(\Phi_B = -BA\)</li>
+          </ul>
+          <div class="callout callout--tip"><strong>Exam Tip</strong> The induced EMF depends on the <strong>rate of change</strong> of flux, not the flux value. A large but constant flux produces zero EMF.</div>
+        </div>
+      </section>
+
+      <!-- 4.2 -->
+      <section id="4.2-faradays-law" class="glass-card content-section">
+        <div class="section-header"><input type="checkbox" class="progress-check" data-section="4.2"><h2>4.2 Faraday's Law</h2><button class="collapse-toggle">▼</button></div>
+        <div class="section-body">
+          <p>Changing magnetic flux through a loop induces an EMF:</p>
+          <div class="equation-block">$$\mathcal{E} = -\frac{d\Phi_B}{dt}$$</div>
+          <p>For a coil with <strong>N turns</strong>: \(\mathcal{E} = -N\frac{d\Phi_B}{dt}\)</p>
+          <p>Flux can change through three mechanisms:</p>
+          <ol>
+            <li><strong>Changing B:</strong> moving a magnet, turning an electromagnet on/off</li>
+            <li><strong>Changing area:</strong> deforming loop, sliding rod on rails</li>
+            <li><strong>Changing orientation:</strong> rotating the loop (electric generators!)</li>
+          </ol>
+          <div class="callout callout--warning"><strong>Common Mistake</strong> Faraday's law magnitude = \(|d\Phi_B/dt|\). The minus sign (Lenz's law) determines direction. Keep magnitude and direction analysis separate.</div>
+        </div>
+      </section>
+
+      <div class="glass-card practice-block">
+        <div class="practice-header"><span class="glass-badge">Practice</span><h3>Q4.1: Solenoid + Outer Loop</h3></div>
+        <div class="practice-question"><p>A long solenoid (500 turns/m, radius 2.0 cm) carries \(I(t) = 5.0t\) A. A 10-turn loop of radius 3.0 cm surrounds it concentrically. Find the induced EMF at t = 2.0 s.</p></div>
+        <details class="solution"><summary class="glass-btn">Show Solution</summary><div class="solution-content">
+          <div class="step">B inside solenoid: \(B = \mu_0 n I = \mu_0(500)(5t) = \mu_0\cdot2500t\). Only B inside solenoid contributes to flux through loop.</div>
+          <div class="step">\(\Phi_B = B\cdot\pi r_{\text{sol}}^2 = \mu_0\cdot2500t\cdot\pi(0.02)^2\). \(d\Phi_B/dt = \mu_0\cdot2500\cdot\pi(0.02)^2\).</div>
+          <div class="step">\(\mathcal{E} = -N\frac{d\Phi_B}{dt} = -10\cdot(4\pi\times10^{-7})(2500)\pi(4\times10^{-4}) = -3.95\times10^{-5}\ \text{V}\).</div>
+        </div></details>
+      </div>
+
+      <!-- 4.3 -->
+      <section id="4.3-lenz-law" class="glass-card content-section">
+        <div class="section-header"><input type="checkbox" class="progress-check" data-section="4.3"><h2>4.3 Lenz's Law</h2><button class="collapse-toggle">▼</button></div>
+        <div class="section-body">
+          <p><strong>Lenz's Law:</strong> The induced current's magnetic flux <strong>opposes the change</strong> in the original flux. This is the minus sign in Faraday's law — nature resists changes in magnetic flux.</p>
+          <p><strong>3-step strategy:</strong></p>
+          <ol>
+            <li>Identify direction of original \(\Phi_B\) and whether it's <strong>increasing or decreasing</strong></li>
+            <li>The induced B-field must <strong>oppose the change</strong>:
+              <ul>
+                <li>\(\Phi_B\) increasing → induced B opposite to original B</li>
+                <li>\(\Phi_B\) decreasing → induced B same direction as original B</li>
+              </ul>
+            </li>
+            <li>Use RHR to find current direction that creates the induced B</li>
+          </ol>
+          <p><strong>alen:</strong> N pole approaching loop → increasing flux into loop → induced B points out → current = CCW as viewed from magnet.</p>
+          <div class="callout callout--danger"><strong>Critical</strong> "Opposes the change" ≠ "opposes the flux." If flux is decreasing, induced B helps the original B (to slow the decrease).</div>
+        </div>
+      </section>
+
+      <div class="glass-card practice-block">
+        <div class="practice-header"><span class="glass-badge">Practice</span><h3>Q4.2: Lenz's Law</h3></div>
+        <div class="practice-question"><p>A bar magnet's south pole is pulled away from a circular loop. Determine the induced current direction as viewed from the magnet side.</p></div>
+        <details class="solution"><summary class="glass-btn">Show Solution</summary><div class="solution-content">
+          <div class="step">S pole faces loop → B lines go <strong>into</strong> the loop. Pulling away means flux into loop is <strong>decreasing</strong>.</div>
+          <div class="step">To oppose the decrease, induced B must also point <strong>into</strong> loop (reinforce original).</div>
+          <div class="step">RHR: thumb into page, fingers curl → <strong>clockwise</strong> as viewed from magnet side.</div>
+        </div></details>
+      </div>
+
+      <!-- 4.4 -->
+      <section id="4.4-motional-emf" class="glass-card content-section">
+        <div class="section-header"><input type="checkbox" class="progress-check" data-section="4.4"><h2>4.4 Motional EMF</h2><button class="collapse-toggle">▼</button></div>
+        <div class="section-body">
+          <p>When a conductor moves through B, charges experience magnetic force → separation → induced EMF:</p>
+          <div class="equation-block">$$\mathcal{E} = B\ell v \quad \text{(rod ⟂ B, motion ⟂ both)}$$</div>
+          <p><strong>Sliding rod on rails:</strong> The rod's motion changes loop area → changing flux:</p>
+          <div class="equation-block">$$\mathcal{E} = B\ell v, \quad I = \frac{B\ell v}{R}, \quad P = \frac{B^2\ell^2 v^2}{R}$$</div>
+          <p>Magnetic force on induced current opposes motion: \(F_B = I\ell B = B^2\ell^2 v/R\). To maintain constant v, apply external force \(F_{\text{ext}} = F_B\).</p>
+          <div class="callout callout--tip"><strong>Exam Tip</strong> Motional EMF can be derived from Faraday (\(\Phi_B = B\ell x\), so \(d\Phi_B/dt = B\ell v\)) or from \(F_B = qvB\) in the moving rod. Both are valid.</div>
+          <p><strong>Electric Generators:</strong> A coil rotating in a uniform B-field produces sinusoidal EMF:</p>
+          <div class="equation-block">$$\mathcal{E} = NBA\omega\sin\omega t = \mathcal{E}_{\text{max}}\sin\omega t$$</div>
+          <p>where N = turns, A = coil area, ω = angular frequency. Peak EMF: \(\mathcal{E}_{\text{max}} = NBA\omega\). This is the principle behind AC generators (alternators).</p>
+        </div>
+      </section>
+
+      <div class="glass-card practice-block">
+        <div class="practice-header"><span class="glass-badge">Practice</span><h3>Q4.3: Sliding Rod</h3></div>
+        <div class="practice-question"><p>A 0.30 m rod at 4.0 m/s on frictionless rails across 0.50 T B ⟂ to plane. R = 2.0 Ω. Find EMF, current, and force to maintain speed.</p></div>
+        <details class="solution"><summary class="glass-btn">Show Solution</summary><div class="solution-content">
+          <div class="step">\(\mathcal{E} = B\ell v = (0.5)(0.3)(4) = 0.60\ \text{V}\). \(I = \mathcal{E}/R = 0.30\ \text{A}\).</div>
+          <div class="step">\(F = I\ell B = (0.3)(0.3)(0.5) = 0.045\ \text{N}\) opposing motion. External force = 0.045 N in direction of motion.</div>
+        </div></details>
+      </div>
+
+      <!-- 4.5 -->
+      <section id="4.5-inductance" class="glass-card content-section">
+        <div class="section-header"><input type="checkbox" class="progress-check" data-section="4.5"><h2>4.5 Inductance</h2><button class="collapse-toggle">▼</button></div>
+        <div class="section-body">
+          <p><strong>Self-inductance L</strong> describes opposition to current change:</p>
+          <div class="equation-block">$$L = \frac{N\Phi_B}{I}, \quad \mathcal{E}_L = -L\frac{dI}{dt}$$</div>
+          <p>Units: henries (H = V·s/A). For a solenoid: \(L = \mu_0 n^2 A\ell = \mu_0 N^2 A/\ell\).</p>
+          <p><strong>Inductor behavior at extremes:</strong></p>
+          <ul>
+            <li><strong>t = 0 (switch closed):</strong> inductor = <strong>open circuit</strong> (I cannot jump)</li>
+            <li><strong>t → ∞ (steady DC):</strong> inductor = <strong>short circuit</strong> (V_L = 0)</li>
+          </ul>
+          <p><strong>Energy stored:</strong> \(U = \frac{1}{2}LI^2\) — dual to capacitor \(U = \frac{1}{2}CV^2\).</p>
+          <div class="callout callout--warning"><strong>Common Mistake</strong> At t=0 inductor is open, capacitor is short. At t→∞ inductor is short, capacitor is open. They are <strong>opposites</strong> — test both extremes to verify your understanding.</div>
+          <p><strong>Energy density of the magnetic field:</strong></p>
+          <div class="equation-block">$$u_B = \frac{B^2}{2\mu_0}$$</div>
+          <p>This is the magnetic analog of \(u_E = \frac{1}{2}\varepsilon_0 E^2\). For a solenoid: \(U = u_B \cdot A\ell = \frac{B^2}{2\mu_0}A\ell = \frac{1}{2}LI^2\).</p>
+          <p><strong>Mutual Inductance (M):</strong> When changing current in coil 1 induces EMF in coil 2:</p>
+          <div class="equation-block">$$\mathcal{E}_2 = -M\frac{dI_1}{dt}$$</div>
+          <p>M depends on geometry of both coils and their relative position. Units: henries (H). The basis for transformers.</p>
+        </div>
+      </section>
+
+      <div class="glass-card practice-block">
+        <div class="practice-header"><span class="glass-badge">Practice</span><h3>Q4.4: Solenoid Inductance</h3></div>
+        <div class="practice-question"><p>Solenoid: 800 turns, length 25 cm, radius 4.0 cm. Find L. If current changes at 3.0 A/s, find induced EMF.</p></div>
+        <details class="solution"><summary class="glass-btn">Show Solution</summary><div class="solution-content">
+          <div class="step">\(A = \pi(0.04)^2 = 5.027\times10^{-3}\ \text{m}^2\). \(L = \mu_0 N^2 A/\ell = (4\pi\times10^{-7})(640000)(5.027\times10^{-3})/0.25 = 16.2\ \text{mH}\).</div>
+          <div class="step">\(|\mathcal{E}| = L|dI/dt| = (0.0162)(3) = 0.0486\ \text{V}\).</div>
+        </div></details>
+      </div>
+
+      <!-- 4.6 -->
+      <section id="4.6-rl-lc-circuits" class="glass-card content-section">
+        <div class="section-header"><input type="checkbox" class="progress-check" data-section="4.6"><h2>4.6 RL & LC Circuits</h2><button class="collapse-toggle">▼</button></div>
+        <div class="section-body">
+          <p><strong>RL Circuits</strong> — time constant \(\tau_L = L/R\):</p>
+          <p><strong>Current growth (connected to battery):</strong></p>
+          <div class="equation-block">$$I(t) = \frac{\mathcal{E}}{R}\left(1 - e^{-Rt/L}\right) = I_f\left(1 - e^{-t/\tau_L}\right)$$</div>
+          <p><strong>Current decay (battery removed):</strong></p>
+          <div class="equation-block">$$I(t) = I_0 e^{-Rt/L} = I_0 e^{-t/\tau_L}$$</div>
+          <p>RL and RC are mathematically identical — I in RL ↔ V in RC. Both first-order exponentials.</p>
+          <p><strong>LC Circuits</strong> — no resistance, perpetual energy oscillation:</p>
+          <div class="equation-block">$$ \omega_0 = \frac{1}{\sqrt{LC}}, \quad f_0 = \frac{1}{2\pi\sqrt{LC}} $$</div>
+          <p>\(q(t) = Q_0\cos(\omega_0 t)\), \(I(t) = -\omega_0 Q_0\sin(\omega_0 t)\). Energy: \(U_{\text{total}} = \frac{Q_0^2}{2C} = \frac{1}{2}LI_{\text{max}}^2\) (constant).</p>
+          <p><strong>Mechanical analogy:</strong> L ↔ mass (inertia), C ↔ 1/k (spring), \(\omega_0 = \sqrt{k/m} \leftrightarrow \omega_0 = 1/\sqrt{LC}\)</p>
+        </div>
+      </section>
+
+      <div class="glass-card practice-block">
+        <div class="practice-header"><span class="glass-badge">Practice</span><h3>Q4.5: RL Transient</h3></div>
+        <div class="practice-question"><p>RL circuit: R = 100 Ω, L = 200 mH, ε = 12 V. Find τ_L, I_final, I at t=2τ_L, and U stored at steady state.</p></div>
+        <details class="solution"><summary class="glass-btn">Show Solution</summary><div class="solution-content">
+          <div class="step">\(\tau_L = L/R = 0.2/100 = 2.0\ \text{ms}\). \(I_f = 12/100 = 0.12\ \text{A}\).</div>
+          <div class="step">\(I(2\tau) = 0.12(1-e^{-2}) = 0.104\ \text{A}\). \(U = \frac{1}{2}LI_f^2 = 0.5(0.2)(0.0144) = 1.44\ \text{mJ}\).</div>
+        </div></details>
+      </div>
+
+      <div class="glass-card practice-block">
+        <div class="practice-header"><span class="glass-badge">Practice</span><h3>Q4.6: LC Oscillation</h3></div>
+        <div class="practice-question"><p>LC: L = 5.0 mH, C = 20 μF, Q_0 = 200 μC. Find f, T, I_max, and total energy.</p></div>
+        <details class="solution"><summary class="glass-btn">Show Solution</summary><div class="solution-content">
+          <div class="step">\(\omega_0 = 1/\sqrt{LC} = 3162\ \text{rad/s}\). \(f = \omega_0/(2\pi) = 503\ \text{Hz}\). \(T = 1.99\ \text{ms}\).</div>
+          <div class="step">\(I_{\text{max}} = \omega_0 Q_0 = 0.632\ \text{A}\). \(U = Q_0^2/(2C) = 1.0\ \text{mJ}\).</div>
+        </div></details>
+      </div>
+
+      <!-- 4.7 -->
+      <section id="4.7-applications" class="glass-card content-section">
+        <div class="section-header"><input type="checkbox" class="progress-check" data-section="4.7"><h2>4.7 Applications: Transformers & Eddy Currents</h2><button class="collapse-toggle">▼</button></div>
+        <div class="section-body">
+          <p><strong>Transformers:</strong> Two coils wound on a shared iron core. AC in the primary creates changing flux, inducing EMF in the secondary:</p>
+          <div class="equation-block">$$\frac{V_s}{V_p} = \frac{N_s}{N_p}$$</div>
+          <p>For an ideal transformer: \(P_p = P_s \Rightarrow V_p I_p = V_s I_s\). <strong>Step-up:</strong> \(N_s > N_p\) (higher voltage, lower current). <strong>Step-down:</strong> \(N_s < N_p\). Used in power distribution.</p>
+          <p><strong>Eddy Currents:</strong> Changing flux through bulk conductors induces circulating currents that dissipate energy as heat (\(I^2R\)). Applications: <strong>induction braking</strong> (trains), <strong>metal detectors</strong>, induction cooktops. Lamination of iron cores reduces eddy current losses.</p>
+        </div>
+      </section>
+
+      <!-- 4.8 -->
+      <section id="4.8-rlc-circuits" class="glass-card content-section">
+        <div class="section-header"><input type="checkbox" class="progress-check" data-section="4.8"><h2>4.8 RLC Circuits (Qualitative)</h2><button class="collapse-toggle">▼</button></div>
+        <div class="section-body">
+          <p>Adding resistance to an LC circuit produces <strong>damped oscillation</strong>. Current oscillates at:</p>
+          <div class="equation-block">$$\omega' = \sqrt{\frac{1}{LC} - \frac{R^2}{4L^2}}$$</div>
+          <p>(derived from LRC differential equation; AP expects qualitative understanding only).</p>
+          <ul>
+            <li><strong>Underdamped</strong> (small R): oscillations decay exponentially</li>
+            <li><strong>Critically damped</strong> (R² = 4L/C): fastest return to equilibrium without oscillation</li>
+            <li><strong>Overdamped</strong> (large R): slow, non-oscillatory decay</li>
+          </ul>
+          <p><strong>Resonance:</strong> At the natural frequency \(\omega_0 = 1/\sqrt{LC}\), the impedance is minimized and current amplitude is maximized — the basis for radio tuning.</p>
+          <div class="callout callout--tip"><strong>Exam Tip</strong>lam RLC is primarily tested qualitatively: "does the oscillation frequency increase or decrease when L is increased?" Know the trends.</div>
+        </div>
+      </section>
+
+      <div class="glass-card practice-block">
+        <div class="practice-header"><span class="glass-badge">Practice</span><h3>Q4.7: Generator EMF</h3></div>
+        <div class="practice-question"><p>A 200-turn coil of area 0.015 m² rotates at 60 rev/s in a 0.40 T B-field. Find (a) the peak EMF and (b) the frequency of the output.</p></div>
+        <details class="solution"><summary class="glass-btn">Show Solution</summary><div class="solution-content">
+          <div class="step">ω = 2π(60) = 377 rad/s. \(\mathcal{E}_{\text{max}} = NBA\omega = (200)(0.4)(0.015)(377) = 452\ \text{V}\).</div>
+          <div class="step">Output frequency = rotation frequency = <strong>60 Hz</strong>.</div>
+        </div></details>
+      </div>
+
+      <div class="glass-card practice-block">
+        <div class="practice-header"><span class="glass-badge">Practice</span><h3>Q4.8: Transformer</h3></div>
+        <div class="practice-question"><p>A step-down transformer has 500 primary turns and 50 secondary turns. Primary voltage is 120 V (rms). Find the secondary voltage and the secondary current if the primary draws 0.20 A.</p></div>
+        <details class="solution"><summary class="glass-btn">Show Solution</summary><div class="solution-content">
+          <div class="step">\(V_s = V_p \cdot N_s/N_p = 120 \times (50/500) = 12\ \text{V}\).</div>
+          <div class="step">\(I_s = I_p \cdot N_p/N_s = 0.2 \times (500/50) = 2.0\ \text{A}\) (ideal: power conserved, \(V_p I_p = V_s I_s\)).</div>
+        </div></details>
+      </div>
+
+      <footer class="site-footer">Unit 4: Electromagnetism · AP Physics C: Electricity & Magnetism</footer>
+
+    </main>
+  </div>
+</body>
+</html>

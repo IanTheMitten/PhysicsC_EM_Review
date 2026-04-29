@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Unit 3: Magnetic Fields — AP Physics C E&M</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  <script defer src="js/app.js"></script>
+</head>
+<body>
+
+  <div class="bg-orbs"><div class="bg-orb"></div><div class="bg-orb"></div><div class="bg-orb"></div></div>
+  <a href="#main" class="skip-link">Skip to content</a>
+
+  <nav class="glass-nav">
+    <a href="index.html" class="nav-brand"><span class="brand-icon">⚡</span><span>AP Physics C: E&M</span></a>
+    <div class="nav-links">
+      <a href="index.html" class="nav-link">Home</a>
+      <a href="unit1-electrostatics.html" class="nav-link"><span class="unit-badge">1</span> Electrostatics</a>
+      <a href="unit2-circuits.html" class="nav-link"><span class="unit-badge">2</span> Circuits</a>
+      <a href="unit3-magnetism.html" class="nav-link active"><span class="unit-badge">3</span> Magnetism</a>
+      <a href="unit4-electromagnetism.html" class="nav-link"><span class="unit-badge">4</span> EM Induction</a>
+      <a href="unit5-maxwell.html" class="nav-link"><span class="unit-badge">5</span> Maxwell</a>
+    </div>
+    <div class="nav-actions">
+      <div class="search-wrapper"><span class="search-icon">🔍</span><input type="text" class="search-input" placeholder="Search unit..." aria-label="Search"></div>
+      <button class="btn-icon theme-toggle" aria-label="Toggle dark mode" title="Toggle dark mode (T)">🌙</button>
+      <button class="btn-icon mobile-menu-btn" aria-label="Menu">☰</button>
+    </div>
+  </nav>
+
+  <div class="app-shell">
+    <aside class="sidebar"><div class="sidebar-title">On This Page</div><ul class="sidebar-toc"></ul></aside>
+    <main class="main-content" id="main">
+
+      <h1>Unit 3: Magnetic Fields</h1>
+      <p class="text-muted" style="margin-bottom:var(--space-lg)">17–23% of AP Exam · 6 Topics · ~15 Practice Questions</p>
+      <div class="progress-bar-wrapper"><div class="progress-bar"><div class="progress-fill"></div></div><span class="progress-label">0% Complete</span></div>
+
+      <!-- 3.1 -->
+      <section id="3.1-magnets-fields" class="glass-card content-section">
+        <div class="section-header">
+          <input type="checkbox" class="progress-check" data-section="3.1" aria-label="Mark 3.1 complete">
+          <h2>3.1 Magnets & Magnetic Fields</h2>
+          <button class="collapse-toggle" aria-label="Toggle section">▼</button>
+        </div>
+        <div class="section-body">
+          <p>Every magnet has <strong>north and south poles</strong>. Like poles repel, opposite attract. Magnetic field lines form closed loops — exit N and enter S outside the magnet, then return from S to N inside. There are <strong>no magnetic monopoles</strong> (unlike electric charges where single + or − can exist).</p>
+          <p>The magnetic field \(\vec{B}\) is measured in <strong>teslas (T = N/(A·m))</strong>. 1 T is very strong; Earth's surface field is ~50 μT. Key properties:</p>
+          <ul>
+            <li>\(\vec{B}\) is tangent to field lines; line density ∝ field strength</li>
+            <li>Field lines never start or end (∇·B = 0, Gauss's law for magnetism)</li>
+            <li>The <strong>magnetic force does no work</strong> (\(\vec{F} \perp \vec{v}\) always)</li>
+          </ul>
+          <div class="callout callout--tip"><strong>Exam Tip</strong> Because magnetic forces do no work, a pure B-field cannot change a particle's speed — only its direction. This is a classic conceptual question.</div>
+        </div>
+      </section>
+
+      <!-- 3.2 -->
+      <section id="3.2-moving-charges" class="glass-card content-section">
+        <div class="section-header"><input type="checkbox" class="progress-check" data-section="3.2"><h2>3.2 Moving Charges in B-Fields</h2><button class="collapse-toggle">▼</button></div>
+        <div class="section-body">
+          <p>The magnetic force on a moving charged particle:</p>
+          <div class="equation-block">$$\vec{F} = q\vec{v} \times \vec{B}, \quad F = |q|vB\sin\theta$$</div>
+          <p><strong>Right-hand rule (for positive charge):</strong> fingers along \(\vec{v}\), curl toward \(\vec{B}\), thumb = \(\vec{F}\) direction. For negative charges, reverse the force direction.</p>
+          <p><strong>Circular motion in uniform B:</strong> When \(\vec{v} \perp \vec{B}\), the magnetic force is the centripetal force:</p>
+          <div class="equation-block">$$|q|vB = m\frac{v^2}{r} \implies r = \frac{mv}{|q|B}$$</div>
+          <p><strong>Cyclotron frequency</strong> (independent of speed and radius!):</p>
+          <div class="equation-block">$$\omega = \frac{|q|B}{m}, \quad f = \frac{\omega}{2\pi}, \quad T = \frac{2\pi m}{|q|B}$$</div>
+          <p>If \(\vec{v}\) has a component parallel to \(\vec{B}\), the motion is <strong>helical</strong>: circular in the perpendicular plane plus constant drift along the field.</p>
+          <p><strong>Hall Effect:</strong> When a current-carrying conductor sits in a perpendicular B-field, charge carriers are deflected to one side, creating a measurable transverse voltage:</p>
+          <div class="equation-block">$$V_H = \frac{IB}{nqw} = v_d B w$$</div>
+          <p>where w is the conductor width, n is charge carrier density, and \(v_d\) is drift velocity. The <strong>Hall voltage's sign</strong> reveals whether charge carriers are positive or negative — historically crucial for discovering that current in metals is carried by electrons.</p>
+          <div class="callout callout--warning"><strong>Common Mistake</strong> The RHR is for <strong>positive</strong> charges. For electrons, flip the force direction. This is the #1 source of sign errors on the AP exam.</div>
+        </div>
+      </section>
+
+      <div class="glass-card practice-block">
+        <div class="practice-header"><span class="glass-badge">Practice</span><h3>Q3.1: Proton Circular Motion</h3></div>
+        <div class="practice-question"><p>A proton (\(m = 1.67\times10^{-27}\ \text{kg}\), \(e = 1.60\times10^{-19}\ \text{C}\)) enters uniform B = 0.50 T at \(v = 2.0\times10^6\ \text{m/s}\) perpendicular to B. Find radius, period, and cyclotron frequency.</p></div>
+        <details class="solution"><summary class="glass-btn">Show Solution</summary><div class="solution-content">
+          <div class="step">\(r = mv/(eB) = (1.67\times10^{-27})(2\times10^6)/(1.6\times10^{-19})(0.5) = 0.0418\ \text{m} = 4.18\ \text{cm}\)</div>
+          <div class="step">\(\omega_c = eB/m = 4.79\times10^7\ \text{rad/s}\). \(T = 2\pi/\omega_c = 1.31\times10^{-7}\ \text{s}\). \(f_c = 7.63\ \text{MHz}\).</div>
+        </div></details>
+      </div>
+
+      <div class="glass-card practice-block">
+        <div class="practice-header"><span class="glass-badge">Practice</span><h3>Q3.2: Velocity Selector</h3></div>
+        <div class="practice-question"><p>A region has crossed fields: \(\vec{E} = 2000\hat{j}\ \text{V/m}\) and \(\vec{B} = 0.10\hat{k}\ \text{T}\). Find the velocity of particles that pass undeflected through both fields.</p></div>
+        <details class="solution"><summary class="glass-btn">Show Solution</summary><div class="solution-content">
+          <div class="step">For no deflection: \(q\vec{E} + q\vec{v}\times\vec{B} = 0 \implies \vec{E} = -\vec{v}\times\vec{B}\).</div>
+          <div class="step">With \(\vec{v}\) along \(\hat{i}\): \(2000\hat{j} = -v\hat{i}\times 0.10\hat{k} = 0.10v\hat{j}\). So \(v = 20000\ \text{m/s}\) along \(+\hat{x}\).</div>
+          <div class="step"><strong>Only particles with \(v = E/B = 2\times10^4\ \text{m/s}\) pass straight through, independent of q or m.</strong></div>
+        </div></details>
+      </div>
+
+      <!-- 3.3 -->
+      <section id="3.3-force-on-wires" class="glass-card content-section">
+        <div class="section-header"><input type="checkbox" class="progress-check" data-section="3.3"><h2>3.3 Forces on Current-Carrying Wires</h2><button class="collapse-toggle">▼</button></div>
+        <div class="section-body">
+          <p>The magnetic force on a straight wire segment:</p>
+          <div class="equation-block">$$\vec{F} = I\vec{\ell} \times \vec{B}, \quad F = I\ell B\sin\theta$$</div>
+          <p>Same RHR: fingers along current (\(\vec{\ell}\)), curl toward \(\vec{B}\), thumb = force.</p>
+          <p><strong>Torque on a current loop in B-field:</strong></p>
+          <div class="equation-block">$$\vec{\tau} = \vec{\mu} \times \vec{B}, \quad \vec{\mu} = NI\vec{A}$$</div>
+          <p>where \(\vec{\mu}\) is the <strong>magnetic dipole moment</strong>: \(N\) turns, current \(I\), area vector \(\vec{A}\) (RHR: curl fingers with current, thumb = direction of \(\vec{A}\)).</p>
+          <p>The torque tends to align \(\vec{\mu}\) with \(\vec{B}\). Potential energy: \(U = -\vec{\mu}\cdot\vec{B}\). This is the working principle behind <strong>electric motors</strong>.</p>
+          <div class="callout callout--tip"><strong>Exam Tip</strong> \(\vec{\tau} = \vec{\mu}\times\vec{B}\) is the magnetic analog of \(\vec{\tau} = \vec{p}\times\vec{E}\) for electric dipoles. Same form, same PE formula \(U = -\vec{\mu}\cdot\vec{B}\).</div>
+        </div>
+      </section>
+
+      <div class="glass-card practice-block">
+        <div class="practice-header"><span class="glass-badge">Practice</span><h3>Q3.3: Force on a Wire Segment</h3></div>
+        <div class="practice-question"><p>A 0.50 m wire carries 3.0 A northward in a uniform 0.20 T B-field pointing east. Find the magnetic force (magnitude and direction).</p></div>
+        <details class="solution"><summary class="glass-btn">Show Solution</summary><div class="solution-content">
+          <div class="step">\(F = I\ell B\sin 90° = (3)(0.5)(0.2) = 0.30\ \text{N}\).</div>
+          <div class="step">RHR: I north, B east → \(\vec{F}\) is <strong>upward, 0.30 N</strong>.</div>
+        </div></details>
+      </div>
+
+      <!-- 3.4 -->
+      <section id="3.4-fields-from-currents" class="glass-card content-section">
+        <div class="section-header"><input type="checkbox" class="progress-check" data-section="3.4"><h2>3.4 Magnetic Fields from Currents</h2><button class="collapse-toggle">▼</button></div>
+        <div class="section-body">
+          <p>Every current produces a magnetic field. The simplest and most important result:</p>
+          <p><strong>Long straight wire:</strong></p>
+          <div class="equation-block">$$B = \frac{\mu_0 I}{2\pi r}, \quad \mu_0 = 4\pi \times 10^{-7}\ \text{T·m/A}$$</div>
+          <p>Direction: RHR — thumb along current, fingers curl in direction of \(\vec{B}\) (concentric circles around the wire).</p>
+          <p><strong>Force between two parallel wires:</strong></p>
+          <div class="equation-block">$$\frac{F}{\ell} = \frac{\mu_0 I_1 I_2}{2\pi d}$$</div>
+          <p><strong>Parallel currents attract; anti-parallel repel.</strong> This is how the ampere is defined.</p>
+          <p><strong>Circular loop (center):</strong> \(B = \mu_0 I/(2R)\). <strong>Solenoid (inside):</strong> \(B = \mu_0 n I\) where \(n = N/L\) turns per meter. Field is uniform inside, ~zero outside.</p>
+        </div>
+      </section>
+
+      <div class="glass-card practice-block">
+        <div class="practice-header"><span class="glass-badge">Practice</span><h3>Q3.4: Forces Between Wires</h3></div>
+        <div class="practice-question"><p>Two parallel wires 3.0 cm apart carry 5.0 A and 8.0 A in the same direction. Find the force per meter on each wire. Is it attractive or repulsive?</p></div>
+        <details class="solution"><summary class="glass-btn">Show Solution</summary><div class="solution-content">
+          <div class="step">\(F/\ell = \mu_0 I_1 I_2/(2\pi d) = (4\pi\times10^{-7})(5)(8)/(2\pi\cdot0.03) = 2.67\times10^{-4}\ \text{N/m}\).</div>
+          <div class="step"><strong>Attractive</strong> (parallel currents). The force is equal and opposite on each wire (Newton's 3rd law).</div>
+        </div></details>
+      </div>
+
+      <!-- 3.5 -->
+      <section id="3.5-biot-savart" class="glass-card content-section">
+        <div class="section-header"><input type="checkbox" class="progress-check" data-section="3.5"><h2>3.5 The Biot-Savart Law</h2><button class="collapse-toggle">▼</button></div>
+        <div class="section-body">
+          <p>The Biot-Savart law gives the \(d\vec{B}\) contribution from a current element \(Id\vec{\ell}\):</p>
+          <div class="equation-block">$$d\vec{B} = \frac{\mu_0}{4\pi} \frac{I d\vec{\ell} \times \hat{r}}{r^2}$$</div>
+          <p>This is the magnetic analog of \(d\vec{E} = k\frac{dq}{r^2}\hat{r}\) — both inverse-square laws.</p>
+          <p><strong>Key results via integration:</strong></p>
+          <ul>
+            <li><strong>Finite straight wire:</strong> \(B = \frac{\mu_0 I}{4\pi r}(\cos\theta_1 - \cos\theta_2)\)</li>
+            <li><strong>Circular loop (on axis):</strong> \(B = \frac{\mu_0 I R^2}{2(R^2+x^2)^{3/2}}\)</li>
+            <li><strong>Loop center (x=0):</strong> \(B = \mu_0 I/(2R)\)</li>
+          </ul>
+          <p>olen integrate: \(\vec{B} = \int d\vec{B}\). Exploit symmetry to cancel components — the direction comes from \(d\vec{\ell} \times \hat{r}\) at each segment.</p>
+          <div class="callout callout--warning"><strong>Common Mistake</strong> Don't forget that \(d\vec{B}\) is a vector. Radial segments often contribute nothing at certain points (when \(d\vec{\ell} \parallel \hat{r}\), the cross product is zero). Always check geometry first.</div>
+        </div>
+      </section>
+
+      <div class="glass-card practice-block">
+        <div class="practice-header"><span class="glass-badge">Practice</span><h3>Q3.5: Biot-Savart — Quarter Circle</h3></div>
+        <div class="practice-question"><p>A wire has two straight radial segments and a quarter-circle arc of radius R, carrying current I. Find B at the center of curvature P.</p></div>
+        <details class="solution"><summary class="glass-btn">Show Solution</summary><div class="solution-content">
+          <div class="step">Straight radial segments: Idℓ ∥ r̂, so cross product = 0 → zero contribution at P.</div>
+          <div class="step">Arc: \(B = \frac{\mu_0 I}{4\pi} \int_0^{\pi/2} \frac{R d\theta}{R^2} = \frac{\mu_0 I}{4\pi R}\cdot\frac{\pi}{2} = \frac{\mu_0 I}{8R}\).</div>
+          <div class="step"><strong>\(B = \mu_0 I/(8R)\), direction ⊥ to page per RHR.</strong></div>
+        </div></details>
+      </div>
+
+      <!-- 3.6 -->
+      <section id="3.6-amperes-law" class="glass-card content-section">
+        <div class="section-header"><input type="checkbox" class="progress-check" data-section="3.6"><h2>3.6 Ampere's Law</h2><button class="collapse-toggle">▼</button></div>
+        <div class="section-body">
+          <p>Ampere's Law relates the line integral of \(\vec{B}\) around a closed loop to the enclosed current:</p>
+          <div class="equation-block">$$\oint \vec{B} \cdot d\vec{\ell} = \mu_0 I_{\text{enc}}$$</div>
+          <p><strong>Strategy (mirrors Gauss's Law):</strong> (1) Choose Amperian loop exploiting symmetry. (2) B is constant and ∥ or ⟂ on each segment. (3) Find \(I_{\text{enc}}\). (4) Solve for B.</p>
+          <p><strong>Standard results (must memorize):</strong></p>
+          <ul>
+            <li><strong>Long straight wire:</strong> \(B = \mu_0 I/(2\pi r)\)</li>
+            <li><strong>Inside wire (uniform J):</strong> \(B = \mu_0 I r/(2\pi R^2)\)</li>
+            <li><strong>Ideal solenoid:</strong> \(B = \mu_0 n I\) inside, B ≈ 0 outside</li>
+            <li><strong>Toroid:</strong> \(B = \mu_0 N I/(2\pi r)\) inside the winding, B = 0 outside</li>
+          </ul>
+          <p>Note: This is the static form. Maxwell will later add the <strong>displacement current</strong> term \(\mu_0\varepsilon_0 d\Phi_E/dt\) to handle time-varying E-fields.</p>
+          <div class="callout callout--danger"><strong>Critical</strong> Ampere's law is always true, but only computationally useful with high symmetry (straight wires, solenoids, toroids). For arbitrary geometries, use Biot-Savart.</div>
+        </div>
+      </section>
+
+      <div class="glass-card practice-block">
+        <div class="practice-header"><span class="glass-badge">Practice</span><h3>Q3.6: Coaxial Cable</h3></div>
+        <div class="practice-question"><p>A coaxial cable: inner solid conductor (radius a) carries +I uniformly; outer thin cylindrical shell (radius b > a) carries −I. Find B(r) everywhere.</p></div>
+        <details class="solution"><summary class="glass-btn">Show Solution</summary><div class="solution-content">
+          <div class="step">\(r < a\): \(B(2\pi r) = \mu_0 I(r^2/a^2) \implies B = \mu_0 I r/(2\pi a^2)\).</div>
+          <div class="step">\(a < r < b\): \(B = \mu_0 I/(2\pi r)\). \(r > b\): \(I_{\text{enc}} = I - I = 0 \implies B = 0\).</div>
+          <div class="step"><strong>No magnetic field outside the cable.</strong> This makes coaxial cables self-shielding — they don't interfere with nearby electronics.</div>
+        </div></details>
+      </div>
+
+      <footer class="site-footer">Unit 3: Magnetic Fields · AP Physics C: Electricity & Magnetism</footer>
+
+    </main>
+  </div>
+</body>
+</html>

@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Unit 2: Electric Circuits — AP Physics C E&M</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  <script defer src="js/app.js"></script>
+</head>
+<body>
+
+  <div class="bg-orbs"><div class="bg-orb"></div><div class="bg-orb"></div><div class="bg-orb"></div></div>
+  <a href="#main" class="skip-link">Skip to content</a>
+
+  <nav class="glass-nav">
+    <a href="index.html" class="nav-brand"><span class="brand-icon">⚡</span><span>AP Physics C: E&M</span></a>
+    <div class="nav-links">
+      <a href="index.html" class="nav-link">Home</a>
+      <a href="unit1-electrostatics.html" class="nav-link"><span class="unit-badge">1</span> Electrostatics</a>
+      <a href="unit2-circuits.html" class="nav-link active"><span class="unit-badge">2</span> Circuits</a>
+      <a href="unit3-magnetism.html" class="nav-link"><span class="unit-badge">3</span> Magnetism</a>
+      <a href="unit4-electromagnetism.html" class="nav-link"><span class="unit-badge">4</span> EM Induction</a>
+      <a href="unit5-maxwell.html" class="nav-link"><span class="unit-badge">5</span> Maxwell</a>
+    </div>
+    <div class="nav-actions">
+      <div class="search-wrapper"><span class="search-icon">🔍</span><input type="text" class="search-input" placeholder="Search unit..." aria-label="Search"></div>
+      <button class="btn-icon theme-toggle" aria-label="Toggle dark mode" title="Toggle dark mode (T)">🌙</button>
+      <button class="btn-icon mobile-menu-btn" aria-label="Menu">☰</button>
+    </div>
+  </nav>
+
+  <div class="app-shell">
+    <aside class="sidebar"><div class="sidebar-title">On This Page</div><ul class="sidebar-toc"></ul></aside>
+    <main class="main-content" id="main">
+
+      <h1>Unit 2: Electric Circuits</h1>
+      <p class="text-muted" style="margin-bottom:var(--space-lg)">17–23% of AP Exam · 5 Topics · ~15 Practice Questions</p>
+      <div class="progress-bar-wrapper"><div class="progress-bar"><div class="progress-fill"></div></div><span class="progress-label">0% Complete</span></div>
+
+      <!-- 2.1 -->
+      <section id="2.1-current-resistance" class="glass-card content-section">
+        <div class="section-header">
+          <input type="checkbox" class="progress-check" data-section="2.1" aria-label="Mark 2.1 complete">
+          <h2>2.1 Current & Resistance</h2>
+          <button class="collapse-toggle" aria-label="Toggle section">▼</button>
+        </div>
+        <div class="section-body">
+          <p><strong>Electric current</strong> is the rate of charge flow through a cross section:</p>
+          <div class="equation-block">$$I = \frac{dQ}{dt} \quad \text{(amperes, A = C/s)}$$</div>
+          <p>By convention, current direction is the direction positive charge would flow — opposite to electron motion. Current density: \(\vec{J} = \sigma\vec{E}\) where \(\sigma\) is conductivity.</p>
+          <p><strong>Resistance</strong> quantifies how much a material opposes current flow:</p>
+          <div class="equation-block">$$R = \frac{\rho L}{A} \quad \text{(ohms, Ω)}$$</div>
+          <p>where \(\rho\) is resistivity (Ω·m), \(L\) is length, \(A\) is cross-sectional area. Resistivity <strong>depends on temperature</strong>: \(\rho = \rho_0[1 + \alpha(T - T_0)]\). For metals, \(\alpha > 0\) (resistance increases with heat); for semiconductors, \(\alpha < 0\).</p>
+          <p><strong>Ohm's Law:</strong> \(V = IR\) applies to <em>ohmic</em> materials where R is independent of V. Non-ohmic devices (diodes, filaments) have a nonlinear I-V curve.</p>
+          <p><strong>Electric Power:</strong></p>
+          <div class="equation-block">$$P = IV = I^2R = \frac{V^2}{R}$$</div>
+          <p>\(I^2R\) is the <strong>Joule heating</strong> rate — energy lost as heat in a resistor.</p>
+          <p><strong>Internal resistance (r) of real batteries:</strong> A real battery has internal resistance r in series with its ideal EMF ε. <strong>Terminal voltage:</strong> \(V_{\text{terminal}} = \varepsilon - Ir\). When current flows, terminal voltage is LESS than the EMF. Open circuit: \(I=0 \Rightarrow V_{\text{terminal}} = \varepsilon\). Short circuit: \(I_{\text{max}} = \varepsilon / r\).</p>
+          <div class="callout callout--warning"><strong>Common Mistake</strong> \(P = IV\) is always true for any device. \(P = I^2R\) and \(P = V^2/R\) only apply to resistors (ohmic devices).</div>
+        </div>
+      </section>
+
+      <div class="glass-card practice-block">
+        <div class="practice-header"><span class="glass-badge">Practice</span><h3>Q2.1: Wire Resistance</h3></div>
+        <div class="practice-question"><p>A copper wire (\(\rho = 1.7 \times 10^{-8}\ \Omega\cdot\text{m}\)) has length 2.0 m and diameter 1.0 mm. Find its resistance. If 3.0 A flows through it, what is the voltage drop and power dissipated?</p></div>
+        <details class="solution"><summary class="glass-btn">Show Solution</summary><div class="solution-content">
+          <div class="step">\(A = \pi(5\times10^{-4})^2 = 7.85\times10^{-7}\ \text{m}^2\). \(R = \rho L/A = (1.7\times10^{-8})(2)/(7.85\times10^{-7}) = 0.0433\ \Omega\)</div>
+          <div class="step">\(V = IR = (3)(0.0433) = 0.13\ \text{V}\). \(P = I^2R = (9)(0.0433) = 0.39\ \text{W}\)</div>
+        </div></details>
+      </div>
+
+      <div class="glass-card practice-block">
+        <div class="practice-header"><span class="glass-badge">Practice</span><h3>Q2.2: Temperature Dependence</h3></div>
+        <div class="practice-question"><p>A tungsten filament has \(R = 20\ \Omega\) at 20°C. Its temperature coefficient \(\alpha = 4.5\times10^{-3}/°\text{C}\). Find R at operating temperature 2500°C.</p></div>
+        <details class="solution"><summary class="glass-btn">Show Solution</summary><div class="solution-content">
+          <div class="step">\(R = R_0[1 + \alpha(T - T_0)] = 20[1 + 4.5\times10^{-3}(2480)] = 20[1 + 11.16]\)</div>
+          <div class="step"><strong>\(R = 243\ \Omega\)</strong> — about 12× the room-temperature value.</div>
+        </div></details>
+      </div>
+
+      <!-- 2.2 -->
+      <section id="2.2-series-circuits" class="glass-card content-section">
+        <div class="section-header"><input type="checkbox" class="progress-check" data-section="2.2"><h2>2.2 Series Circuits</h2><button class="collapse-toggle">▼</button></div>
+        <div class="section-body">
+          <p>In a <strong>series</strong> circuit, components share one path — <strong>current is the same</strong> through every element.</p>
+          <p><strong>Equivalent resistance:</strong></p>
+          <div class="equation-block">$$R_{\text{eq}} = R_1 + R_2 + \cdots + R_n$$</div>
+          <p><strong>Voltage divider:</strong> The voltage across each resistor is proportional to its resistance:</p>
+          <div class="equation-block">$$V_i = \frac{R_i}{R_{\text{eq}}} V_{\text{total}}$$</div>
+          <p><strong>Key facts:</strong></p>
+          <ul>
+            <li>\(I = I_1 = I_2 = \cdots\) (same current everywhere)</li>
+            <li>\(V_{\text{total}} = V_1 + V_2 + \cdots\) (voltages add)</li>
+            <li>Largest resistor gets largest voltage drop (and dissipates most power)</li>
+          </ul>
+          <h3>Kirchhoff's Laws</h3>
+          <p><strong>Kirchhoff's Junction Rule (KCL):</strong> At any junction, \(\sum I_{\text{in}} = \sum I_{\text{out}}\) — charge is conserved.</p>
+          <p><strong>Kirchhoff's Loop Rule (KVL):</strong> Around any closed loop, \(\sum \Delta V_i = 0\) — energy is conserved. The sum of all voltage rises (EMFs) equals the sum of all voltage drops (IR).</p>
+          <p><strong>Sign conventions for loop rule:</strong> Going across a resistor in the direction of current: −IR. Going across a battery from − to +: +ε. From + to −: −ε.</p>
+          <p><strong>Application strategy:</strong> (1) Label all currents. (2) Write junction equations. (3) Write loop equations for independent loops. (4) Solve the system.</p>
+        </div>
+      </section>
+
+      <div class="glass-card practice-block">
+        <div class="practice-header"><span class="glass-badge">Practice</span><h3>Q2.3: Voltage Divider</h3></div>
+        <div class="practice-question"><p>Three resistors (\(R_1=2\ \Omega\), \(R_2=3\ \Omega\), \(R_3=5\ \Omega\)) in series across a 20 V battery. Find the current and the voltage across \(R_2\).</p></div>
+        <details class="solution"><summary class="glass-btn">Show Solution</summary><div class="solution-content">
+          <div class="step">\(R_{\text{eq}} = 2 + 3 + 5 = 10\ \Omega\). \(I = V/R_{\text{eq}} = 20/10 = 2.0\ \text{A}\)</div>
+          <div class="step"><strong>\(V_2 = I R_2 = (2)(3) = 6.0\ \text{V}\)</strong>. Check: \(V_1 = 4\ \text{V}, V_3 = 10\ \text{V}\), sum = 20 V.</div>
+        </div></details>
+      </div>
+
+      <!-- 2.3 -->
+      <section id="2.3-parallel-circuits" class="glass-card content-section">
+        <div class="section-header"><input type="checkbox" class="progress-check" data-section="2.3"><h2>2.3 Parallel Circuits</h2><button class="collapse-toggle">▼</button></div>
+        <div class="section-body">
+          <p>In a <strong>parallel</strong> circuit, components share two nodes — <strong>voltage is the same</strong> across every branch.</p>
+          <p><strong>Equivalent resistance:</strong></p>
+          <div class="equation-block">$$\frac{1}{R_{\text{eq}}} = \frac{1}{R_1} + \frac{1}{R_2} + \cdots + \frac{1}{R_n}$$</div>
+          <p>For <strong>two</strong> resistors: \(R_{\text{eq}} = \frac{R_1 R_2}{R_1 + R_2}\)</p>
+          <p><strong>Current divider:</strong> In a two-resistor parallel branch:</p>
+          <div class="equation-block">$$I_1 = \frac{R_2}{R_1 + R_2} I_{\text{total}}, \quad I_2 = \frac{R_1}{R_1 + R_2} I_{\text{total}}$$</div>
+          <p><strong>Key facts:</strong></p>
+          <ul>
+            <li>\(V = V_1 = V_2 = \cdots\) (same voltage across each branch)</li>
+            <li>\(I_{\text{total}} = I_1 + I_2 + \cdots\) (currents add)</li>
+            <li>\(R_{\text{eq}} < \min(R_1, R_2, \dots)\) — adding a parallel path always decreases R_eq</li>
+            <li>Smallest resistor carries largest current (and dissipates most power)</li>
+          </ul>
+          <div class="callout callout--danger"><strong>Critical</strong> Series: same CURRENT. Parallel: same VOLTAGE. This is the most fundamental circuit concept — mixing them up ruins every analysis.</div>
+        </div>
+      </section>
+
+      <div class="glass-card practice-block">
+        <div class="practice-header"><span class="glass-badge">Practice</span><h3>Q2.4: Current Divider</h3></div>
+        <div class="practice-question"><p>\(R_1 = 4\ \Omega\) in parallel with \(R_2 = 12\ \Omega\), the combination is connected to 24 V. Find all currents and power in each.</p></div>
+        <details class="solution"><summary class="glass-btn">Show Solution</summary><div class="solution-content">
+          <div class="step">\(R_{\text{eq}} = \frac{4\cdot12}{16} = 3\ \Omega\). \(I_{\text{tot}} = 24/3 = 8\ \text{A}\).</div>
+          <div class="step">\(I_1 = \frac{12}{16}(8) = 6\ \text{A}\), \(I_2 = \frac{4}{16}(8) = 2\ \text{A}\). Check: \(V\) across both = 24 V, so \(I_1 = 24/4 = 6\ \text{A}\), \(I_2 = 24/12 = 2\ \text{A}\). Both methods agree.</div>
+          <div class="step">\(P_1 = I_1^2 R_1 = 36 \cdot 4 = 144\ \text{W}\); \(P_2 = I_2^2 R_2 = 4 \cdot 12 = 48\ \text{W}\). Total: 192 W = \(I_{\text{tot}}^2 R_{\text{eq}}\).</div>
+        </div></details>
+      </div>
+
+      <div class="glass-card practice-block">
+        <div class="practice-header"><span class="glass-badge">Practice</span><h3>Q2.5: Series-Parallel Network</h3></div>
+        <div class="practice-question"><p>\(R_1 = 6\ \Omega\), \(R_2 = 3\ \Omega\) in parallel with each other, then in series with \(R_3 = 10\ \Omega\). Powered by 18 V. Find \(R_{\text{eq}}\), total current, and \(V_3\).</p></div>
+        <details class="solution"><summary class="glass-btn">Show Solution</summary><div class="solution-content">
+          <div class="step">\(R_{12} = \frac{6\cdot3}{9} = 2\ \Omega\). \(R_{\text{eq}} = 2 + 10 = 12\ \Omega\).</div>
+          <div class="step">\(I_{\text{tot}} = 18/12 = 1.5\ \text{A}\). \(V_3 = I R_3 = 15\ \text{V}\). \(V_{12} = 3\ \text{V}\).</div>
+        </div></details>
+      </div>
+
+      <!-- 2.4 -->
+      <section id="2.4-rc-steady-state" class="glass-card content-section">
+        <div class="section-header"><input type="checkbox" class="progress-check" data-section="2.4"><h2>2.4 RC Circuits — Steady State</h2><button class="collapse-toggle">▼</button></div>
+        <div class="section-body">
+          <p>After a long time (all transients have decayed), a capacitor reaches <strong>steady state</strong>:</p>
+          <ul>
+            <li><strong>Capacitor acts as an open circuit</strong> — no current flows through its branch</li>
+            <li><strong>Voltage across capacitor = voltage of its branch</strong>: \(V_C = V_{\text{branch}}\)</li>
+            <li><strong>Charge on capacitor:</strong> \(Q = C V_C\)</li>
+            <li><strong>Energy stored:</strong> \(U = \frac{1}{2}C V_C^2\)</li>
+          </ul>
+          <p><strong>Analysis strategy:</strong></p>
+          <ol>
+            <li>Replace all capacitors with open circuits</li>
+            <li>Solve the resulting resistor-network for voltages at capacitor positions</li>
+            <li>Then \(Q = CV\) and \(U = \frac{1}{2}CV^2\) for each capacitor</li>
+          </ol>
+          <div class="callout callout--tip"><strong>Exam Tip</strong> "After a long time" = steady state = capacitors are open = no current in capacitor branches. Always redraw the circuit with the open gaps.</div>
+        </div>
+      </section>
+
+      <div class="glass-card practice-block">
+        <div class="practice-header"><span class="glass-badge">Practice</span><h3>Q2.6: Steady State RC</h3></div>
+        <div class="practice-question"><p>A 10 V battery, \(R_1 = 2\ \text{k}\Omega\), and \(C = 5\ \mu\text{F}\) in series. A second resistor \(R_2 = 3\ \text{k}\Omega\) is in parallel with C. After a long time, find \(V_C\), \(Q\), U, and the current through each resistor.</p></div>
+        <details class="solution"><summary class="glass-btn">Show Solution</summary><div class="solution-content">
+          <div class="step">At steady state, C is open. Current only in \(R_1 \to R_2\) series path: \(I = 10/(2000+3000) = 2.0\ \text{mA}\).</div>
+          <div class="step">\(V_C = V_{R_2} = IR_2 = (0.002)(3000) = 6\ \text{V}\). \(Q = CV_C = (5\times10^{-6})(6) = 30\ \mu\text{C}\).</div>
+          <div class="step"><strong>\(U = \frac{1}{2}CV^2 = 9\times10^{-5}\ \text{J}\). \(I_{R_1} = I_{R_2} = 2\ \text{mA}\).</strong></div>
+        </div></details>
+      </div>
+
+      <!-- 2.5 -->
+      <section id="2.5-rc-transient" class="glass-card content-section">
+        <div class="section-header"><input type="checkbox" class="progress-check" data-section="2.5"><h2>2.5 RC Circuits — Transient Analysis</h2><button class="collapse-toggle">▼</button></div>
+        <div class="section-body">
+          <p>During charging/discharging, the capacitor voltage and current are <strong>exponential</strong> functions of time.</p>
+          <p><strong>Time constant:</strong></p>
+          <div class="equation-block">$$\tau = RC$$</div>
+          <p>After \(1\tau\): ~63% of change. After \(5\tau\): effectively at steady state (>99%).</p>
+          <p><strong>Charging (RC series, battery ε):</strong></p>
+          <div class="equation-block">
+            $$q(t) = Q_f\left(1 - e^{-t/RC}\right), \quad Q_f = C\varepsilon$$
+            $$V_C(t) = \varepsilon\left(1 - e^{-t/RC}\right)$$
+            $$I(t) = \frac{\varepsilon}{R}e^{-t/RC} = I_0 e^{-t/RC}$$
+          </div>
+          <p><strong>Discharging (no battery):</strong></p>
+          <div class="equation-block">
+            $$q(t) = Q_0 e^{-t/RC}$$
+            $$V_C(t) = V_0 e^{-t/RC}$$
+            $$I(t) = \frac{V_0}{R}e^{-t/RC} = I_0 e^{-t/RC}$$
+          </div>
+          <p><strong>Standard derivative forms (memorize):</strong></p>
+          <ul>
+            <li>Charging: \(\frac{dq}{dt} = \frac{\varepsilon}{R}e^{-t/RC}\)</li>
+            <li>At \(t=0\): uncharged capacitor acts like a <strong>short</strong> (zero voltage)</li>
+            <li>At \(t \to \infty\): capacitor acts like an <strong>open</strong> (no current)</li>
+          </ul>
+          <div class="callout callout--warning"><strong>Common Mistake</strong> Writing \(V_C(t) = \varepsilon e^{-t/RC}\) for charging. That's the form for discharging. Charging is: \(V_C = \varepsilon(1 - e^{-t/RC})\). Always check: at t=0, your formula should give \(V_C = 0\) for charging, \(V_C = V_0\) for discharging.</div>
+        </div>
+      </section>
+
+      <div class="glass-card practice-block">
+        <div class="practice-header"><span class="glass-badge">Practice</span><h3>Q2.7: Charging — Time to 90%</h3></div>
+        <div class="practice-question"><p>An uncharged 2.0 μF capacitor and 50 kΩ resistor in series with a 12 V battery. Find: (a) time constant, (b) time for V_C to reach 10.8 V (90% of final), (c) current at that time.</p></div>
+        <details class="solution"><summary class="glass-btn">Show Solution</summary><div class="solution-content">
+          <div class="step">(a) \(\tau = RC = (5\times10^4)(2\times10^{-6}) = 0.10\ \text{s}\)</div>
+          <div class="step">(b) \(V_C = 12(1 - e^{-t/0.1}) = 10.8 \implies 1 - e^{-t/0.1} = 0.9 \implies e^{-t/0.1} = 0.1 \implies t = -0.1\ln(0.1) = 0.230\ \text{s}\)</div>
+          <div class="step">(c) At that time, \(I = (\varepsilon/R)e^{-t/RC} = (12/50000)e^{-2.303} = (2.4\times10^{-4})(0.1) = 24\ \mu\text{A}\)</div>
+        </div></details>
+      </div>
+
+      <!-- 2.6 -->
+      <section id="2.6-measurement" class="glass-card content-section">
+        <div class="section-header"><input type="checkbox" class="progress-check" data-section="2.6"><h2>2.6 Meters & Measurement</h2><button class="collapse-toggle">▼</button></div>
+        <div class="section-body">
+          <p><strong>Ammeters</strong> measure current. They must be connected in <strong>series</strong> and have very <strong>low internal resistance</strong> (ideally zero) so they don't affect the circuit.</p>
+          <p><strong>Voltmeters</strong> measure potential difference. They must be connected in <strong>parallel</strong> across the component and have very <strong>high internal resistance</strong> (ideally infinite) so they draw negligible current.</p>
+        </div>
+      </section>
+
+      <div class="glass-card practice-block">
+        <div class="practice-header"><span class="glass-badge">Practice</span><h3>Q2.8: Battery with Internal Resistance</h3></div>
+        <div class="practice-question"><p>A battery with ε = 9.0 V and internal resistance r = 0.50 Ω is connected to a 4.0 Ω resistor. Find: (a) circuit current, (b) terminal voltage of the battery, (c) power delivered to the load, (d) power dissipated inside the battery.</p></div>
+        <details class="solution"><summary class="glass-btn">Show Solution</summary><div class="solution-content">
+          <div class="step">\(I = \varepsilon/(R+r) = 9/(4+0.5) = 2.0\ \text{A}\).</div>
+          <div class="step">\(V_{\text{terminal}} = \varepsilon - Ir = 9 - (2)(0.5) = 8.0\ \text{V}\) (or \(V_{\text{terminal}} = IR = 2\times4 = 8\ \text{V}\)).</div>
+          <div class="step">\(P_{\text{load}} = I^2R = 16\ \text{W}\). \(P_{\text{internal}} = I^2r = 2.0\ \text{W}\). Total: 18 W = εI.</div>
+        </div></details>
+      </div>
+
+      <div class="glass-card practice-block">
+        <div class="practice-header"><span class="glass-badge">Practice</span><h3>Q2.9: Two-Loop Circuit (Kirchhoff)</h3></div>
+        <div class="practice-question"><p>Two batteries: ε₁ = 12 V, ε₂ = 6 V. Resistors: R₁ = 4 Ω connected to ε₁, R₂ = 3 Ω connected to ε₂, R₃ = 2 Ω connects the midpoints. Find all three branch currents.</p></div>
+        <details class="solution"><summary class="glass-btn">Show Solution</summary><div class="solution-content">
+          <div class="step">Junction (top): \(I_1 = I_2 + I_3\).</div>
+          <div class="step">Left loop: \(12 - 4I_1 - 2I_3 = 0 \Rightarrow 4I_1 + 2I_3 = 12\).</div>
+          <div class="step">Right loop: \(-6 + 3I_2 - 2I_3 = 0 \Rightarrow 3I_2 - 2I_3 = 6\).</div>
+          <div class="step">Substitute \(I_2 = I_1 - I_3\) into right loop: \(3(I_1 - I_3) - 2I_3 = 6 \Rightarrow 3I_1 - 5I_3 = 6\).</div>
+          <div class="step">Solve system: \(I_1 = 2.0\ \text{A}\), \(I_3 = 0\ \text{A}\), \(I_2 = 2.0\ \text{A}\). The midpoint resistor carries no current.</div>
+        </div></details>
+      </div>
+
+      <footer class="site-footer">Unit 2: Electric Circuits · AP Physics C: Electricity & Magnetism</footer>
+
+    </main>
+  </div>
+</body>
+</html>

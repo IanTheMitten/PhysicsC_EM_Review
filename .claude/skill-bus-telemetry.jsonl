@@ -1,0 +1,4 @@
+{"ts":"2026-04-26T14:36:13+0900","sessionId":"945f9d12","event":"no_match","skill":"everything-claude-code:plan","timing":"pre","source":"tool"}
+{"ts":"2026-04-26T14:36:15+0900","sessionId":"bde24240","event":"no_match","skill":"everything-claude-code:plan","timing":"post","source":"tool"}
+{"ts":"2026-04-26T14:54:54+0900","sessionId":"50fc7ef8","event":"no_match","skill":"superpowers:write-plan","timing":"pre","source":"tool"}
+{"ts":"2026-04-26T14:54:55+0900","sessionId":"ca72af38","event":"no_match","skill":"superpowers:write-plan","timing":"post","source":"tool"}

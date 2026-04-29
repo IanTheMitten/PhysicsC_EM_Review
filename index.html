@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AP Physics C: E&M — Study Guide</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  <script defer src="js/app.js"></script>
+</head>
+<body class="page-landing">
+
+  <div class="bg-orbs">
+    <div class="bg-orb"></div>
+    <div class="bg-orb"></div>
+    <div class="bg-orb"></div>
+  </div>
+
+  <a href="#main" class="skip-link">Skip to content</a>
+
+  <nav class="glass-nav">
+    <a href="index.html" class="nav-brand">
+      <span class="brand-icon">⚡</span>
+      <span>AP Physics C: E&M</span>
+    </a>
+    <div class="nav-links">
+      <a href="index.html" class="nav-link active">Home</a>
+      <a href="unit1-electrostatics.html" class="nav-link"><span class="unit-badge">1</span> Electrostatics</a>
+      <a href="unit2-circuits.html" class="nav-link"><span class="unit-badge">2</span> Circuits</a>
+      <a href="unit3-magnetism.html" class="nav-link"><span class="unit-badge">3</span> Magnetism</a>
+      <a href="unit4-electromagnetism.html" class="nav-link"><span class="unit-badge">4</span> EM Induction</a>
+      <a href="unit5-maxwell.html" class="nav-link"><span class="unit-badge">5</span> Maxwell</a>
+      <a href="#practice-materials" class="nav-link">📚 Practice</a>
+    </div>
+    <div class="nav-actions">
+      <div class="search-wrapper">
+        <span class="search-icon">🔍</span>
+        <input type="text" class="search-input" placeholder="Search..." aria-label="Search">
+      </div>
+      <button class="btn-icon theme-toggle" aria-label="Toggle dark mode" title="Toggle dark mode (T)">🌙</button>
+      <button class="btn-icon mobile-menu-btn" aria-label="Menu">☰</button>
+    </div>
+  </nav>
+
+  <div class="app-shell">
+    <main class="main-content" id="main">
+
+      <section class="hero">
+        <h1>AP Physics C: Electricity & Magnetism</h1>
+        <p class="subtitle">
+          A complete, visual study guide covering every topic on the College Board AP Physics C E&M exam.
+          Master electrostatics, circuits, magnetism, induction, and Maxwell's equations.
+        </p>
+        <div class="exam-meta">
+          <div class="meta-item">
+            <span class="meta-value">5</span>
+            <span class="meta-label">Units</span>
+          </div>
+          <div class="meta-item">
+            <span class="meta-value">24</span>
+            <span class="meta-label">Topics</span>
+          </div>
+          <div class="meta-item">
+            <span class="meta-value">~75</span>
+            <span class="meta-label">Practice Questions</span>
+          </div>
+          <div class="meta-item">
+            <span class="meta-value">90 min</span>
+            <span class="meta-label">Exam Length</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- College Board Cross-Reference -->
+      <section id="cb-mapping" class="glass-card" style="margin-bottom:var(--space-lg)">
+        <h2>🏫 College Board Unit Mapping</h2>
+        <p>The College Board organizes AP Physics C: E&M into <strong>6 units</strong> (Units 8-13, continuing from Mechanics Units 1-7). This study guide reorganizes the content into <strong>5 logical units</strong>. Here's how they map:</p>
+        <table style="width:100%;border-collapse:collapse;margin-top:var(--space-md)">
+          <thead>
+            <tr style="border-bottom:2px solid var(--border)">
+              <th style="padding:8px;text-align:left">Study Guide</th>
+              <th style="padding:8px;text-align:left">College Board Units</th>
+              <th style="padding:8px;text-align:left">CB Exam Weight</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr style="border-bottom:1px solid var(--border)">
+              <td style="padding:8px"><strong>Unit 1: Electrostatics</strong></td>
+              <td style="padding:8px">Unit 8: Electric Charges, Fields, Gauss's Law<br>Unit 9: Electric Potential<br>Unit 10: Conductors & Capacitors</td>
+              <td style="padding:8px">15-25% + 10-20% + 10-15%</td>
+            </tr>
+            <tr style="border-bottom:1px solid var(--border)">
+              <td style="padding:8px"><strong>Unit 2: Electric Circuits</strong></td>
+              <td style="padding:8px">Unit 11: Electric Circuits</td>
+              <td style="padding:8px">15-25%</td>
+            </tr>
+            <tr style="border-bottom:1px solid var(--border)">
+              <td style="padding:8px"><strong>Unit 3: Magnetic Fields</strong></td>
+              <td style="padding:8px">Unit 12: Magnetic Fields & Electromagnetism</td>
+              <td style="padding:8px">10-20%</td>
+            </tr>
+            <tr style="border-bottom:1px solid var(--border)">
+              <td style="padding:8px"><strong>Unit 4: Electromagnetism</strong></td>
+              <td style="padding:8px">Unit 13: Electromagnetic Induction</td>
+              <td style="padding:8px">10-20%</td>
+            </tr>
+            <tr style="border-bottom:1px solid var(--border)">
+              <td style="padding:8px"><strong>Unit 5: Maxwell's Equations</strong></td>
+              <td style="padding:8px">Distributed across Units 12-13</td>
+              <td style="padding:8px">Integrated above</td>
+            </tr>
+          </tbody>
+        </table>
+        <div class="callout callout--tip" style="margin-top:var(--space-md)"><strong>Note:</strong> This guide covers ALL content from the official College Board CED. Unit numbers differ but nothing is omitted.</div>
+      </section>
+
+      <section class="unit-grid">
+
+        <a href="unit1-electrostatics.html" class="glass-card unit-card" data-unit="unit1" data-total="7">
+          <div class="card-top">
+            <span class="unit-number">Unit 1</span>
+            <span class="unit-weight">15–25%</span>
+          </div>
+          <h2>Electrostatics</h2>
+          <p class="topic-preview">Coulomb's Law, electric fields, Gauss's Law, electric potential, continuous charge distributions, conductors, and capacitors.</p>
+          <div class="card-footer">
+            <span class="progress-text">0% complete</span>
+            <span class="glass-btn glass-btn--sm">Start →</span>
+          </div>
+          <div class="card-progress"><div class="card-progress-fill"></div></div>
+        </a>
+
+        <a href="unit2-circuits.html" class="glass-card unit-card" data-unit="unit2" data-total="5">
+          <div class="card-top">
+            <span class="unit-number">Unit 2</span>
+            <span class="unit-weight">17–23%</span>
+          </div>
+          <h2>Electric Circuits</h2>
+          <p class="topic-preview">Current, resistance, Ohm's law, series & parallel circuits, RC circuits in steady-state and transient analysis.</p>
+          <div class="card-footer">
+            <span class="progress-text">0% complete</span>
+            <span class="glass-btn glass-btn--sm">Start →</span>
+          </div>
+          <div class="card-progress"><div class="card-progress-fill"></div></div>
+        </a>
+
+        <a href="unit3-magnetism.html" class="glass-card unit-card" data-unit="unit3" data-total="6">
+          <div class="card-top">
+            <span class="unit-number">Unit 3</span>
+            <span class="unit-weight">17–23%</span>
+          </div>
+          <h2>Magnetic Fields</h2>
+          <p class="topic-preview">Magnetic forces on charges and wires, Biot-Savart Law, Ampere's Law, solenoids, and torque on current loops.</p>
+          <div class="card-footer">
+            <span class="progress-text">0% complete</span>
+            <span class="glass-btn glass-btn--sm">Start →</span>
+          </div>
+          <div class="card-progress"><div class="card-progress-fill"></div></div>
+        </a>
+
+        <a href="unit4-electromagnetism.html" class="glass-card unit-card" data-unit="unit4" data-total="6">
+          <div class="card-top">
+            <span class="unit-number">Unit 4</span>
+            <span class="unit-weight">14–20%</span>
+          </div>
+          <h2>Electromagnetism</h2>
+          <p class="topic-preview">Magnetic flux, Faraday's Law, Lenz's Law, motional EMF, inductance, and RL & LC circuits.</p>
+          <div class="card-footer">
+            <span class="progress-text">0% complete</span>
+            <span class="glass-btn glass-btn--sm">Start →</span>
+          </div>
+          <div class="card-progress"><div class="card-progress-fill"></div></div>
+        </a>
+
+        <a href="unit5-maxwell.html" class="glass-card unit-card" data-unit="unit5" data-total="5">
+          <div class="card-top">
+            <span class="unit-number">Unit 5</span>
+            <span class="unit-weight">14–17%</span>
+          </div>
+          <h2>Maxwell's Equations</h2>
+          <p class="topic-preview">The four Maxwell equations, displacement current, electromagnetic waves, and unification of E&M.</p>
+          <div class="card-footer">
+            <span class="progress-text">0% complete</span>
+            <span class="glass-btn glass-btn--sm">Start →</span>
+          </div>
+          <div class="card-progress"><div class="card-progress-fill"></div></div>
+        </a>
+
+      </section>
+
+      <section class="glass-card shortcuts-card">
+        <h2>⌨️ Keyboard Shortcuts</h2>
+        <div class="shortcut-grid">
+          <div class="shortcut-item"><kbd>←</kbd><kbd>→</kbd><span class="shortcut-desc">Previous / next unit</span></div>
+          <div class="shortcut-item"><kbd>1</kbd>–<kbd>5</kbd><span class="shortcut-desc">Jump to unit</span></div>
+          <div class="shortcut-item"><kbd>0</kbd> or <kbd>H</kbd><span class="shortcut-desc">Home page</span></div>
+          <div class="shortcut-item"><kbd>T</kbd><span class="shortcut-desc">Toggle dark mode</span></div>
+          <div class="shortcut-item"><kbd>Ctrl</kbd>+<kbd>K</kbd> or <kbd>/</kbd><span class="shortcut-desc">Search</span></div>
+          <div class="shortcut-item"><kbd>Esc</kbd><span class="shortcut-desc">Clear search</span></div>
+        </div>
+      </section>
+
+      <!-- Exam Strategy -->
+      <section class="glass-card" style="margin-top:var(--space-lg)" id="exam-strategy">
+        <h2>📝 Exam Strategy & Tips</h2>
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:var(--space-md);margin-top:var(--space-md)">
+          <div>
+            <h3>⏱️ Time Management</h3>
+            <ul>
+              <li><strong>Section I:</strong> 35 MC questions in 45 minutes (~77 sec each)</li>
+              <li><strong>Section II:</strong> 3 FRQs in 45 minutes (15 min each)</li>
+              <li>Skip hard MC questions — come back if time permits</li>
+              <li>Leave 5 minutes at the end to bubble in skipped answers</li>
+            </ul>
+          </div>
+          <div>
+            <h3>✍️ FRQ Strategy</h3>
+            <ul>
+              <li>Read all parts before starting — later parts often give hints</li>
+              <li>Show ALL work: equation → substitution → answer with units</li>
+              <li>If you can't solve part (a), state an assumed answer and use it for (b)-(d)</li>
+              <li>Draw clear diagrams — they earn partial credit</li>
+              <li>Justify direction claims with "by Lenz's Law" or "by RHR"</li>
+            </ul>
+          </div>
+          <div>
+            <h3>🔬 Lab-Based FRQ Tips</h3>
+            <ul>
+              <li>Expect 1 lab-design or data-analysis FRQ</li>
+              <li>Know how to linearize: plot Q vs V (for C), T² vs m (for oscillations)</li>
+              <li>Slope interpretation: slope = C, slope = 4π²/k, etc.</li>
+              <li>Error analysis: mention systematic vs random uncertainty sources</li>
+            </ul>
+          </div>
+          <div>
+            <h3>🧮 Calculator Policy</h3>
+            <ul>
+              <li>4-function, scientific, or graphing calculator allowed</li>
+              <li>No calculator with QWERTY keyboard or internet access</li>
+              <li>Store constants: k, ε₀, μ₀, e, m_e, m_p</li>
+              <li>Practice unit conversions: μC→C, cm→m, ms→s</li>
+            </ul>
+          </div>
+        </div>
+        <div class="callout callout--danger" style="margin-top:var(--space-md)"><strong>Most Common Mistakes:</strong> (1) Forgetting to square r in Coulomb's/Biot-Savart Law (2) Using series rules for parallel circuits (3) Forgetting the minus sign in Faraday/Lenz (4) Wrong RHR direction for negative charges (5) Confusing capacitor open/short at t=0 vs t=∞.</div>
+      </section>
+
+      <!-- Practice Materials -->
+      <section class="glass-card" style="margin-top:var(--space-lg)" id="practice-materials">
+        <h2>📚 Practice Materials Directory</h2>
+        <p>This study guide is paired with extensive practice materials organized by topic. Click any link to open the PDF.</p>
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:var(--space-md);margin-top:var(--space-md)">
+          <div class="glass-card">
+            <h3>Unit 8 (CB): Electrostatics</h3>
+            <ul style="list-style:none;padding:0">
+              <li>📄 <a href="E%26M%20practice/Electrostatic/Unit%207%20Notes.pdf">Unit 7 Notes</a></li>
+              <li>📝 <a href="E%26M%20practice/Electrostatic/Unit%207%20Practice.pdf">Practice Problems</a></li>
+              <li>📝 <a href="E%26M%20practice/Electrostatic/Unit%207%20Practice%20%26%20Solutions.pdf">Practice & Solutions</a></li>
+              <li>📋 <a href="E%26M%20practice/Electrostatic/Unit%207%20Practice%20Quiz.pdf">Practice Quiz</a></li>
+              <li>🧪 <a href="E%26M%20practice/Electrostatic/Unit%207%20Practice%20Test%201.pdf">Practice Test 1</a></li>
+              <li>🧪 <a href="E%26M%20practice/Electrostatic/Unit%207%20Practice%20Test%202.pdf">Practice Test 2</a></li>
+              <li>✅ <a href="E%26M%20practice/Electrostatic/Unit%207%20Practice%20Test%202%20Answers.pdf">Test 2 Answers</a></li>
+            </ul>
+          </div>
+          <div class="glass-card">
+            <h3>Unit 9 (CB): Electric Potential</h3>
+            <ul style="list-style:none;padding:0">
+              <li>📄 <a href="E%26M%20practice/potential/Unit%208%20Notes.pdf">Unit 8 Notes</a></li>
+              <li>📝 <a href="E%26M%20practice/potential/Unit%208%20Practice.pdf">Practice Problems</a></li>
+              <li>📝 <a href="E%26M%20practice/potential/Unit%208%20Practice%20%26%20Most%20Solutions.pdf">Practice & Solutions</a></li>
+              <li>🧪 <a href="E%26M%20practice/potential/Unit%208%20Practice%20Test%201.pdf">Practice Test 1</a></li>
+              <li>🧪 <a href="E%26M%20practice/potential/Unit%208%20Practice%20Test%202.pdf">Practice Test 2</a></li>
+              <li>✅ <a href="E%26M%20practice/potential/Unit%208%20Practice%20Test%20Answers.pdf">Test Answers</a></li>
+            </ul>
+          </div>
+          <div class="glass-card">
+            <h3>Unit 10 (CB): Circuits</h3>
+            <ul style="list-style:none;padding:0">
+              <li>📄 <a href="E%26M%20practice/Circuits/Unit%209%20Notes.pdf">Unit 9 Notes</a></li>
+              <li>📋 <a href="E%26M%20practice/Circuits/Unit%209%20Practice%20Quiz.pdf">Practice Quiz</a></li>
+              <li>🧪 <a href="E%26M%20practice/Circuits/Unit%209%20Practice%20Test%201.pdf">Practice Test 1</a></li>
+              <li>🧪 <a href="E%26M%20practice/Circuits/Unit%209%20Practice%20Test%202.pdf">Practice Test 2</a></li>
+              <li>✅ <a href="E%26M%20practice/Circuits/Unit%209%20Practice%20Test%202%20Answers.pdf">Test 2 Answers</a></li>
+              <li>🧪 <a href="E%26M%20practice/Circuits/Unit%209%20Practice%20Test%203.pdf">Practice Test 3</a></li>
+            </ul>
+          </div>
+          <div class="glass-card">
+            <h3>Unit 11 (CB): Magnetism</h3>
+            <ul style="list-style:none;padding:0">
+              <li>📄 <a href="E%26M%20practice/Magnetism/Unit%2010%20Notes.pdf">Unit 10 Notes</a></li>
+              <li>📝 <a href="E%26M%20practice/Magnetism/Unit%2010%20Practice.pdf">Practice Problems</a></li>
+              <li>📝 <a href="E%26M%20practice/Magnetism/Unit%2010%20Practice%20%26%20Solutions.pdf">Practice & Solutions</a></li>
+              <li>📋 <a href="E%26M%20practice/Magnetism/Unit%2010%20Practice%20Quiz%201.pdf">Practice Quiz 1</a></li>
+              <li>📋 <a href="E%26M%20practice/Magnetism/Unit%2010%20Practice%20Quiz%202.pdf">Practice Quiz 2</a></li>
+              <li>🧪 <a href="E%26M%20practice/Magnetism/Unit%2010%20Practice%20Test%201.pdf">Practice Test 1</a></li>
+              <li>🧪 <a href="E%26M%20practice/Magnetism/Unit%2010%20Practice%20Test%202.pdf">Practice Test 2</a></li>
+            </ul>
+          </div>
+          <div class="glass-card">
+            <h3>Unit 12 (CB): Induction</h3>
+            <ul style="list-style:none;padding:0">
+              <li>📄 <a href="E%26M%20practice/New%20Folder%20With%20Items/Unit%2011%20Notes.pdf">Unit 11 Notes</a></li>
+              <li>📝 <a href="E%26M%20practice/New%20Folder%20With%20Items/Unit%2011%20Practice.pdf">Practice Problems</a></li>
+              <li>📝 <a href="E%26M%20practice/New%20Folder%20With%20Items/Unit%2011%20Practice%20%26%20Solutions.pdf">Practice & Solutions</a></li>
+              <li>🧪 <a href="E%26M%20practice/New%20Folder%20With%20Items/Unit%2011%20Practice%20Test%201.pdf">Practice Test 1</a></li>
+              <li>🧪 <a href="E%26M%20practice/New%20Folder%20With%20Items/Unit%2011%20Practice%20Test%202.pdf">Practice Test 2</a></li>
+              <li>✅ <a href="E%26M%20practice/New%20Folder%20With%20Items/Unit%2011%20Practice%20Test%202%20Answers.pdf">Test 2 Answers</a></li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <footer class="site-footer">
+        AP Physics C: Electricity & Magnetism Study Guide · Aligned with College Board curriculum · Good luck on the exam!
+      </footer>
+
+    </main>
+  </div>
+</body>
+</html>

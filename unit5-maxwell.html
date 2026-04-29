@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Unit 5: Maxwell's Equations — AP Physics C E&M</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  <script defer src="js/app.js"></script>
+</head>
+<body>
+
+  <div class="bg-orbs"><div class="bg-orb"></div><div class="bg-orb"></div><div class="bg-orb"></div></div>
+  <a href="#main" class="skip-link">Skip to content</a>
+
+  <nav class="glass-nav">
+    <a href="index.html" class="nav-brand"><span class="brand-icon">⚡</span><span>AP Physics C: E&M</span></a>
+    <div class="nav-links">
+      <a href="index.html" class="nav-link">Home</a>
+      <a href="unit1-electrostatics.html" class="nav-link"><span class="unit-badge">1</span> Electrostatics</a>
+      <a href="unit2-circuits.html" class="nav-link"><span class="unit-badge">2</span> Circuits</a>
+      <a href="unit3-magnetism.html" class="nav-link"><span class="unit-badge">3</span> Magnetism</a>
+      <a href="unit4-electromagnetism.html" class="nav-link"><span class="unit-badge">4</span> EM Induction</a>
+      <a href="unit5-maxwell.html" class="nav-link active"><span class="unit-badge">5</span> Maxwell</a>
+    </div>
+    <div class="nav-actions">
+      <div class="search-wrapper"><span class="search-icon">🔍</span><input type="text" class="search-input" placeholder="Search unit..." aria-label="Search"></div>
+      <button class="btn-icon theme-toggle" aria-label="Toggle dark mode" title="Toggle dark mode (T)">🌙</button>
+      <button class="btn-icon mobile-menu-btn" aria-label="Menu">☰</button>
+    </div>
+  </nav>
+
+  <div class="app-shell">
+    <aside class="sidebar"><div class="sidebar-title">On This Page</div><ul class="sidebar-toc"></ul></aside>
+    <main class="main-content" id="main">
+
+      <h1>Unit 5: Maxwell's Equations</h1>
+      <p class="text-muted" style="margin-bottom:var(--space-lg)">14–17% of AP Exam · 5 Subsections · ~8 Practice Questions</p>
+      <div class="progress-bar-wrapper"><div class="progress-bar"><div class="progress-fill"></div></div><span class="progress-label">0% Complete</span></div>
+
+      <!-- 5.1 -->
+      <section id="5.1-gauss-electric" class="glass-card content-section">
+        <div class="section-header">
+          <input type="checkbox" class="progress-check" data-section="5.1" aria-label="Mark 5.1 complete">
+          <h2>5.1 Gauss's Law for Electric Fields</h2>
+          <button class="collapse-toggle" aria-label="Toggle section">▼</button>
+        </div>
+        <div class="section-body">
+          <p><strong>Maxwell Equation 1:</strong> Electric charges are sources of electric fields.</p>
+          <div class="equation-block">$$\oint \vec{E} \cdot d\vec{A} = \frac{Q_{\text{enc}}}{\varepsilon_0}$$</div>
+          <p>Electric field lines start on + charges and end on − charges. Net flux through a closed surface is proportional to enclosed charge. <strong>Differential form:</strong> \(\nabla \cdot \vec{E} = \rho/\varepsilon_0\).</p>
+          <div class="callout callout--tip"><strong>Exam Tip</strong> The AP exam may ask you to identify which Maxwell equation applies to a given situation. This one: "net electric flux through closed surface = enclosed charge over epsilon-zero."</div>
+        </div>
+      </section>
+
+      <!-- 5.2 -->
+      <section id="5.2-gauss-magnetic" class="glass-card content-section">
+        <div class="section-header"><input type="checkbox" class="progress-check" data-section="5.2"><h2>5.2 Gauss's Law for Magnetic Fields</h2><button class="collapse-toggle">▼</button></div>
+        <div class="section-body">
+          <p><strong>Maxwell Equation 2:</strong> No magnetic monopoles exist.</p>
+          <div class="equation-block">$$\oint \vec{B} \cdot d\vec{A} = 0$$</div>
+          <p>B-field lines are always <strong>closed loops</strong> — they never start or end. Net B-flux through any closed surface = 0. Cut a bar magnet in half → two smaller magnets, each with N and S. <strong>Differential form:</strong> \(\nabla \cdot \vec{B} = 0\).</p>
+          <div class="callout callout--warning"><strong>Common Mistake</strong> Through a <strong>closed</strong> surface, net B-flux = 0. Through an <strong>open</strong> surface, B-flux can be non-zero — that's what Faraday's Law describes.</div>
+        </div>
+      </section>
+
+      <!-- 5.3 -->
+      <section id="5.3-faraday-maxwell" class="glass-card content-section">
+        <div class="section-header"><input type="checkbox" class="progress-check" data-section="5.3"><h2>5.3 Faraday's Law</h2><button class="collapse-toggle">▼</button></div>
+        <div class="section-body">
+          <p><strong>Maxwell Equation 3:</strong> Changing B creates a circulating E-field.</p>
+          <div class="equation-block">$$\oint \vec{E} \cdot d\vec{\ell} = -\frac{d\Phi_B}{dt}$$</div>
+          <p>Time-varying B induces a <strong>non-conservative</strong> E-field (\(\oint\vec{E}\cdot d\vec{\ell} \neq 0\)). This drives current in conductors — the principle behind generators. <strong>Differential form:</strong> \(\nabla \times \vec{E} = -\partial\vec{B}/\partial t\).</p>
+        </div>
+      </section>
+
+      <div class="glass-card practice-block">
+        <div class="practice-header"><span class="glass-badge">Practice</span><h3>Q5.1: Identity the Maxwell Equation</h3></div>
+        <div class="practice-question"><p>A time-varying B-field through a loop induces circulating E-field: \(\oint\vec{E}\cdot d\vec{\ell} = -d\Phi_B/dt\). Which Maxwell equation is this?</p></div>
+        <details class="solution"><summary class="glass-btn">Show Solution</summary><div class="solution-content">
+          <div class="step"><strong>Faraday's Law (Maxwell Equation 3).</strong> Describes induction — changing B produces curling E. Principle of transformers and generators.</div>
+        </div></details>
+      </div>
+
+      <!-- 5.4 -->
+      <section id="5.4-ampere-maxwell" class="glass-card content-section">
+        <div class="section-header"><input type="checkbox" class="progress-check" data-section="5.4"><h2>5.4 The Ampere-Maxwell Law</h2><button class="collapse-toggle">▼</button></div>
+        <div class="section-body">
+          <p><strong>Maxwell Equation 4:</strong> Currents AND changing E-fields create B-fields.</p>
+          <div class="equation-block">$$\oint \vec{B} \cdot d\vec{\ell} = \mu_0 I_{\text{enc}} + \mu_0\varepsilon_0 \frac{d\Phi_E}{dt}$$</div>
+          <p>Maxwell's crucial addition is the <strong>displacement current</strong> term: \(I_d = \varepsilon_0\frac{d\Phi_E}{dt}\). Even between capacitor plates (no moving charges), a changing E acts as an effective current producing B-field.</p>
+          <p>Without this term, Ampere's law is inconsistent for time-varying scenarios. <strong>Differential form:</strong> \(\nabla \times \vec{B} = \mu_0\vec{J} + \mu_0\varepsilon_0\frac{\partial\vec{E}}{\partial t}\).</p>
+          <div class="callout callout--danger"><strong>Critical</strong> The displacement current was Maxwell's great theoretical contribution. It completes the symmetry: changing E → B (this), changing B → E (Faraday). Together they predict EM waves.</div>
+        </div>
+      </section>
+
+      <div class="glass-card practice-block">
+        <div class="practice-header"><span class="glass-badge">Practice</span><h3>Q5.2: Displacement Current</h3></div>
+        <div class="practice-question"><p>Parallel-plate capacitor (radius 5.0 cm) charges with \(E(t)=1.0\times10^6t\ \text{V/m·s}\). Find displacement current density and B at r=3.0 cm.</p></div>
+        <details class="solution"><summary class="glass-btn">Show Solution</summary><div class="solution-content">
+          <div class="step">\(J_d = \varepsilon_0 dE/dt = 8.85\times10^{-6}\ \text{A/m}^2\). Total \(I_d = J_d\cdot\pi R^2 = 6.95\times10^{-8}\ \text{A}\).</div>
+          <div class="step">Ampere-Maxwell for r<R: \(B = \mu_0 J_d r/2 = (4\pi\times10^{-7})(8.85\times10^{-6})(0.03)/2 = 1.67\times10^{-13}\ \text{T}\).</div>
+        </div></details>
+      </div>
+
+      <!-- 5.5 -->
+      <section id="5.5-em-waves" class="glass-card content-section">
+        <div class="section-header"><input type="checkbox" class="progress-check" data-section="5.5"><h2>5.5 Electromagnetic Waves</h2><button class="collapse-toggle">▼</button></div>
+        <div class="section-body">
+          <p>Maxwell's equations predict self-sustaining <strong>EM waves</strong> — propagating oscillations of E and B requiring no medium.</p>
+          <p><strong>Speed of light:</strong></p>
+          <div class="equation-block">$$c = \frac{1}{\sqrt{\mu_0\varepsilon_0}} = 3.00 \times 10^8\ \text{m/s}$$</div>
+          <p><strong>Plane wave structure:</strong></p>
+          <ul>
+            <li>\(\vec{E} \perp \vec{B} \perp \vec{v}\) — mutually perpendicular</li>
+            <li>E and B are <strong>in phase</strong>: \(E = E_0\sin(kx-\omega t)\), \(B = B_0\sin(kx-\omega t)\)</li>
+            <li>Amplitude: \(E_0 = cB_0\)</li>
+            <li>Propagation direction: \(\vec{E} \times \vec{B}\)</li>
+          </ul>
+          <p><strong>Poynting vector</strong> = energy flux (W/m²): \(\vec{S} = \frac{1}{\mu_0}\vec{E} \times \vec{B}\)</p>
+          <p>Average intensity: \(I = \langle S \rangle = \frac{1}{2}c\varepsilon_0 E_0^2 = \frac{E_0^2}{2\mu_0 c}\)</p>
+          <p><strong>Radiation pressure:</strong> \(p = I/c\) (perfect absorber), \(p = 2I/c\) (perfect reflector).</p>
+          <p><strong>RMS Values:</strong> For sinusoidal waves: \(E_{\text{rms}} = E_0/\sqrt{2}\), \(B_{\text{rms}} = B_0/\sqrt{2}\). Average intensity: \(I = \frac{1}{2}c\varepsilon_0 E_0^2 = c\varepsilon_0 E_{\text{rms}}^2\).</p>
+          <p><strong>Energy density in EM waves:</strong> \(u = \varepsilon_0 E^2 = B^2/\mu_0\) (instantaneous). Average: \(\langle u \rangle = \frac{1}{2}\varepsilon_0 E_0^2 = \varepsilon_0 E_{\text{rms}}^2\).</p>
+          <div class="equation-block">$$c = \lambda f = 3.00 \times 10^8\ \text{m/s}$$</div>
+        </div>
+      </section>
+
+      <div class="glass-card practice-block">
+        <div class="practice-header"><span class="glass-badge">Practice</span><h3>Q5.3: EM Wave Direction</h3></div>
+        <div class="practice-question"><p>An EM wave has \(\vec{E}=100\sin(ky+\omega t)\hat{x}\ \text{V/m}\). Find propagation direction and \(\vec{B}(y,t)\).</p></div>
+        <details class="solution"><summary class="glass-btn">Show Solution</summary><div class="solution-content">
+          <div class="step">Argument \((ky+\omega t)\) → plus sign between k and ω means propagation in <strong>−y</strong> direction.</div>
+          <div class="step">\(\vec{v} \propto \vec{E}\times\vec{B}\): (−ĵ) ∝ î × B̂ → B must be along +k̂ (î×k̂ = −ĵ ✓).</div>
+          <div class="step">\(B_0 = E_0/c = 100/(3\times10^8) = 3.33\times10^{-7}\ \text{T}\). <strong>\(\vec{B}=3.33\times10^{-7}\sin(ky+\omega t)\hat{z}\ \text{T}\).</strong></div>
+        </div></details>
+      </div>
+
+      <div class="glass-card practice-block">
+        <div class="practice-header"><span class="glass-badge">Practice</span><h3>Q5.4: Intensity and Radiation Pressure</h3></div>
+        <div class="practice-question"><p>EM wave: \(E_0=150\ \text{V/m}\). Find average intensity and radiation pressure on a perfect absorber.</p></div>
+        <details class="solution"><summary class="glass-btn">Show Solution</summary><div class="solution-content">
+          <div class="step">\(I = \frac{1}{2}c\varepsilon_0 E_0^2 = 0.5(3\times10^8)(8.85\times10^{-12})(22500) = 29.9\ \text{W/m}^2\).</div>
+          <div class="step">\(p = I/c = 29.9/(3\times10^8) = 1.0\times10^{-7}\ \text{Pa}\). Very small — why solar sails need large area.</div>
+        </div></details>
+      </div>
+
+      <div class="glass-card practice-block">
+        <div class="practice-header"><span class="glass-badge">Practice</span><h3>Q5.5: Maxwell Summary</h3></div>
+        <div class="practice-question"><p>Match each to its description:<br>
+        (a) \(\oint\vec{E}\cdot d\vec{A}=Q_{\text{enc}}/\varepsilon_0\) — (i) No magnetic monopoles<br>
+        (b) \(\oint\vec{B}\cdot d\vec{A}=0\) — (ii) Changing B makes E<br>
+        (c) \(\oint\vec{E}\cdot d\vec{\ell}=-d\Phi_B/dt\) — (iii) Charges make E<br>
+        (d) \(\oint\vec{B}\cdot d\vec{\ell}=\mu_0 I+\mu_0\varepsilon_0 d\Phi_E/dt\) — (iv) Current + changing E makes B</p></div>
+        <details class="solution"><summary class="glass-btn">Show Solution</summary><div class="solution-content">
+          <div class="step">(a)→(iii): Gauss's Law for E — charges produce electric fields.<br>
+          (b)→(i): Gauss's Law for B — no magnetic monopoles; B lines are closed loops.<br>
+          (c)→(ii): Faraday's Law — changing magnetic flux induces circulating E-field.<br>
+          (d)→(iv): Ampere-Maxwell Law — conduction current AND displacement current produce B-field.</div>
+        </div></details>
+      </div>
+
+      <footer class="site-footer">Unit 5: Maxwell's Equations · AP Physics C: Electricity & Magnetism</footer>
+
+    </main>
+  </div>
+</body>
+</html>

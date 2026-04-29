@@ -1,0 +1,382 @@
+/* ============================================================
+   AP Physics C E&M — Glassmorphism Study Guide
+   app.js — All JavaScript in one file
+   ============================================================ */
+(function () {
+  'use strict';
+
+  /* --------------------------------------------------
+     StateManager — localStorage backed
+     -------------------------------------------------- */
+  const STORAGE_THEME = 'ap-em-theme';
+  const STORAGE_PROGRESS = 'ap-em-progress';
+
+  const StateManager = {
+    getDarkMode() {
+      return localStorage.getItem(STORAGE_THEME) === 'dark';
+    },
+    setDarkMode(dark) {
+      localStorage.setItem(STORAGE_THEME, dark ? 'dark' : 'light');
+    },
+    getProgress(unitId) {
+      try {
+        const data = JSON.parse(localStorage.getItem(STORAGE_PROGRESS) || '{}');
+        return new Set(data[unitId] || []);
+      } catch { return new Set(); }
+    },
+    setProgress(unitId, sections) {
+      try {
+        const data = JSON.parse(localStorage.getItem(STORAGE_PROGRESS) || '{}');
+        data[unitId] = [...sections];
+        localStorage.setItem(STORAGE_PROGRESS, JSON.stringify(data));
+      } catch { /* quota exceeded — silently ignore */ }
+    },
+    toggleSection(unitId, sectionId) {
+      const sections = this.getProgress(unitId);
+      if (sections.has(sectionId)) sections.delete(sectionId);
+      else sections.add(sectionId);
+      this.setProgress(unitId, sections);
+      return sections;
+    },
+    getProgressPercent(unitId, totalSections) {
+      if (!totalSections) return 0;
+      return Math.round((this.getProgress(unitId).size / totalSections) * 100);
+    }
+  };
+
+  /* --------------------------------------------------
+     Unit page config
+     -------------------------------------------------- */
+  const UNIT_PAGES = [
+    { id: 'unit1', file: 'unit1-electrostatics.html', num: 1, label: 'Electrostatics', weight: '15-25%' },
+    { id: 'unit2', file: 'unit2-circuits.html', num: 2, label: 'Circuits', weight: '17-23%' },
+    { id: 'unit3', file: 'unit3-magnetism.html', num: 3, label: 'Magnetism', weight: '17-23%' },
+    { id: 'unit4', file: 'unit4-electromagnetism.html', num: 4, label: 'EM Induction', weight: '14-20%' },
+    { id: 'unit5', file: 'unit5-maxwell.html', num: 5, label: 'Maxwell', weight: '14-17%' }
+  ];
+
+  function getCurrentPageFile() {
+    const path = window.location.pathname;
+    return path.substring(path.lastIndexOf('/') + 1) || 'index.html';
+  }
+
+  function getCurrentUnitId() {
+    const file = getCurrentPageFile();
+    for (const u of UNIT_PAGES) {
+      if (u.file === file) return u.id;
+    }
+    return null;
+  }
+
+  /* --------------------------------------------------
+     DarkModeController
+     -------------------------------------------------- */
+  const DarkModeController = {
+    init() {
+      const dark = StateManager.getDarkMode();
+      document.documentElement.setAttribute('data-theme', dark ? 'dark' : 'light');
+      this._updateButton(dark);
+    },
+    toggle() {
+      const current = document.documentElement.getAttribute('data-theme') === 'dark';
+      const next = !current;
+      document.documentElement.setAttribute('data-theme', next ? 'dark' : 'light');
+      StateManager.setDarkMode(next);
+      this._updateButton(next);
+    },
+    _updateButton(dark) {
+      const btn = document.querySelector('.theme-toggle');
+      if (btn) btn.textContent = dark ? '\u2600\uFE0F' : '\uD83C\uDF19';
+    }
+  };
+
+  /* --------------------------------------------------
+     NavController
+     -------------------------------------------------- */
+  const NavController = {
+    init() {
+      this._highlightActive();
+      this._bindClicks();
+    },
+    _highlightActive() {
+      const current = getCurrentPageFile();
+      document.querySelectorAll('.nav-link').forEach(link => {
+        const href = link.getAttribute('href');
+        link.classList.toggle('active', href === current);
+      });
+    },
+    _bindClicks() {
+      document.querySelectorAll('.nav-link').forEach(link => {
+        link.addEventListener('click', function () {
+          const href = this.getAttribute('href');
+          if (href) window.location.href = href;
+        });
+      });
+    },
+    goToUnit(num) {
+      if (num === 0) { window.location.href = 'index.html'; return; }
+      const u = UNIT_PAGES[num - 1];
+      if (u) window.location.href = u.file;
+    },
+    goNext() {
+      const current = getCurrentUnitId();
+      if (!current) { window.location.href = UNIT_PAGES[0].file; return; }
+      const idx = UNIT_PAGES.findIndex(u => u.id === current);
+      if (idx < UNIT_PAGES.length - 1) window.location.href = UNIT_PAGES[idx + 1].file;
+    },
+    goPrev() {
+      const current = getCurrentUnitId();
+      if (!current) return;
+      const idx = UNIT_PAGES.findIndex(u => u.id === current);
+      if (idx > 0) window.location.href = UNIT_PAGES[idx - 1].file;
+      else window.location.href = 'index.html';
+    }
+  };
+
+  /* --------------------------------------------------
+     SidebarController — builds TOC & scroll spy
+     -------------------------------------------------- */
+  const SidebarController = {
+    init() {
+      const toc = document.querySelector('.sidebar-toc');
+      if (!toc) return;
+      const headings = document.querySelectorAll('.content-section[id]');
+      headings.forEach(section => {
+        const h2 = section.querySelector('h2');
+        if (!h2) return;
+        const li = document.createElement('li');
+        const a = document.createElement('a');
+        a.href = '#' + section.id;
+        a.textContent = h2.textContent;
+        a.addEventListener('click', function (e) {
+          e.preventDefault();
+          section.scrollIntoView({ behavior: 'smooth' });
+        });
+        li.appendChild(a);
+        toc.appendChild(li);
+      });
+      this._observe();
+    },
+    _observe() {
+      const links = document.querySelectorAll('.sidebar-toc a');
+      if (!links.length) return;
+      const observer = new IntersectionObserver(entries => {
+        for (const entry of entries) {
+          if (entry.isIntersecting) {
+            links.forEach(l => l.classList.remove('active'));
+            const active = document.querySelector('.sidebar-toc a[href="#' + entry.target.id + '"]');
+            if (active) active.classList.add('active');
+          }
+        }
+      }, { rootMargin: '-80px 0px -70% 0px' });
+      document.querySelectorAll('.content-section[id]').forEach(s => observer.observe(s));
+    }
+  };
+
+  /* --------------------------------------------------
+     SectionCollapse
+     -------------------------------------------------- */
+  const SectionCollapse = {
+    init() {
+      document.querySelectorAll('.section-header').forEach(header => {
+        header.addEventListener('click', function (e) {
+          if (e.target.tagName === 'INPUT') return;
+          const section = this.closest('.content-section');
+          if (section) section.classList.toggle('collapsed');
+        });
+      });
+    }
+  };
+
+  /* --------------------------------------------------
+     ProgressCheckboxes
+     -------------------------------------------------- */
+  const ProgressCheckboxes = {
+    init() {
+      const unitId = getCurrentUnitId();
+      if (!unitId) return;
+      const completed = StateManager.getProgress(unitId);
+      const checkboxes = document.querySelectorAll('.progress-check');
+      checkboxes.forEach(cb => {
+        const sectionId = cb.getAttribute('data-section');
+        if (completed.has(sectionId)) cb.checked = true;
+        cb.addEventListener('change', () => {
+          const sections = StateManager.toggleSection(unitId, sectionId);
+          this._updateUI(sections, checkboxes);
+        });
+      });
+      this._updateUI(completed, checkboxes);
+    },
+    _updateUI(sections, checkboxes) {
+      const pct = Math.round((sections.size / checkboxes.length) * 100) || 0;
+      const fill = document.querySelector('.progress-fill');
+      const label = document.querySelector('.progress-label');
+      if (fill) fill.style.width = pct + '%';
+      if (label) label.textContent = pct + '% Complete';
+    }
+  };
+
+  /* --------------------------------------------------
+     SearchFilter
+     -------------------------------------------------- */
+  const SearchFilter = {
+    init() {
+      const input = document.querySelector('.search-input');
+      if (!input) return;
+      let debounce;
+      input.addEventListener('input', () => {
+        clearTimeout(debounce);
+        debounce = setTimeout(() => this._filter(input.value.toLowerCase()), 200);
+      });
+      input.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape') { this.value = ''; this.blur(); SearchFilter._filter(''); }
+      });
+    },
+    _filter(query) {
+      const sections = document.querySelectorAll('.content-section');
+      const practice = document.querySelectorAll('.practice-block');
+      const all = [...sections, ...practice];
+      all.forEach(el => {
+        const text = el.textContent.toLowerCase();
+        const match = !query || text.includes(query);
+        el.classList.toggle('hidden', !match);
+        if (match && query) el.classList.add('animate-in');
+        else el.classList.remove('animate-in');
+      });
+    }
+  };
+
+  /* --------------------------------------------------
+     Keyboard shortcuts
+     -------------------------------------------------- */
+  const KeyboardController = {
+    init() {
+      document.addEventListener('keydown', e => {
+        const tag = document.activeElement.tagName;
+        const isInput = tag === 'INPUT' || tag === 'TEXTAREA' || tag === 'SELECT' || document.activeElement.isContentEditable;
+
+        if ((e.key === 'k' && (e.ctrlKey || e.metaKey)) || (e.key === '/' && !isInput)) {
+          e.preventDefault();
+          const search = document.querySelector('.search-input');
+          if (search) search.focus();
+          return;
+        }
+
+        if (isInput) return;
+
+        if (e.key === 't' || e.key === 'T') { e.preventDefault(); DarkModeController.toggle(); return; }
+        if (e.key === 'ArrowRight') { e.preventDefault(); NavController.goNext(); return; }
+        if (e.key === 'ArrowLeft') { e.preventDefault(); NavController.goPrev(); return; }
+        if (e.key === '0' || e.key === 'h' || e.key === 'H') { e.preventDefault(); NavController.goToUnit(0); return; }
+        if (e.key >= '1' && e.key <= '5') { e.preventDefault(); NavController.goToUnit(parseInt(e.key)); return; }
+      });
+    }
+  };
+
+  /* --------------------------------------------------
+     Mobile menu
+     -------------------------------------------------- */
+  const MobileMenu = {
+    init() {
+      const btn = document.querySelector('.mobile-menu-btn');
+      const nav = document.querySelector('.nav-links');
+      if (!btn || !nav) return;
+      btn.addEventListener('click', () => {
+        nav.classList.toggle('open');
+        btn.textContent = nav.classList.contains('open') ? '\u2715' : '\u2630';
+      });
+      nav.querySelectorAll('.nav-link').forEach(link => {
+        link.addEventListener('click', () => {
+          nav.classList.remove('open');
+          btn.textContent = '\u2630';
+        });
+      });
+    }
+  };
+
+  /* --------------------------------------------------
+     Mobile sidebar
+     -------------------------------------------------- */
+  const MobileSidebar = {
+    init() {
+      let backdrop = document.querySelector('.sidebar-backdrop');
+      if (!backdrop) {
+        backdrop = document.createElement('div');
+        backdrop.className = 'sidebar-backdrop';
+        backdrop.addEventListener('click', () => this._close());
+        document.body.appendChild(backdrop);
+      }
+      const main = document.querySelector('.main-content');
+      const sidebar = document.querySelector('.sidebar');
+      if (!main || !sidebar) return;
+      if (document.body.classList.contains('page-landing')) return;
+
+      const toggleBtn = document.createElement('button');
+      toggleBtn.className = 'mobile-menu-btn glass-btn glass-btn--sm';
+      toggleBtn.textContent = '\u2630 Contents';
+      toggleBtn.style.cssText = 'margin-bottom: 1rem; display: none;';
+      toggleBtn.addEventListener('click', () => {
+        sidebar.classList.add('open');
+        backdrop.classList.add('open');
+      });
+      main.insertBefore(toggleBtn, main.firstChild);
+
+      const mq = window.matchMedia('(max-width: 768px)');
+      mq.addEventListener('change', () => {
+        toggleBtn.style.display = mq.matches ? 'inline-flex' : 'none';
+      });
+      if (mq.matches) toggleBtn.style.display = 'inline-flex';
+    },
+    _close() {
+      const sidebar = document.querySelector('.sidebar');
+      const backdrop = document.querySelector('.sidebar-backdrop');
+      if (sidebar) sidebar.classList.remove('open');
+      if (backdrop) backdrop.classList.remove('open');
+    }
+  };
+
+  /* --------------------------------------------------
+     Landing page
+     -------------------------------------------------- */
+  const LandingPage = {
+    init() {
+      if (!document.body.classList.contains('page-landing')) return;
+      UNIT_PAGES.forEach(u => {
+        const card = document.querySelector('.unit-card[data-unit="' + u.id + '"]');
+        if (!card) return;
+        const totalSections = parseInt(card.getAttribute('data-total') || '0');
+        const pct = StateManager.getProgressPercent(u.id, totalSections);
+        const fill = card.querySelector('.card-progress-fill');
+        const text = card.querySelector('.progress-text');
+        if (fill) fill.style.width = pct + '%';
+        if (text) text.textContent = pct + '% complete';
+      });
+    }
+  };
+
+  /* --------------------------------------------------
+     Bootstrap
+     -------------------------------------------------- */
+  function init() {
+    DarkModeController.init();
+    NavController.init();
+    KeyboardController.init();
+    MobileMenu.init();
+
+    if (document.body.classList.contains('page-landing')) {
+      LandingPage.init();
+    } else {
+      SidebarController.init();
+      SectionCollapse.init();
+      ProgressCheckboxes.init();
+      MobileSidebar.init();
+    }
+    SearchFilter.init();
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', init);
+  } else {
+    init();
+  }
+})();

@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Unit 1: Electrostatics — AP Physics C E&M</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  <script defer src="js/app.js"></script>
+</head>
+<body>
+
+  <div class="bg-orbs"><div class="bg-orb"></div><div class="bg-orb"></div><div class="bg-orb"></div></div>
+  <a href="#main" class="skip-link">Skip to content</a>
+
+  <nav class="glass-nav">
+    <a href="index.html" class="nav-brand"><span class="brand-icon">⚡</span><span>AP Physics C: E&M</span></a>
+    <div class="nav-links">
+      <a href="index.html" class="nav-link">Home</a>
+      <a href="unit1-electrostatics.html" class="nav-link active"><span class="unit-badge">1</span> Electrostatics</a>
+      <a href="unit2-circuits.html" class="nav-link"><span class="unit-badge">2</span> Circuits</a>
+      <a href="unit3-magnetism.html" class="nav-link"><span class="unit-badge">3</span> Magnetism</a>
+      <a href="unit4-electromagnetism.html" class="nav-link"><span class="unit-badge">4</span> EM Induction</a>
+      <a href="unit5-maxwell.html" class="nav-link"><span class="unit-badge">5</span> Maxwell</a>
+    </div>
+    <div class="nav-actions">
+      <div class="search-wrapper"><span class="search-icon">🔍</span><input type="text" class="search-input" placeholder="Search unit..." aria-label="Search"></div>
+      <button class="btn-icon theme-toggle" aria-label="Toggle dark mode" title="Toggle dark mode (T)">🌙</button>
+      <button class="btn-icon mobile-menu-btn" aria-label="Menu">☰</button>
+    </div>
+  </nav>
+
+  <div class="app-shell">
+    <aside class="sidebar"><div class="sidebar-title">On This Page</div><ul class="sidebar-toc"></ul></aside>
+    <main class="main-content" id="main">
+
+      <h1>Unit 1: Electrostatics</h1>
+      <p class="text-muted" style="margin-bottom:var(--space-lg)">15–25% of AP Exam · 7 Topics · ~25 Practice Questions</p>
+      <div class="progress-bar-wrapper"><div class="progress-bar"><div class="progress-fill"></div></div><span class="progress-label">0% Complete</span></div>
+
+      <!-- 1.1 -->
+      <section id="1.1-electric-charge" class="glass-card content-section">
+        <div class="section-header">
+          <input type="checkbox" class="progress-check" data-section="1.1" aria-label="Mark 1.1 complete">
+          <h2>1.1 Electric Charge & Coulomb's Law</h2>
+          <button class="collapse-toggle" aria-label="Toggle section">▼</button>
+        </div>
+        <div class="section-body">
+          <p>Electric charge is a fundamental property of matter. There are two types: <strong>positive</strong> and <strong>negative</strong>. Like charges repel; opposite charges attract. Charge is <strong>quantized</strong> in units of the elementary charge \(e = 1.60 \times 10^{-19} \text{ C}\) and is <strong>conserved</strong> — the net charge of an isolated system never changes.</p>
+          <p><strong>Conductors</strong> (metals, ionic solutions) allow charge to flow freely because they have mobile electrons. <strong>Insulators</strong> (glass, rubber, plastic) bind electrons tightly, preventing macroscopic charge flow.</p>
+          <div class="equation-block">
+            <p><strong>Coulomb's Law:</strong></p>
+            $$F = k \frac{|q_1 q_2|}{r^2}, \quad k = \frac{1}{4\pi\varepsilon_0} = 8.99 \times 10^9 \text{ N·m}^2/\text{C}^2$$
+            $$\vec{F}_{12} = k \frac{q_1 q_2}{r^2} \hat{r}_{12}$$
+          </div>
+          <p>Coulomb's law gives the force between two <strong>point charges</strong>. The force is directed along the line connecting them: attractive for opposite signs, repulsive for like signs. It obeys <strong>superposition</strong>: the net force on a charge is the vector sum of forces from all other charges individually.</p>
+          <div class="callout callout--tip"><strong>Exam Tip</strong> When using superposition, calculate each force vector separately using \(\vec{F} = k\frac{q_1 q_2}{r^2}\hat{r}\), then sum component-wise. Don't add magnitudes directly — forces are vectors.</div>
+          <div class="callout callout--warning"><strong>Common Mistake</strong> The \(\hat{r}\) in Coulomb's law points <em>from</em> the source charge <em>to</em> the test charge. Getting the direction wrong is the most common error on AP free-response.</div>
+        </div>
+      </section>
+
+      <!-- Practice 1.1 -->
+      <div class="glass-card practice-block">
+        <div class="practice-header"><span class="glass-badge">Practice</span><h3>Q1.1: Net Force on a Charge</h3></div>
+        <div class="practice-question"><p>Three point charges lie along the x-axis: \(q_1 = +3.0\ \mu\text{C}\) at \(x = 0\), \(q_2 = -5.0\ \mu\text{C}\) at \(x = 2.0\ \text{cm}\), and \(q_3 = +4.0\ \mu\text{C}\) at \(x = 5.0\ \text{cm}\). Find the net electric force (magnitude and direction) on \(q_2\).</p></div>
+        <details class="solution"><summary class="glass-btn">Show Solution</summary><div class="solution-content">
+          <div class="step">Force from \(q_1\) on \(q_2\): \(F_{12} = k\frac{|q_1 q_2|}{r_{12}^2} = (8.99\times10^9)\frac{(3.0\times10^{-6})(5.0\times10^{-6})}{(0.020)^2} = 337\ \text{N}\) (attractive, toward \(q_1\): \(-x\) direction)</div>
+          <div class="step">Force from \(q_3\) on \(q_2\): \(F_{32} = k\frac{|q_3 q_2|}{r_{32}^2} = (8.99\times10^9)\frac{(4.0\times10^{-6})(5.0\times10^{-6})}{(0.030)^2} = 200\ \text{N}\) (attractive, toward \(q_3\): \(+x\) direction)</div>
+          <div class="step">Net force: \(F_{\text{net}} = +200 - 337 = -137\ \text{N}\) → <strong>137 N in the −x direction (toward q₁)</strong></div>
+        </div></details>
+      </div>
+
+      <div class="glass-card practice-block">
+        <div class="practice-header"><span class="glass-badge">Practice</span><h3>Q1.2: Equilibrium Position</h3></div>
+        <div class="practice-question"><p>Two point charges \(+Q\) and \(+4Q\) are fixed 12 cm apart. Where should a third charge be placed so that it experiences zero net electric force? Does the sign of the third charge matter?</p></div>
+        <details class="solution"><summary class="glass-btn">Show Solution</summary><div class="solution-content">
+          <div class="step">For zero net force: \(k\frac{Qq}{x^2} = k\frac{4Qq}{(12-x)^2}\) where \(x\) is distance from \(+Q\).</div>
+          <div class="step">Cancel \(kQq\): \(\frac{1}{x^2} = \frac{4}{(12-x)^2} \implies (12-x)^2 = 4x^2 \implies 12-x = 2x \implies x = 4\ \text{cm}\)</div>
+          <div class="step"><strong>4.0 cm from +Q, on the line between them. Any sign works.</strong> Forces scale with charge product — both flip direction but still cancel.</div>
+        </div></details>
+      </div>
+
+      <!-- 1.2 -->
+      <section id="1.2-electric-fields" class="glass-card content-section">
+        <div class="section-header"><input type="checkbox" class="progress-check" data-section="1.2"><h2>1.2 Electric Fields</h2><button class="collapse-toggle">▼</button></div>
+        <div class="section-body">
+          <p>The <strong>electric field</strong> \(\vec{E}\) is the force per unit charge on a small positive test charge:</p>
+          <div class="equation-block">$$\vec{E} = \frac{\vec{F}}{q} \quad \text{or} \quad \vec{F} = q\vec{E}$$</div>
+          <p>For a <strong>point charge</strong> \(Q\): \(\vec{E} = k\frac{Q}{r^2}\hat{r}\). Field points away from + charges, toward − charges. Units: N/C = V/m.</p>
+          <p><strong>Electric field lines</strong> start on + charges, end on − charges, never cross, denser where field is stronger. The \(\vec{E}\) vector is tangent to field lines.</p>
+          <p>Key field configurations:</p>
+          <ul>
+            <li><strong>Point charge:</strong> radial, \(E \propto 1/r^2\)</li>
+            <li><strong>Dipole:</strong> two equal opposite charges; \(E \propto 1/r^3\) at large distances</li>
+            <li><strong>Uniform field:</strong> parallel lines, constant magnitude (between parallel plates)</li>
+            <li><strong>Infinite line:</strong> \(E = \frac{2k\lambda}{r}\), radial, \(E \propto 1/r\)</li>
+            <li><strong>Infinite sheet:</strong> \(E = \frac{\sigma}{2\varepsilon_0}\), uniform, perpendicular to sheet</li>
+          </ul>
+          <div class="callout callout--tip"><strong>Exam Tip</strong> Know how to sketch field lines for point charges, dipoles, and parallel plates. Line density = field strength.</div>
+        </div>
+      </section>
+
+      <div class="glass-card practice-block">
+        <div class="practice-header"><span class="glass-badge">Practice</span><h3>Q1.3: Field from Two Charges</h3></div>
+        <div class="practice-question"><p>Charges \(+q\) and \(-2q\) are fixed 6.0 cm apart. Find \(\vec{E}\) at the midpoint.</p></div>
+        <details class="solution"><summary class="glass-btn">Show Solution</summary><div class="solution-content">
+          <div class="step">At midpoint, \(r = 3.0\ \text{cm}\). Field from \(+q\) points away (toward \(-2q\)). Field from \(-2q\) points toward it (same direction!).</div>
+          <div class="step">\(E_{\text{net}} = k\frac{q}{(0.03)^2} + k\frac{2q}{(0.03)^2} = k\frac{3q}{0.0009} = \frac{3kq}{9\times10^{-4}}\)</div>
+          <div class="step"><strong>\(\vec{E} = \frac{3kq}{(0.03)^2}\) directed toward the −2q charge.</strong></div>
+        </div></details>
+      </div>
+
+      <!-- 1.3 -->
+      <section id="1.3-gauss-law" class="glass-card content-section">
+        <div class="section-header"><input type="checkbox" class="progress-check" data-section="1.3"><h2>1.3 Gauss's Law</h2><button class="collapse-toggle">▼</button></div>
+        <div class="section-body">
+          <div class="equation-block">$$\Phi_E = \oint \vec{E} \cdot d\vec{A} = \frac{Q_{\text{enc}}}{\varepsilon_0}$$</div>
+          <p>Gauss's law: net electric flux through any closed surface equals enclosed charge divided by \(\varepsilon_0\).</p>
+          <p><strong>Strategy:</strong> (1) Choose Gaussian surface matching the symmetry. (2) Ensure \(E\) is constant and ⟂ or parallel on each face. (3) Find \(Q_{\text{enc}}\). (4) Solve.</p>
+          <p><strong>Standard results (must memorize):</strong></p>
+          <ul>
+            <li><strong>Spherical shell:</strong> \(E = 0\) inside (\(r<R\)); \(E = kQ/r^2\) outside (\(r>R\))</li>
+            <li><strong>Solid sphere (uniform ρ):</strong> \(E = kQr/R^3\) inside; \(E = kQ/r^2\) outside</li>
+            <li><strong>Infinite line:</strong> \(E = \lambda/(2\pi\varepsilon_0 r) = 2k\lambda/r\)</li>
+            <li><strong>Infinite sheet:</strong> \(E = \sigma/(2\varepsilon_0)\) — independent of distance!</li>
+            <li><strong>Parallel plates:</strong> \(E = \sigma/\varepsilon_0\) between; \(E = 0\) outside</li>
+          </ul>
+          <div class="callout callout--warning"><strong>Common Mistake</strong> Gauss's law always holds but is only <em>useful</em> when symmetry exists (spherical, cylindrical, planar). Don't force it on asymmetric distributions.</div>
+        </div>
+      </section>
+
+      <div class="glass-card practice-block">
+        <div class="practice-header"><span class="glass-badge">Practice</span><h3>Q1.4: Gauss — Solid Sphere</h3></div>
+        <div class="practice-question"><p>A solid insulating sphere of radius \(R = 5.0\ \text{cm}\) has uniform \(\rho = 2.0\ \mu\text{C/m}^3\). Find \(E\) at (a) \(r = 3.0\ \text{cm}\) and (b) \(r = 8.0\ \text{cm}\).</p></div>
+        <details class="solution"><summary class="glass-btn">Show Solution</summary><div class="solution-content">
+          <div class="step">(a) Inside: \(E(4\pi r^2) = \frac{\rho(4/3)\pi r^3}{\varepsilon_0} \implies E = \frac{\rho r}{3\varepsilon_0} = \frac{(2\times10^{-6})(0.03)}{3(8.85\times10^{-12})} = 2.26 \times 10^3\ \text{N/C}\)</div>
+          <div class="step">(b) Outside: \(Q_{\text{tot}} = \rho(4/3)\pi R^3 = 1.047 \times 10^{-9}\ \text{C}\); \(E = kQ/r^2 = 1.47 \times 10^3\ \text{N/C}\)</div>
+        </div></details>
+      </div>
+
+      <div class="glass-card practice-block">
+        <div class="practice-header"><span class="glass-badge">Practice</span><h3>Q1.5: Conducting Shell + Point Charge</h3></div>
+        <div class="practice-question"><p>Point charge \(+Q\) at center of a neutral thick conducting shell (inner radius \(a\), outer \(b\)). Find \(E\) everywhere and induced charges.</p></div>
+        <details class="solution"><summary class="glass-btn">Show Solution</summary><div class="solution-content">
+          <div class="step">\(r < a\): \(E = kQ/r^2\) (point charge field). \(a < r < b\): \(E = 0\) (inside conductor). \(r > b\): \(E = kQ/r^2\) (net charge = +Q).</div>
+          <div class="step"><strong>Induced: −Q on inner surface (r=a), +Q on outer surface (r=b).</strong></div>
+        </div></details>
+      </div>
+
+      <section id="1.4-electric-potential" class="glass-card content-section">
+        <div class="section-header"><input type="checkbox" class="progress-check" data-section="1.4"><h2>1.4 Electric Potential & Energy</h2><button class="collapse-toggle">▼</button></div>
+        <div class="section-body">
+          <p><strong>Electric potential energy</strong> of two point charges: \(U = k\frac{q_1 q_2}{r} = qV\)</p>
+          <p><strong>Electric potential</strong> (voltage) = potential energy per unit charge: \(V = U/q\)</p>
+          <p>For a point charge: \(V = k\frac{Q}{r}\) (with \(V = 0\) at \(r \to \infty\))</p>
+          <p>Potentials add as <strong>scalars</strong>: \(V_{\text{total}} = \sum_i k\frac{q_i}{r_i}\) (unlike fields, which add as vectors)</p>
+
+          <h3>Electron-Volt (eV)</h3>
+          <p>The <strong>electron-volt</strong> is the energy gained/lost when one elementary charge moves through 1 volt of potential difference:</p>
+          <div class="equation-block">$$1\text{ eV} = (1.60 \times 10^{-19}\text{ C})(1\text{ V}) = 1.60 \times 10^{-19}\text{ J}$$</div>
+          <p>eV is the natural energy unit for atomic/particle physics. To convert: multiply eV by e to get joules. <strong>Common conversions:</strong> 1 keV = 10³ eV, 1 MeV = 10⁶ eV.</p>
+
+          <h3>Work-Energy Theorem</h3>
+          <p>Energy conservation for a charge in an electric field:</p>
+          <div class="equation-block">$$\Delta K + \Delta U = 0 \quad \Rightarrow \quad \frac{1}{2}mv_f^2 - \frac{1}{2}mv_i^2 = -q\Delta V$$</div>
+          <p>A positive charge accelerates toward <strong>lower</strong> potential (V decreases). A negative charge accelerates toward <strong>higher</strong> potential. Work done by the field: \(W = -\Delta U = -q\Delta V\).</p>
+
+          <h3>Equipotential Surfaces</h3>
+          <p><strong>Key properties:</strong></p>
+          <ul>
+            <li>\(\vec{E}\) is always <strong>perpendicular</strong> to equipotential surfaces</li>
+            <li>No work is done moving charge along an equipotential (\(\Delta V = 0\))</li>
+            <li>Closer equipotential spacing = <strong>stronger</strong> E-field</li>
+            <li>Conductors in equilibrium are equipotential volumes</li>
+            <li>Point charge: equipotentials are concentric spheres</li>
+            <li>Uniform field: equipotentials are parallel planes</li>
+          </ul>
+
+          <h3>Relationship between E and V</h3>
+          <p>\(E_x = -dV/dx\) or \(\vec{E} = -\nabla V\). E points toward steepest decrease of V.</p>
+          <p>From potential energy: \(\vec{F} = -\nabla U = -q\nabla V\). Force on a charge always points toward lower potential energy.</p>
+          <p><strong>For a uniform field:</strong> \(E = \frac{|\Delta V|}{d}\) (field magnitude = potential difference / separation).</p>
+
+          <h3>Potential of Continuous Distributions</h3>
+          <p>For continuous charge distributions, integrate the scalar potential:</p>
+          <div class="equation-block">$$V = \int k\frac{dq}{r}$$</div>
+          <p><strong>Key results:</strong></p>
+          <ul>
+            <li><strong>Charged ring (on axis):</strong> \(V = \frac{kQ}{\sqrt{x^2+a^2}}\)</li>
+            <li><strong>Charged disk (on axis):</strong> \(V = \frac{\sigma}{2\varepsilon_0}\left(\sqrt{R^2+x^2} - |x|\right)\)</li>
+            <li><strong>Line of charge (off-axis):</strong> \(V = \frac{\lambda}{2\pi\varepsilon_0}\ln\left(\frac{\text{ref}}{r}\right)\)</li>
+          </ul>
+          <p>Strategy: compute V first (scalar integral), then differentiate to find E: \(\vec{E} = -\nabla V\).</p>
+
+          <div class="callout callout--tip"><strong>Exam Tip</strong> Finding E from V(x) via \(E_x = -dV/dx\) is a frequent free-response task. Practice differentiating potential functions. Also: when asked for speed of a charged particle, use \(\frac{1}{2}mv^2 = |q\Delta V|\).</div>
+        </div>
+      </section>
+
+      <div class="glass-card practice-block">
+        <div class="practice-header"><span class="glass-badge">Practice</span><h3>Q1.6: Potential at Midpoint</h3></div>
+        <div class="practice-question"><p>\(q_1 = +5.0\ \mu\text{C}\) and \(q_2 = -3.0\ \mu\text{C}\) are 4.0 cm apart. Find V at the midpoint.</p></div>
+        <details class="solution"><summary class="glass-btn">Show Solution</summary><div class="solution-content">
+          <div class="step">\(r = 2.0\ \text{cm}\). \(V_1 = k(5\times10^{-6})/0.02 = 2.25\times10^6\ \text{V}\); \(V_2 = k(-3\times10^{-6})/0.02 = -1.35\times10^6\ \text{V}\)</div>
+          <div class="step"><strong>\(V_{\text{net}} = 9.0 \times 10^5\ \text{V}\)</strong></div>
+        </div></details>
+      </div>
+
+      <div class="glass-card practice-block">
+        <div class="practice-header"><span class="glass-badge">Practice</span><h3>Q1.7: E from V(x)</h3></div>
+        <div class="practice-question"><p>\(V(x) = 3x^2 - 12x + 5\) volts (x in meters). Find \(\vec{E}(x)\) and where \(E = 0\).</p></div>
+        <details class="solution"><summary class="glass-btn">Show Solution</summary><div class="solution-content">
+          <div class="step">\(E_x = -dV/dx = -(6x - 12) = 12 - 6x\). \(E = 0\) at \(x = 2.0\ \text{m}\).</div>
+        </div></details>
+      </div>
+
+      <div class="glass-card practice-block">
+        <div class="practice-header"><span class="glass-badge">Practice</span><h3>Q1.7b: Electron Accelerated Through Potential Difference</h3></div>
+        <div class="practice-question"><p>An electron (\(m_e = 9.11\times10^{-31}\ \text{kg}\)) is accelerated from rest through 500 V. Find its final speed in m/s and the energy gained in eV.</p></div>
+        <details class="solution"><summary class="glass-btn">Show Solution</summary><div class="solution-content">
+          <div class="step">Energy gained: \(\Delta K = |q\Delta V| = e(500) = 500\ \text{eV} = 8.0\times10^{-17}\ \text{J}\).</div>
+          <div class="step">\(\frac{1}{2}mv^2 = 8.0\times10^{-17} \implies v = \sqrt{\frac{2(8.0\times10^{-17})}{9.11\times10^{-31}}} = 1.33\times10^7\ \text{m/s}\) (about 4.4% of c).</div>
+        </div></details>
+      </div>
+
+      <div class="glass-card practice-block">
+        <div class="practice-header"><span class="glass-badge">Practice</span><h3>Q1.7c: Work to Assemble Charges</h3></div>
+        <div class="practice-question"><p>Three point charges \(+q\), \(+q\), and \(-q\) are brought from infinity to the vertices of an equilateral triangle of side a. How much work is required to assemble this configuration? (Express in terms of k, q, a)</p></div>
+        <details class="solution"><summary class="glass-btn">Show Solution</summary><div class="solution-content">
+          <div class="step">Bring first +q: W₁ = 0 (no other charges present).</div>
+          <div class="step">Bring second +q: W₂ = kq²/a.</div>
+          <div class="step">Bring -q: it interacts with BOTH +q charges: W₃ = -kq²/a + (-kq²/a) = -2kq²/a.</div>
+          <div class="step"><strong>W_total = 0 + kq²/a - 2kq²/a = -kq²/a. Negative work means the system releases energy — the configuration is bound.</strong></div>
+        </div></details>
+      </div>
+
+      <!-- 1.5 -->
+      <section id="1.5-continuous-charge" class="glass-card content-section">
+        <div class="section-header"><input type="checkbox" class="progress-check" data-section="1.5"><h2>1.5 Continuous Charge Distributions</h2><button class="collapse-toggle">▼</button></div>
+        <div class="section-body">
+          <p>For continuous distributions: \(dq = \lambda\ d\ell\) (linear), \(dq = \sigma\ dA\) (surface), \(dq = \rho\ dV\) (volume).</p>
+          <div class="equation-block">$$d\vec{E} = k\frac{dq}{r^2}\hat{r}, \quad \vec{E} = \int k\frac{dq}{r^2}\hat{r} \qquad dV = k\frac{dq}{r}, \quad V = \int k\frac{dq}{r}$$</div>
+          <p><strong>Key results:</strong></p>
+          <ul>
+            <li><strong>Charged rod:</strong> \(E = k\frac{Q}{x(x+L)}\) on axis</li>
+            <li><strong>Charged ring:</strong> \(E = k\frac{Qx}{(x^2+a^2)^{3/2}}\), \(V = k\frac{Q}{\sqrt{x^2+a^2}}\) on axis</li>
+            <li><strong>Charged disk:</strong> \(E = \frac{\sigma}{2\varepsilon_0}\left[1 - \frac{x}{\sqrt{x^2+R^2}}\right]\) on axis</li>
+          </ul>
+          <div class="callout callout--tip"><strong>Exam Tip</strong> Always exploit symmetry. For a ring, perpendicular components cancel. Use V (scalar integral) when computing field direction is hard — then use \(\vec{E} = -\nabla V\).</div>
+        </div>
+      </section>
+
+      <div class="glass-card practice-block">
+        <div class="practice-header"><span class="glass-badge">Practice</span><h3>Q1.8: Ring of Charge</h3></div>
+        <div class="practice-question"><p>A ring of radius \(R = 10\ \text{cm}\) carries \(Q = 5.0\ \mu\text{C}\). Find \(E\) and \(V\) at a point 20 cm along the axis.</p></div>
+        <details class="solution"><summary class="glass-btn">Show Solution</summary><div class="solution-content">
+          <div class="step">\(E_x = k\frac{Qx}{(x^2+R^2)^{3/2}} = 8.04\times10^5\ \text{N/C}\). \(V = k\frac{Q}{\sqrt{x^2+R^2}} = 2.01\times10^5\ \text{V}\).</div>
+        </div></details>
+      </div>
+
+      <!-- 1.6 -->
+      <section id="1.6-conductors" class="glass-card content-section">
+        <div class="section-header"><input type="checkbox" class="progress-check" data-section="1.6"><h2>1.6 Conductors in Equilibrium</h2><button class="collapse-toggle">▼</button></div>
+        <div class="section-body">
+          <p>When a conductor is in electrostatic equilibrium:</p>
+          <ol>
+            <li><strong>\(\vec{E} = 0\) inside</strong> (otherwise free charges would move)</li>
+            <li><strong>All excess charge on the surface</strong></li>
+            <li><strong>\(\vec{E}\) at surface is ⟂ with magnitude \(E = \sigma/\varepsilon_0\)</strong></li>
+            <li><strong>Charge density highest at sharpest curvature</strong></li>
+            <li><strong>Entire conductor is equipotential</strong></li>
+          </ol>
+          <p><strong>Charge distribution on irregular conductors:</strong> Surface charge density \(\sigma\) is inversely proportional to the local radius of curvature: \(\sigma \propto 1/R\). Sharp points accumulate high charge density and produce strong local fields — this is how lightning rods work.</p>
+          <p><strong>Shielding:</strong> E = 0 inside a cavity within a conductor, regardless of external fields.</p>
+          <p><strong>Induction:</strong> A charged object redistributes charge in a conductor. Grounding + removing ground before removing the charged object leaves net opposite charge.</p>
+          <div class="callout callout--warning"><strong>Common Mistake</strong> E = 0 inside a conductor ≠ V = 0. V is constant inside, equal to the surface potential.</div>
+        </div>
+      </section>
+
+      <div class="glass-card practice-block">
+        <div class="practice-header"><span class="glass-badge">Practice</span><h3>Q1.9: Conducting Sphere</h3></div>
+        <div class="practice-question"><p>A solid conducting sphere of radius \(R\) carries \(+Q\). Describe charge location, E(r), V(r). Sketch both.</p></div>
+        <details class="solution"><summary class="glass-btn">Show Solution</summary><div class="solution-content">
+          <div class="step">Charge all on surface. \(E = 0\) (\(r<R\)); \(E = kQ/r^2\) (\(r>R\)). \(V = kQ/R\) (\(r\le R\)); \(V = kQ/r\) (\(r>R\)). Identical to point charge for \(r>R\).</div>
+        </div></details>
+      </div>
+
+      <!-- 1.7 -->
+      <section id="1.7-capacitors" class="glass-card content-section">
+        <div class="section-header"><input type="checkbox" class="progress-check" data-section="1.7"><h2>1.7 Capacitors</h2><button class="collapse-toggle">▼</button></div>
+        <div class="section-body">
+          <p><strong>Capacitance:</strong> \(C = Q/V\) (farads). <strong>Parallel-plate:</strong> \(C = \varepsilon_0 A/d\). Field: \(E = \sigma/\varepsilon_0 = V/d\).</p>
+
+          <h3>Energy Stored in a Capacitor</h3>
+          <p><strong>Energy:</strong> \(U = \frac{1}{2}CV^2 = \frac{Q^2}{2C} = \frac{1}{2}QV\)</p>
+          <p><strong>Energy density of the electric field:</strong></p>
+          <div class="equation-block">$$u_E = \frac{U}{\text{volume}} = \frac{1}{2}\varepsilon_0 E^2$$</div>
+          <p>This is a general result — the energy per unit volume stored in ANY electric field. For a parallel-plate capacitor, \(U = u_E \cdot Ad = \frac{1}{2}\varepsilon_0 E^2 Ad\).</p>
+
+          <h3>Dielectric (κ)</h3>
+          <p><strong>Dielectric (κ):</strong> \(C = \kappa C_0\). <strong>With fixed Q</strong> (battery disconnected): V drops to \(V_0/\kappa\), E fields weaken, U decreases (energy goes into work pulling dielectric in).</p>
+          <p><strong>With fixed V</strong> (battery connected): Q increases to \(\kappa Q_0\), more energy is stored, battery supplies additional charge.</p>
+
+          <h3>Combinations</h3>
+
+          <h3>Combinations</h3>
+          <p>Series: \(1/C_{\text{eq}} = \sum 1/C_i\) (same Q). Parallel: \(C_{\text{eq}} = \sum C_i\) (same V).</p>
+          <div class="callout callout--danger"><strong>Critical</strong> Series: same CHARGE. Parallel: same VOLTAGE. Reversing these is the #1 capacitor error.</div>
+        </div>
+      </section>
+
+      <div class="glass-card practice-block">
+        <div class="practice-header"><span class="glass-badge">Practice</span><h3>Q1.10: Parallel-Plate Capacitor</h3></div>
+        <div class="practice-question"><p>Plates area \(200\ \text{cm}^2\), separation \(0.50\ \text{mm}\), 12 V battery. Find C, Q, E, U.</p></div>
+        <details class="solution"><summary class="glass-btn">Show Solution</summary><div class="solution-content">
+          <div class="step">\(C = \varepsilon_0 A/d = 354\ \text{pF}\); \(Q = CV = 4.25\ \text{nC}\); \(E = V/d = 2.4\times10^4\ \text{V/m}\); \(U = \frac{1}{2}CV^2 = 2.55\times10^{-8}\ \text{J}\)</div>
+        </div></details>
+      </div>
+
+      <div class="glass-card practice-block">
+        <div class="practice-header"><span class="glass-badge">Practice</span><h3>Q1.11: Capacitor Network</h3></div>
+        <div class="practice-question"><p>\(C_1=2.0\), \(C_2=3.0\), \(C_3=6.0\ \mu\text{F}\) with 24 V. \(C_2 \parallel C_3\), then in series with \(C_1\). Find \(C_{\text{eq}}\) and Q, V on each.</p></div>
+        <details class="solution"><summary class="glass-btn">Show Solution</summary><div class="solution-content">
+          <div class="step">\(C_{23} = 9.0\ \mu\text{F}\). \(C_{\text{eq}} = 1.636\ \mu\text{F}\). \(Q_{\text{total}} = 39.3\ \mu\text{C} = Q_1\). \(V_1 = 19.65\ \text{V}\). \(V_{23} = 4.35\ \text{V}\). \(Q_2 = 13.1\ \mu\text{C}\), \(Q_3 = 26.1\ \mu\text{C}\).</div>
+        </div></details>
+      </div>
+
+      <div class="glass-card practice-block">
+        <div class="practice-header"><span class="glass-badge">Practice</span><h3>Q1.12: Dielectric — Battery Disconnected</h3></div>
+        <div class="practice-question"><p>\(C_0 = 10\ \mu\text{F}\) charged to 9 V, then disconnected. Dielectric \(\kappa = 4\) inserted. Find new C, V, Q, U.</p></div>
+        <details class="solution"><summary class="glass-btn">Show Solution</summary><div class="solution-content">
+          <div class="step">Q fixed at \(90\ \mu\text{C}\). \(C = 40\ \mu\text{F}\). \(V = Q/C = 2.25\ \text{V}\) (drops!). \(U = Q^2/(2C) = 1.01\times10^{-4}\ \text{J}\) (decreased — energy went into mechanical work pulling the dielectric in).</div>
+        </div></details>
+      </div>
+
+      <div class="glass-card practice-block">
+        <div class="practice-header"><span class="glass-badge">Practice</span><h3>Q1.12b: Energy Density</h3></div>
+        <div class="practice-question"><p>A parallel-plate capacitor with A = 500 cm², d = 0.20 mm is charged to 100 V. Find: (a) the energy stored and (b) the energy density u_E inside.</p></div>
+        <details class="solution"><summary class="glass-btn">Show Solution</summary><div class="solution-content">
+          <div class="step">\(C = \varepsilon_0 A/d = (8.85\times10^{-12})(0.05)/(2\times10^{-4}) = 2.21\ \text{nF}\). \(U = \frac{1}{2}CV^2 = 1.11\times10^{-5}\ \text{J}\).</div>
+          <div class="step">\(E = V/d = 100/(2\times10^{-4}) = 5\times10^5\ \text{V/m}\). \(u_E = \frac{1}{2}\varepsilon_0 E^2 = 0.5(8.85\times10^{-12})(2.5\times10^{11}) = 1.11\ \text{J/m}^3\).</div>
+          <div class="step">Check: \(U = u_E \times Ad = 1.11 \times (0.05)(2\times10^{-4}) = 1.11\times10^{-5}\ \text{J}\). ✓</div>
+        </div></details>
+      </div>
+
+      <footer class="site-footer">Unit 1: Electrostatics · AP Physics C: Electricity & Magnetism</footer>
+
+    </main>
+  </div>
+</body>
+</html>
