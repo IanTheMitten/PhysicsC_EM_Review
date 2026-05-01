@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Practice 4: EM Induction — AP Physics C E&M</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
+  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  <script defer src="../js/app.js"></script>
+</head>
+<body class="page-practice">
+
+  <div class="bg-orbs"><div class="bg-orb"></div><div class="bg-orb"></div><div class="bg-orb"></div></div>
+  <a href="#main" class="skip-link">Skip to content</a>
+
+  <nav class="glass-nav">
+    <a href="../index.html" class="nav-brand"><span class="brand-icon">⚡</span><span>AP Physics C: E&M</span></a>
+    <div class="nav-links">
+      <a href="../index.html" class="nav-link">Home</a>
+      <a href="../unit1-electrostatics.html" class="nav-link"><span class="unit-badge">1</span> Electrostatics</a>
+      <a href="../unit2-circuits.html" class="nav-link"><span class="unit-badge">2</span> Circuits</a>
+      <a href="../unit3-magnetism.html" class="nav-link"><span class="unit-badge">3</span> Magnetism</a>
+      <a href="../unit4-electromagnetism.html" class="nav-link"><span class="unit-badge">4</span> EM Induction</a>
+      <a href="../unit5-maxwell.html" class="nav-link"><span class="unit-badge">5</span> Maxwell</a>
+      <a href="practice-unit1.html" class="nav-link active">🤓 Practice</a>
+    </div>
+    <div class="nav-actions">
+      <div class="search-wrapper"><span class="search-icon">🔍</span><input type="text" class="search-input" placeholder="Search..." aria-label="Search"></div>
+      <button class="btn-icon theme-toggle" aria-label="Toggle dark mode" title="Toggle dark mode (T)">🌙</button>
+      <button class="btn-icon mobile-menu-btn" aria-label="Menu">☰</button>
+    </div>
+  </nav>
+
+  <div class="app-shell">
+    <aside class="sidebar">
+      <div class="sidebar-title">Practice Topics</div>
+      <ul class="sidebar-toc"></ul>
+    </aside>
+    <main class="main-content" id="main">
+
+      <div class="practice-page-header">
+        <div>
+          <h1>Practice 4: Electromagnetic Induction</h1>
+          <p style="color:var(--text-muted)">10 MCQ + 5 FRQ · Covers Faraday's Law, Lenz's Law, Motional EMF, Inductance, and RL/LC Circuits</p>
+        </div>
+        <div class="practice-scoreboard">
+          <div class="score-item"><span class="score-value score-attempted">0</span><span class="score-label">Attempted</span></div>
+          <div class="score-item"><span class="score-value score-correct">0</span><span class="score-label">Correct</span></div>
+          <div class="score-item"><span class="score-value score-frq">0</span><span class="score-label">FRQ Viewed</span></div>
+        </div>
+      </div>
+
+      <div class="practice-tabs">
+        <button class="practice-tab active" data-target="section-all">All Questions</button>
+        <button class="practice-tab" data-target="section-mcq">Multiple Choice</button>
+        <button class="practice-tab" data-target="section-frq">Free Response</button>
+        <button class="practice-tab" data-target="section-topic1">Faraday &amp; Lenz</button>
+        <button class="practice-tab" data-target="section-topic2">Inductance &amp; RL</button>
+        <button class="practice-tab" data-target="section-topic3">LC &amp; Applications</button>
+      </div>
+
+      <!-- MCQ SECTION -->
+      <section id="section-mcq" class="practice-section">
+        <h2>Multiple Choice Questions</h2>
+
+        <div class="glass-card mcq-question" data-mcq-id="mcq-1" data-correct="B">
+          <div class="question-text"><p><strong>Q1.</strong> A circular loop of wire lies in the plane of the page. A magnetic field directed into the page is decreasing in magnitude. The induced current in the loop:</p></div>
+          <div class="mcq-options">
+            <div class="mcq-option"><input type="radio" name="mcq1" id="mcq1-a" value="A"><label for="mcq1-a"><strong>(A)</strong> Is zero.</label></div>
+            <div class="mcq-option"><input type="radio" name="mcq1" id="mcq1-b" value="B"><label for="mcq1-b"><strong>(B)</strong> Is clockwise.</label></div>
+            <div class="mcq-option"><input type="radio" name="mcq1" id="mcq1-c" value="C"><label for="mcq1-c"><strong>(C)</strong> Is counterclockwise.</label></div>
+            <div class="mcq-option"><input type="radio" name="mcq1" id="mcq1-d" value="D"><label for="mcq1-d"><strong>(D)</strong> Alternates direction.</label></div>
+            <div class="mcq-option"><input type="radio" name="mcq1" id="mcq1-e" value="E"><label for="mcq1-e"><strong>(E)</strong> Cannot be determined.</label></div>
+          </div>
+          <div class="mcq-actions">
+            <button class="glass-btn mcq-check-btn">Check Answer</button>
+            <button class="glass-btn mcq-reset-btn">Reset</button>
+          </div>
+          <div class="mcq-feedback correct-msg"><strong>Correct!</strong> B into page is decreasing. By Lenz's Law, induced current creates a field to oppose the decrease — producing B into page. RHR: clockwise current produces B into page.</div>
+          <div class="mcq-feedback incorrect-msg"><strong>Incorrect.</strong> The correct answer is <strong>(B) Clockwise</strong>. Lenz's Law: oppose the decrease of B into page by creating B into page. RHR gives clockwise current.</div>
+        </div>
+
+        <div class="glass-card mcq-question" data-mcq-id="mcq-2" data-correct="D">
+          <div class="question-text"><p><strong>Q2.</strong> A conducting rod of length \(L\) moves with velocity \(v\) perpendicular to a uniform magnetic field \(B\). The motional EMF induced across the rod is:</p></div>
+          <div class="mcq-options">
+            <div class="mcq-option"><input type="radio" name="mcq2" id="mcq2-a" value="A"><label for="mcq2-a"><strong>(A)</strong> \(BLv\cos\theta\)</label></div>
+            <div class="mcq-option"><input type="radio" name="mcq2" id="mcq2-b" value="B"><label for="mcq2-b"><strong>(B)</strong> \(\frac{1}{2}BLv\)</label></div>
+            <div class="mcq-option"><input type="radio" name="mcq2" id="mcq2-c" value="C"><label for="mcq2-c"><strong>(C)</strong> \(B^2 L^2 v\)</label></div>
+            <div class="mcq-option"><input type="radio" name="mcq2" id="mcq2-d" value="D"><label for="mcq2-d"><strong>(D)</strong> \(BLv\)</label></div>
+            <div class="mcq-option"><input type="radio" name="mcq2" id="mcq2-e" value="E"><label for="mcq2-e"><strong>(E)</strong> \(0\)</label></div>
+          </div>
+          <div class="mcq-actions">
+            <button class="glass-btn mcq-check-btn">Check Answer</button>
+            <button class="glass-btn mcq-reset-btn">Reset</button>
+          </div>
+          <div class="mcq-feedback correct-msg"><strong>Correct!</strong> For a rod moving perpendicular to B: \(\mathcal{E} = \oint (\vec{v} \times \vec{B}) \cdot d\vec{\ell} = vBL\). Magnetic force on charges: \(F_B = qvB\), creating separation until \(qE = qvB\), so \(\mathcal{E} = EL = BLv\).</div>
+          <div class="mcq-feedback incorrect-msg"><strong>Incorrect.</strong> The correct answer is <strong>(D) \(BLv\)</strong>. Motional EMF: \(\mathcal{E} = BLv\) when \(\vec{v} \perp \vec{B} \perp \vec{L}\).</div>
+        </div>
+
+        <div class="glass-card mcq-question" data-mcq-id="mcq-3" data-correct="C">
+          <div class="question-text"><p><strong>Q3.</strong> The magnetic flux through a coil changes from 0.50 Wb to 0.10 Wb in 0.20 s. The coil has 100 turns. The average induced EMF is:</p></div>
+          <div class="mcq-options">
+            <div class="mcq-option"><input type="radio" name="mcq3" id="mcq3-a" value="A"><label for="mcq3-a"><strong>(A)</strong> \(2.0\ \text{V}\)</label></div>
+            <div class="mcq-option"><input type="radio" name="mcq3" id="mcq3-b" value="B"><label for="mcq3-b"><strong>(B)</strong> \(20\ \text{V}\)</label></div>
+            <div class="mcq-option"><input type="radio" name="mcq3" id="mcq3-c" value="C"><label for="mcq3-c"><strong>(C)</strong> \(200\ \text{V}\)</label></div>
+            <div class="mcq-option"><input type="radio" name="mcq3" id="mcq3-d" value="D"><label for="mcq3-d"><strong>(D)</strong> \(400\ \text{V}\)</label></div>
+            <div class="mcq-option"><input type="radio" name="mcq3" id="mcq3-e" value="E"><label for="mcq3-e"><strong>(E)</strong> \(0.20\ \text{V}\)</label></div>
+          </div>
+          <div class="mcq-actions">
+            <button class="glass-btn mcq-check-btn">Check Answer</button>
+            <button class="glass-btn mcq-reset-btn">Reset</button>
+          </div>
+          <div class="mcq-feedback correct-msg"><strong>Correct!</strong> \(\mathcal{E} = -N\frac{\Delta\Phi}{\Delta t} = -100 \times \frac{0.10 - 0.50}{0.20} = -100 \times (-2.0) = 200\ \text{V}\).</div>
+          <div class="mcq-feedback incorrect-msg"><strong>Incorrect.</strong> The correct answer is <strong>(C) \(200\ \text{V}\)</strong>. \(\mathcal{E} = N|\Delta\Phi/\Delta t| = 100 \times 0.40/0.20 = 200\ \text{V}\).</div>
+        </div>
+
+        <div class="glass-card mcq-question" data-mcq-id="mcq-4" data-correct="A">
+          <div class="question-text"><p><strong>Q4.</strong> A bar magnet is pushed toward a conducting loop (N pole first). The induced current in the loop, as viewed from the magnet side, is:</p></div>
+          <div class="mcq-options">
+            <div class="mcq-option"><input type="radio" name="mcq4" id="mcq4-a" value="A"><label for="mcq4-a"><strong>(A)</strong> Counterclockwise (to create a N pole facing the magnet).</label></div>
+            <div class="mcq-option"><input type="radio" name="mcq4" id="mcq4-b" value="B"><label for="mcq4-b"><strong>(B)</strong> Clockwise (to create a S pole facing the magnet).</label></div>
+            <div class="mcq-option"><input type="radio" name="mcq4" id="mcq4-c" value="C"><label for="mcq4-c"><strong>(C)</strong> Zero — DC current can't be induced.</label></div>
+            <div class="mcq-option"><input type="radio" name="mcq4" id="mcq4-d" value="D"><label for="mcq4-d"><strong>(D)</strong> Clockwise then counterclockwise.</label></div>
+            <div class="mcq-option"><input type="radio" name="mcq4" id="mcq4-e" value="E"><label for="mcq4-e"><strong>(E)</strong> Depends on the speed.</label></div>
+          </div>
+          <div class="mcq-actions">
+            <button class="glass-btn mcq-check-btn">Check Answer</button>
+            <button class="glass-btn mcq-reset-btn">Reset</button>
+          </div>
+          <div class="mcq-feedback correct-msg"><strong>Correct!</strong> N pole approaching increases flux to the right through the loop. By Lenz's Law, induced current creates flux opposing (to the left). From the magnet side, a N pole facing the magnet repels it — requiring counterclockwise current by RHR.</div>
+          <div class="mcq-feedback incorrect-msg"><strong>Incorrect.</strong> The correct answer is <strong>(A) Counterclockwise</strong>. Lenz's Law: oppose the approaching N pole by creating a N pole facing it → counterclockwise current.</div>
+        </div>
+
+        <div class="glass-card mcq-question" data-mcq-id="mcq-5" data-correct="E">
+          <div class="question-text"><p><strong>Q5.</strong> In an RL circuit with battery \(\mathcal{E}\), resistor \(R\), and inductor \(L\), the time constant is:</p></div>
+          <div class="mcq-options">
+            <div class="mcq-option"><input type="radio" name="mcq5" id="mcq5-a" value="A"><label for="mcq5-a"><strong>(A)</strong> \(RC\)</label></div>
+            <div class="mcq-option"><input type="radio" name="mcq5" id="mcq5-b" value="B"><label for="mcq5-b"><strong>(B)</strong> \(RL\)</label></div>
+            <div class="mcq-option"><input type="radio" name="mcq5" id="mcq5-c" value="C"><label for="mcq5-c"><strong>(C)</strong> \(R/L\)</label></div>
+            <div class="mcq-option"><input type="radio" name="mcq5" id="mcq5-d" value="D"><label for="mcq5-d"><strong>(D)</strong> \(1/(RL)\)</label></div>
+            <div class="mcq-option"><input type="radio" name="mcq5" id="mcq5-e" value="E"><label for="mcq5-e"><strong>(E)</strong> \(L/R\)</label></div>
+          </div>
+          <div class="mcq-actions">
+            <button class="glass-btn mcq-check-btn">Check Answer</button>
+            <button class="glass-btn mcq-reset-btn">Reset</button>
+          </div>
+          <div class="mcq-feedback correct-msg"><strong>Correct!</strong> RL time constant: \(\tau = L/R\). Current rises as \(I(t) = (\mathcal{E}/R)(1 - e^{-t/\tau})\). Analogous to \(\tau = RC\) in RC circuits.</div>
+          <div class="mcq-feedback incorrect-msg"><strong>Incorrect.</strong> The correct answer is <strong>(E) \(L/R\)</strong>. RL time constant \(\tau = L/R\); current: \(I(t) = (\mathcal{E}/R)(1 - e^{-Rt/L})\).</div>
+        </div>
+
+        <div class="glass-card mcq-question" data-mcq-id="mcq-6" data-correct="C">
+          <div class="question-text"><p><strong>Q6.</strong> A circular loop of radius \(r\) rotates with angular speed \(\omega\) in a uniform magnetic field \(B\). The axis of rotation is perpendicular to \(B\). The maximum induced EMF is:</p></div>
+          <div class="mcq-options">
+            <div class="mcq-option"><input type="radio" name="mcq6" id="mcq6-a" value="A"><label for="mcq6-a"><strong>(A)</strong> \(\pi r^2 B\omega\)</label></div>
+            <div class="mcq-option"><input type="radio" name="mcq6" id="mcq6-b" value="B"><label for="mcq6-b"><strong>(B)</strong> \(2\pi r B\omega\)</label></div>
+            <div class="mcq-option"><input type="radio" name="mcq6" id="mcq6-c" value="C"><label for="mcq6-c"><strong>(C)</strong> \(\pi r^2 B\omega\)</label></div>
+            <div class="mcq-option"><input type="radio" name="mcq6" id="mcq6-d" value="D"><label for="mcq6-d"><strong>(D)</strong> \(\frac{1}{2}\pi r^2 B\omega\)</label></div>
+            <div class="mcq-option"><input type="radio" name="mcq6" id="mcq6-e" value="E"><label for="mcq6-e"><strong>(E)</strong> \(\pi r^2 B/\omega\)</label></div>
+          </div>
+          <div class="mcq-actions">
+            <button class="glass-btn mcq-check-btn">Check Answer</button>
+            <button class="glass-btn mcq-reset-btn">Reset</button>
+          </div>
+          <div class="mcq-feedback correct-msg"><strong>Correct!</strong> Flux: \(\Phi = BA\cos(\omega t)\). \(\mathcal{E} = -d\Phi/dt = BA\omega\sin(\omega t)\). Maximum: \(\mathcal{E}_{\text{max}} = BA\omega = B(\pi r^2)\omega = \pi r^2 B\omega\).</div>
+          <div class="mcq-feedback incorrect-msg"><strong>Incorrect.</strong> The correct answer is <strong>(C) \(\pi r^2 B\omega\)</strong>. \(\Phi = BA\cos(\omega t)\), \(\mathcal{E}_{\text{max}} = BA\omega = \pi r^2 B\omega\).</div>
+        </div>
+
+        <div class="glass-card mcq-question" data-mcq-id="mcq-7" data-correct="B">
+          <div class="question-text"><p><strong>Q7.</strong> An LC circuit has \(L = 10\ \text{mH}\) and \(C = 100\ \mu\text{F}\). The angular frequency of oscillation is:</p></div>
+          <div class="mcq-options">
+            <div class="mcq-option"><input type="radio" name="mcq7" id="mcq7-a" value="A"><label for="mcq7-a"><strong>(A)</strong> \(10\ \text{rad/s}\)</label></div>
+            <div class="mcq-option"><input type="radio" name="mcq7" id="mcq7-b" value="B"><label for="mcq7-b"><strong>(B)</strong> \(1000\ \text{rad/s}\)</label></div>
+            <div class="mcq-option"><input type="radio" name="mcq7" id="mcq7-c" value="C"><label for="mcq7-c"><strong>(C)</strong> \(100\ \text{rad/s}\)</label></div>
+            <div class="mcq-option"><input type="radio" name="mcq7" id="mcq7-d" value="D"><label for="mcq7-d"><strong>(D)</strong> \(10^6\ \text{rad/s}\)</label></div>
+            <div class="mcq-option"><input type="radio" name="mcq7" id="mcq7-e" value="E"><label for="mcq7-e"><strong>(E)</strong> \(1\ \text{rad/s}\)</label></div>
+          </div>
+          <div class="mcq-actions">
+            <button class="glass-btn mcq-check-btn">Check Answer</button>
+            <button class="glass-btn mcq-reset-btn">Reset</button>
+          </div>
+          <div class="mcq-feedback correct-msg"><strong>Correct!</strong> \(\omega = 1/\sqrt{LC} = 1/\sqrt{(10\times10^{-3})(100\times10^{-6})} = 1/\sqrt{10^{-6}} = 1000\ \text{rad/s}\).</div>
+          <div class="mcq-feedback incorrect-msg"><strong>Incorrect.</strong> The correct answer is <strong>(B) \(1000\ \text{rad/s}\)</strong>. \(\omega = 1/\sqrt{LC} = 1/\sqrt{10^{-6}} = 1000\ \text{rad/s}\).</div>
+        </div>
+
+        <div class="glass-card mcq-question" data-mcq-id="mcq-8" data-correct="D">
+          <div class="question-text"><p><strong>Q8.</strong> The energy stored in an inductor carrying current \(I\) is:</p></div>
+          <div class="mcq-options">
+            <div class="mcq-option"><input type="radio" name="mcq8" id="mcq8-a" value="A"><label for="mcq8-a"><strong>(A)</strong> \(\frac{1}{2}LI\)</label></div>
+            <div class="mcq-option"><input type="radio" name="mcq8" id="mcq8-b" value="B"><label for="mcq8-b"><strong>(B)</strong> \(LI^2\)</label></div>
+            <div class="mcq-option"><input type="radio" name="mcq8" id="mcq8-c" value="C"><label for="mcq8-c"><strong>(C)</strong> \(\frac{1}{2}CV^2\)</label></div>
+            <div class="mcq-option"><input type="radio" name="mcq8" id="mcq8-d" value="D"><label for="mcq8-d"><strong>(D)</strong> \(\frac{1}{2}LI^2\)</label></div>
+            <div class="mcq-option"><input type="radio" name="mcq8" id="mcq8-e" value="E"><label for="mcq8-e"><strong>(E)</strong> \(L dI/dt\)</label></div>
+          </div>
+          <div class="mcq-actions">
+            <button class="glass-btn mcq-check-btn">Check Answer</button>
+            <button class="glass-btn mcq-reset-btn">Reset</button>
+          </div>
+          <div class="mcq-feedback correct-msg"><strong>Correct!</strong> \(U_L = \frac{1}{2}LI^2\), analogous to \(U_C = \frac{1}{2}CV^2\). The energy is stored in the magnetic field of the inductor.</div>
+          <div class="mcq-feedback incorrect-msg"><strong>Incorrect.</strong> The correct answer is <strong>(D) \(\frac{1}{2}LI^2\)</strong>. Energy stored in an inductor's magnetic field.</div>
+        </div>
+
+        <div class="glass-card mcq-question" data-mcq-id="mcq-9" data-correct="A">
+          <div class="question-text"><p><strong>Q9.</strong> A conducting loop is pulled out of a uniform magnetic field region at constant speed. The induced current while the loop is partially in the field is:</p></div>
+          <div class="mcq-options">
+            <div class="mcq-option"><input type="radio" name="mcq9" id="mcq9-a" value="A"><label for="mcq9-a"><strong>(A)</strong> Constant (non-zero).</label></div>
+            <div class="mcq-option"><input type="radio" name="mcq9" id="mcq9-b" value="B"><label for="mcq9-b"><strong>(B)</strong> Increasing.</label></div>
+            <div class="mcq-option"><input type="radio" name="mcq9" id="mcq9-c" value="C"><label for="mcq9-c"><strong>(C)</strong> Decreasing.</label></div>
+            <div class="mcq-option"><input type="radio" name="mcq9" id="mcq9-d" value="D"><label for="mcq9-d"><strong>(D)</strong> Zero.</label></div>
+            <div class="mcq-option"><input type="radio" name="mcq9" id="mcq9-e" value="E"><label for="mcq9-e"><strong>(E)</strong> Exponentially decaying.</label></div>
+          </div>
+          <div class="mcq-actions">
+            <button class="glass-btn mcq-check-btn">Check Answer</button>
+            <button class="glass-btn mcq-reset-btn">Reset</button>
+          </div>
+          <div class="mcq-feedback correct-msg"><strong>Correct!</strong> Flux change rate \(d\Phi/dt = B \cdot dA/dt = B(Lv)\) is constant while the loop crosses the boundary at constant speed. \(\mathcal{E} = -d\Phi/dt\) is constant, so \(I\) is constant.</div>
+          <div class="mcq-feedback incorrect-msg"><strong>Incorrect.</strong> The correct answer is <strong>(A) Constant</strong>. \(d\Phi/dt = BLv\) is constant at constant speed, so \(\mathcal{E}\) and \(I\) are constant.</div>
+        </div>
+
+        <div class="glass-card mcq-question" data-mcq-id="mcq-10" data-correct="E">
+          <div class="question-text"><p><strong>Q10.</strong> In an LC circuit with no resistance, the total energy:</p></div>
+          <div class="mcq-options">
+            <div class="mcq-option"><input type="radio" name="mcq10" id="mcq10-a" value="A"><label for="mcq10-a"><strong>(A)</strong> Decreases exponentially.</label></div>
+            <div class="mcq-option"><input type="radio" name="mcq10" id="mcq10-b" value="B"><label for="mcq10-b"><strong>(B)</strong> Increases linearly.</label></div>
+            <div class="mcq-option"><input type="radio" name="mcq10" id="mcq10-c" value="C"><label for="mcq10-c"><strong>(C)</strong> Oscillates between the inductor and capacitor.</label></div>
+            <div class="mcq-option"><input type="radio" name="mcq10" id="mcq10-d" value="D"><label for="mcq10-d"><strong>(D)</strong> Stays entirely in the capacitor.</label></div>
+            <div class="mcq-option"><input type="radio" name="mcq10" id="mcq10-e" value="E"><label for="mcq10-e"><strong>(E)</strong> Is constant — oscillates between inductor and capacitor.</label></div>
+          </div>
+          <div class="mcq-actions">
+            <button class="glass-btn mcq-check-btn">Check Answer</button>
+            <button class="glass-btn mcq-reset-btn">Reset</button>
+          </div>
+          <div class="mcq-feedback correct-msg"><strong>Correct!</strong> \(U_{\text{total}} = \frac{1}{2}LI^2 + \frac{1}{2}CV^2 = \text{constant}\). Energy oscillates between magnetic (inductor) and electric (capacitor) forms, analogous to kinetic/potential energy in a spring-mass system.</div>
+          <div class="mcq-feedback incorrect-msg"><strong>Incorrect.</strong> The correct answer is <strong>(E)</strong>. No resistance means no dissipation: total energy is constant, oscillating between \(U_L = \frac{1}{2}LI^2\) and \(U_C = \frac{1}{2}CV^2\).</div>
+        </div>
+      </section>
+
+      <!-- FRQ SECTION -->
+      <section id="section-frq" class="practice-section">
+        <h2>Free Response Questions</h2>
+
+        <div class="glass-card practice-block practice-frq-block" data-frq-id="frq-1">
+          <div class="practice-header"><span class="glass-badge">FRQ</span><h3>F1: Sliding Rod on Rails</h3></div>
+          <div class="practice-question">
+            <p>A conducting rod of mass \(m = 0.050\ \text{kg}\) and resistance \(R = 2.0\ \Omega\) slides without friction on two parallel conducting rails separated by \(L = 0.20\ \text{m}\). A uniform magnetic field \(B = 0.80\ \text{T}\) is perpendicular to the plane. The rod is given an initial velocity \(v_0 = 10\ \text{m/s}\) to the right.</p>
+            <ol type="a">
+              <li>Find the induced EMF as a function of velocity \(v\).</li>
+              <li>Write the differential equation for \(v(t)\) and solve for \(v(t)\).</li>
+              <li>How far does the rod travel before stopping?</li>
+              <li>Show that the initial kinetic energy equals the total energy dissipated in the resistor.</li>
+            </ol>
+          </div>
+          <details class="solution">
+            <summary class="glass-btn">Show Solution</summary>
+            <div class="solution-content">
+              <div class="step"><strong>(a):</strong> \(\mathcal{E} = BLv\). Induced current: \(I = \mathcal{E}/R = BLv/R\). Magnetic force opposes motion (Lenz): \(F = ILB = B^2 L^2 v/R\) (to the left).</div>
+              <div class="step"><strong>(b):</strong> \(m\,dv/dt = -B^2 L^2 v/R\). This is \(dv/dt = -(B^2 L^2/mR)v\). Solution: \(v(t) = v_0 e^{-t/\tau}\) where \(\tau = mR/(B^2 L^2)\). With numbers: \(\tau = (0.050)(2.0)/[(0.80)^2(0.20)^2] = 0.10/0.0256 = 3.91\ \text{s}\).</div>
+              <div class="step"><strong>(c):</strong> \(dx/dt = v = v_0 e^{-t/\tau}\). Integrate: \(x_{\text{total}} = v_0\tau = 10 \times 3.91 = 39.1\ \text{m}\).</div>
+              <div class="step"><strong>(d):</strong> \(P = I^2 R = (BLv/R)^2 R = B^2 L^2 v^2/R\). Total dissipated: \(\int_0^\infty P\,dt = (B^2 L^2 /R) \int_0^\infty v_0^2 e^{-2t/\tau}\,dt = (B^2 L^2 v_0^2/R)(\tau/2) = \frac{1}{2}mv_0^2 = KE_{\text{initial}}\).</div>
+            </div>
+          </details>
+        </div>
+
+        <div class="glass-card practice-block practice-frq-block" data-frq-id="frq-2">
+          <div class="practice-header"><span class="glass-badge">FRQ</span><h3>F2: Faraday's Law — Solenoid & Coil</h3></div>
+          <div class="practice-question">
+            <p>A long solenoid (radius \(r_1 = 2.0\ \text{cm}\), \(n = 1000\ \text{turns/m}\)) carries current \(I(t) = 5.0\sin(120\pi t)\ \text{A}\). A circular coil (radius \(r_2 = 5.0\ \text{cm}\), \(N = 20\ \text{turns}\)) is placed around the solenoid, coaxial with it.</p>
+            <ol type="a">
+              <li>Find the magnetic field inside the solenoid as a function of time.</li>
+              <li>Determine the magnetic flux through one turn of the outer coil.</li>
+              <li>Find the induced EMF in the outer coil as a function of time.</li>
+              <li>What is the maximum induced EMF?</li>
+            </ol>
+          </div>
+          <details class="solution">
+            <summary class="glass-btn">Show Solution</summary>
+            <div class="solution-content">
+              <div class="step"><strong>(a):</strong> \(B(t) = \mu_0 n I(t) = (4\pi\times10^{-7})(1000)(5.0\sin(120\pi t)) = 2\pi\times10^{-3}\sin(120\pi t)\ \text{T}\).</div>
+              <div class="step"><strong>(b):</strong> Field exists only inside solenoid (\(r_1 = 2\ \text{cm}\)). Flux through one turn of outer coil: \(\Phi_1 = B \cdot \pi r_1^2 = 2\pi\times10^{-3}\sin(120\pi t) \times \pi(0.02)^2 = 7.90\times10^{-6}\sin(120\pi t)\ \text{Wb}\).</div>
+              <div class="step"><strong>(c):</strong> \(\mathcal{E} = -N\frac{d\Phi_1}{dt} = -20 \times 7.90\times10^{-6} \times 120\pi\cos(120\pi t) = -0.0596\cos(120\pi t)\ \text{V}\).</div>
+              <div class="step"><strong>(d):</strong> \(\mathcal{E}_{\text{max}} = 0.0596\ \text{V} \approx 59.6\ \text{mV}\).</div>
+            </div>
+          </details>
+        </div>
+
+        <div class="glass-card practice-block practice-frq-block" data-frq-id="frq-3">
+          <div class="practice-header"><span class="glass-badge">FRQ</span><h3>F3: RL Circuit Analysis</h3></div>
+          <div class="practice-question">
+            <p>A battery \(\mathcal{E} = 24\ \text{V}\), resistor \(R = 6.0\ \Omega\), and inductor \(L = 0.30\ \text{H}\) are connected in series. The switch is closed at \(t = 0\).</p>
+            <ol type="a">
+              <li>Find the time constant of the circuit.</li>
+              <li>Derive \(I(t)\) and find the current at \(t = 0.10\ \text{s}\).</li>
+              <li>Find the voltage across the inductor as a function of time.</li>
+              <li>Calculate the energy stored in the inductor at \(t \to \infty\).</li>
+              <li>Sketch \(I(t)\) and \(V_L(t)\) on labeled axes.</li>
+            </ol>
+          </div>
+          <details class="solution">
+            <summary class="glass-btn">Show Solution</summary>
+            <div class="solution-content">
+              <div class="step"><strong>(a):</strong> \(\tau = L/R = 0.30/6.0 = 0.050\ \text{s}\).</div>
+              <div class="step"><strong>(b):</strong> Loop: \(\mathcal{E} - IR - L\,dI/dt = 0\). Solution: \(I(t) = (\mathcal{E}/R)(1 - e^{-t/\tau}) = 4.0(1 - e^{-t/0.050})\ \text{A}\). At \(t = 0.10\ \text{s}\): \(I = 4.0(1 - e^{-2}) = 4.0(0.865) = 3.46\ \text{A}\).</div>
+              <div class="step"><strong>(c):</strong> \(V_L = L\,dI/dt = L \cdot (\mathcal{E}/L)e^{-t/\tau} = \mathcal{E}e^{-t/\tau} = 24e^{-t/0.050}\ \text{V}\).</div>
+              <div class="step"><strong>(d):</strong> At \(t \to \infty\): \(I = \mathcal{E}/R = 4.0\ \text{A}\). \(U_L = \frac{1}{2}LI^2 = 0.5 \times 0.30 \times 16.0 = 2.4\ \text{J}\).</div>
+              <div class="step"><strong>(e):</strong> \(I(t)\) rises asymptotically from 0 to 4.0 A. \(V_L(t)\) decays exponentially from 24 V to 0. At \(\tau = 0.05\ \text{s}\): \(I = 0.632 \times 4.0 = 2.53\ \text{A}\), \(V_L = 0.368 \times 24 = 8.83\ \text{V}\).</div>
+            </div>
+          </details>
+        </div>
+
+        <div class="glass-card practice-block practice-frq-block" data-frq-id="frq-4">
+          <div class="practice-header"><span class="glass-badge">FRQ</span><h3>F4: LC Oscillation</h3></div>
+          <div class="practice-question">
+            <p>An LC circuit has \(C = 20\ \mu\text{F}\) and \(L = 5.0\ \text{mH}\). The capacitor is initially charged to \(V_0 = 50\ \text{V}\) and connected to the inductor at \(t = 0\).</p>
+            <ol type="a">
+              <li>Find the angular frequency and period of oscillation.</li>
+              <li>Write expressions for \(q(t)\) and \(I(t)\).</li>
+              <li>Find the maximum current in the circuit.</li>
+              <li>At what times is the energy entirely in the inductor?</li>
+            </ol>
+          </div>
+          <details class="solution">
+            <summary class="glass-btn">Show Solution</summary>
+            <div class="solution-content">
+              <div class="step"><strong>(a):</strong> \(\omega = 1/\sqrt{LC} = 1/\sqrt{(5.0\times10^{-3})(20\times10^{-6})} = 1/\sqrt{10^{-7}} = 3162\ \text{rad/s}\). \(T = 2\pi/\omega = 2\pi/3162 = 1.99\times10^{-3}\ \text{s} \approx 2.0\ \text{ms}\).</div>
+              <div class="step"><strong>(b):</strong> \(Q_0 = CV_0 = (20\times10^{-6})(50) = 1.0\times10^{-3}\ \text{C}\). \(q(t) = Q_0\cos(\omega t) = 1.0\times10^{-3}\cos(3162t)\ \text{C}\). \(I(t) = -dq/dt = \omega Q_0\sin(\omega t) = 3.16\sin(3162t)\ \text{A}\).</div>
+              <div class="step"><strong>(c):</strong> \(I_{\text{max}} = \omega Q_0 = 3162 \times 1.0\times10^{-3} = 3.16\ \text{A}\). (Check: \(\frac{1}{2}LI_{\text{max}}^2 = \frac{1}{2}CV_0^2\) → works.)</div>
+              <div class="step"><strong>(d):</strong> All energy in inductor when \(q = 0\). \(\cos(\omega t) = 0\) → \(\omega t = \pi/2, 3\pi/2, 5\pi/2, \ldots\) → \(t = T/4, 3T/4, 5T/4, \ldots = 0.50\ \text{ms}, 1.50\ \text{ms}, 2.50\ \text{ms}, \ldots\)</div>
+            </div>
+          </details>
+        </div>
+
+        <div class="glass-card practice-block practice-frq-block" data-frq-id="frq-5">
+          <div class="practice-header"><span class="glass-badge">FRQ</span><h3>F5: Eddy Current Braking</h3></div>
+          <div class="practice-question">
+            <p>A rectangular metal plate of width \(w\) and mass \(m\) falls vertically through a horizontal magnetic field \(B\) that extends over region of height \(h\). The plate has resistance \(R\).</p>
+            <ol type="a">
+              <li>Explain physically why the plate experiences a magnetic braking force.</li>
+              <li>When the plate is partly in the field, derive the induced EMF in terms of its speed \(v\).</li>
+              <li>Find the terminal velocity of the plate (assume \(h\) is large).</li>
+              <li>Describe the energy conversion that occurs.</li>
+            </ol>
+          </div>
+          <details class="solution">
+            <summary class="glass-btn">Show Solution</summary>
+            <div class="solution-content">
+              <div class="step"><strong>(a):</strong> As the plate enters the B field, the changing flux induces eddy currents in the plate. By Lenz's Law, these currents produce a magnetic field opposing the motion — creating an upward magnetic force (braking).</div>
+              <div class="step"><strong>(b):</strong> Consider the leading edge entering: the bottom portion in the field acts like a sliding bar. \(\mathcal{E} = Bwv\). Eddy current: \(I \sim \mathcal{E}/R = Bwv/R\).</div>
+              <div class="step"><strong>(c):</strong> Magnetic braking force: \(F_B = IwB = B^2 w^2 v/R\) (upward). At terminal velocity: \(F_B = mg\). \(v_T = mgR/(B^2 w^2)\).</div>
+              <div class="step"><strong>(d):</strong> Gravitational potential energy → kinetic energy → electrical energy (via induction) → thermal energy (Joule heating in the plate's resistance). Energy is conserved: \(mgv_T = I^2 R\) at terminal velocity.</div>
+            </div>
+          </details>
+        </div>
+      </section>
+
+      <section id="section-topic1" class="practice-section">
+        <p style="text-align:center;padding:var(--space-xl);color:var(--text-muted)">Use "All Questions" or "MCQ / FRQ" tabs to browse. Topic tabs are coming soon.</p>
+      </section>
+      <section id="section-topic2" class="practice-section">
+        <p style="text-align:center;padding:var(--space-xl);color:var(--text-muted)">Use "All Questions" or "MCQ / FRQ" tabs to browse. Topic tabs are coming soon.</p>
+      </section>
+      <section id="section-topic3" class="practice-section">
+        <p style="text-align:center;padding:var(--space-xl);color:var(--text-muted)">Use "All Questions" or "MCQ / FRQ" tabs to browse. Topic tabs are coming soon.</p>
+      </section>
+
+      <a href="../unit4-electromagnetism.html" class="practice-back-link">← Back to Unit 4 Study Guide</a>
+
+      <footer class="site-footer">
+        <a href="practice-unit3.html">← Previous: Magnetism</a> ·
+        <a href="../index.html">Home</a> ·
+        <a href="practice-unit5.html">Next Practice: Maxwell →</a>
+      </footer>
+
+    </main>
+  </div>
+</body>
+</html>

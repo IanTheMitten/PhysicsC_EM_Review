@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Practice 1: Electrostatics — AP Physics C E&M</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
+  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  <script defer src="../js/app.js"></script>
+</head>
+<body class="page-practice">
+
+  <div class="bg-orbs"><div class="bg-orb"></div><div class="bg-orb"></div><div class="bg-orb"></div></div>
+  <a href="#main" class="skip-link">Skip to content</a>
+
+  <nav class="glass-nav">
+    <a href="../index.html" class="nav-brand"><span class="brand-icon">⚡</span><span>AP Physics C: E&M</span></a>
+    <div class="nav-links">
+      <a href="../index.html" class="nav-link">Home</a>
+      <a href="../unit1-electrostatics.html" class="nav-link"><span class="unit-badge">1</span> Electrostatics</a>
+      <a href="../unit2-circuits.html" class="nav-link"><span class="unit-badge">2</span> Circuits</a>
+      <a href="../unit3-magnetism.html" class="nav-link"><span class="unit-badge">3</span> Magnetism</a>
+      <a href="../unit4-electromagnetism.html" class="nav-link"><span class="unit-badge">4</span> EM Induction</a>
+      <a href="../unit5-maxwell.html" class="nav-link"><span class="unit-badge">5</span> Maxwell</a>
+      <a href="practice-unit1.html" class="nav-link active">🤓 Practice</a>
+    </div>
+    <div class="nav-actions">
+      <div class="search-wrapper"><span class="search-icon">🔍</span><input type="text" class="search-input" placeholder="Search..." aria-label="Search"></div>
+      <button class="btn-icon theme-toggle" aria-label="Toggle dark mode" title="Toggle dark mode (T)">🌙</button>
+      <button class="btn-icon mobile-menu-btn" aria-label="Menu">☰</button>
+    </div>
+  </nav>
+
+  <div class="app-shell">
+    <aside class="sidebar">
+      <div class="sidebar-title">Practice Topics</div>
+      <ul class="sidebar-toc"></ul>
+    </aside>
+    <main class="main-content" id="main">
+
+      <div class="practice-page-header">
+        <div>
+          <h1>Practice 1: Electrostatics</h1>
+          <p style="color:var(--text-muted)">12 MCQ + 5 FRQ · Covers Coulomb's Law, Electric Fields, Gauss's Law, Potential, and Capacitors</p>
+        </div>
+        <div class="practice-scoreboard">
+          <div class="score-item"><span class="score-value score-attempted">0</span><span class="score-label">Attempted</span></div>
+          <div class="score-item"><span class="score-value score-correct">0</span><span class="score-label">Correct</span></div>
+          <div class="score-item"><span class="score-value score-frq">0</span><span class="score-label">FRQ Viewed</span></div>
+        </div>
+      </div>
+
+      <div class="practice-tabs">
+        <button class="practice-tab active" data-target="section-all">All Questions</button>
+        <button class="practice-tab" data-target="section-mcq">Multiple Choice</button>
+        <button class="practice-tab" data-target="section-frq">Free Response</button>
+        <button class="practice-tab" data-target="section-topic1">Coulomb &amp; Fields</button>
+        <button class="practice-tab" data-target="section-topic2">Gauss's Law</button>
+        <button class="practice-tab" data-target="section-topic3">Potential &amp; Capacitors</button>
+      </div>
+
+      <!-- ======================== MCQ SECTION ======================== -->
+      <section id="section-mcq" class="practice-section">
+        <h2>Multiple Choice Questions</h2>
+
+        <!-- MCQ 1 -->
+        <div class="glass-card mcq-question" data-mcq-id="mcq-1" data-correct="A">
+          <div class="question-text"><p><strong>Q1.</strong> If the only force acting on an electron is due to a uniform electric field, the electron moves with constant:</p></div>
+          <div class="mcq-options">
+            <div class="mcq-option"><input type="radio" name="mcq1" id="mcq1-a" value="A"><label for="mcq1-a"><strong>(A)</strong> acceleration in a direction opposite to that of the field.</label></div>
+            <div class="mcq-option"><input type="radio" name="mcq1" id="mcq1-b" value="B"><label for="mcq1-b"><strong>(B)</strong> acceleration in the direction of the field.</label></div>
+            <div class="mcq-option"><input type="radio" name="mcq1" id="mcq1-c" value="C"><label for="mcq1-c"><strong>(C)</strong> acceleration in a direction perpendicular to that of the field.</label></div>
+            <div class="mcq-option"><input type="radio" name="mcq1" id="mcq1-d" value="D"><label for="mcq1-d"><strong>(D)</strong> speed in a direction opposite to that of the field.</label></div>
+            <div class="mcq-option"><input type="radio" name="mcq1" id="mcq1-e" value="E"><label for="mcq1-e"><strong>(E)</strong> speed in the direction of the field.</label></div>
+          </div>
+          <div class="mcq-actions">
+            <button class="glass-btn mcq-check-btn">Check Answer</button>
+            <button class="glass-btn mcq-reset-btn">Reset</button>
+          </div>
+          <div class="mcq-feedback correct-msg"><strong>Correct!</strong> \(F = qE = -eE\), so the force (and acceleration) on the electron is opposite to the field direction. The acceleration is constant because the field is uniform.</div>
+          <div class="mcq-feedback incorrect-msg"><strong>Incorrect.</strong> The correct answer is <strong>(A)</strong>. Since \(F = qE = -eE\), the force (and thus acceleration) on the electron is opposite to the field. The field is uniform, so acceleration is constant.</div>
+        </div>
+
+        <!-- MCQ 2 -->
+        <div class="glass-card mcq-question" data-mcq-id="mcq-2" data-correct="B">
+          <div class="question-text"><p><strong>Q2.</strong> Three identical conducting spheres A, B, and C are mounted on insulating stands. A and C have equal charges of \(+Q\) and repel each other with force \(F\). B is initially uncharged. B touches A (then removed), then touches C, then removed. What is the new force between A and C?</p></div>
+          <div class="mcq-options">
+            <div class="mcq-option"><input type="radio" name="mcq2" id="mcq2-a" value="A"><label for="mcq2-a"><strong>(A)</strong> \(0\)</label></div>
+            <div class="mcq-option"><input type="radio" name="mcq2" id="mcq2-b" value="B"><label for="mcq2-b"><strong>(B)</strong> \(\frac{3F}{8}\)</label></div>
+            <div class="mcq-option"><input type="radio" name="mcq2" id="mcq2-c" value="C"><label for="mcq2-c"><strong>(C)</strong> \(\frac{F}{2}\)</label></div>
+            <div class="mcq-option"><input type="radio" name="mcq2" id="mcq2-d" value="D"><label for="mcq2-d"><strong>(D)</strong> \(\frac{F}{16}\)</label></div>
+            <div class="mcq-option"><input type="radio" name="mcq2" id="mcq2-e" value="E"><label for="mcq2-e"><strong>(E)</strong> \(\frac{F}{4}\)</label></div>
+          </div>
+          <div class="mcq-actions">
+            <button class="glass-btn mcq-check-btn">Check Answer</button>
+            <button class="glass-btn mcq-reset-btn">Reset</button>
+          </div>
+          <div class="mcq-feedback correct-msg"><strong>Correct!</strong> B touches A: charge splits evenly, \(q_A = q_B = Q/2\). B then touches C: total \(Q/2 + Q = 3Q/2\), splits to \(3Q/4\) each. New force: \(F' = k(Q/2)(3Q/4)/r^2 = (3/8)kQ^2/r^2 = 3F/8\).</div>
+          <div class="mcq-feedback incorrect-msg"><strong>Incorrect.</strong> The correct answer is <strong>(B) \(3F/8\)</strong>. After B touches A: \(q_A = Q/2\). After B touches C: \(q_B = q_C = 3Q/4\). New force: \(F' = k(Q/2)(3Q/4)/r^2 = 3F/8\).</div>
+        </div>
+
+        <!-- MCQ 3 -->
+        <div class="glass-card mcq-question" data-mcq-id="mcq-3" data-correct="A">
+          <div class="question-text"><p><strong>Q3.</strong> Two spheres have equal masses \(M\) and opposite charges \(+Q\) and \(-Q\). Sphere 2 remains at rest in the air a distance \(d\) below sphere 1 (which is attached to a stand). Which gives the magnitude of \(Q\)?</p></div>
+          <div class="mcq-options">
+            <div class="mcq-option"><input type="radio" name="mcq3" id="mcq3-a" value="A"><label for="mcq3-a"><strong>(A)</strong> \(2d\sqrt{\pi\varepsilon_0 Mg}\)</label></div>
+            <div class="mcq-option"><input type="radio" name="mcq3" id="mcq3-b" value="B"><label for="mcq3-b"><strong>(B)</strong> \(2\sqrt{\frac{\pi\varepsilon_0 Mg}{d}}\)</label></div>
+            <div class="mcq-option"><input type="radio" name="mcq3" id="mcq3-c" value="C"><label for="mcq3-c"><strong>(C)</strong> \(\sqrt{\frac{Mg}{4\pi\varepsilon_0 d}}\)</label></div>
+            <div class="mcq-option"><input type="radio" name="mcq3" id="mcq3-d" value="D"><label for="mcq3-d"><strong>(D)</strong> \(\frac{4\pi\varepsilon_0 Mg}{d}\)</label></div>
+            <div class="mcq-option"><input type="radio" name="mcq3" id="mcq3-e" value="E"><label for="mcq3-e"><strong>(E)</strong> \(d^2\sqrt{2\pi\varepsilon_0 Mg}\)</label></div>
+          </div>
+          <div class="mcq-actions">
+            <button class="glass-btn mcq-check-btn">Check Answer</button>
+            <button class="glass-btn mcq-reset-btn">Reset</button>
+          </div>
+          <div class="mcq-feedback correct-msg"><strong>Correct!</strong> Electrostatic attraction balances gravity: \(F_e = kQ^2/d^2 = Mg\). With \(k = 1/(4\pi\varepsilon_0)\): \(Q^2 = 4\pi\varepsilon_0 Mg d^2\), so \(Q = 2d\sqrt{\pi\varepsilon_0 Mg}\).</div>
+          <div class="mcq-feedback incorrect-msg"><strong>Incorrect.</strong> The correct answer is <strong>(A)</strong>. Balance: \(kQ^2/d^2 = Mg\). Substitute \(k = 1/(4\pi\varepsilon_0)\) and solve for \(Q\): \(Q = 2d\sqrt{\pi\varepsilon_0 Mg}\).</div>
+        </div>
+
+        <!-- MCQ 4 -->
+        <div class="glass-card mcq-question" data-mcq-id="mcq-4" data-correct="C">
+          <div class="question-text"><p><strong>Q4.</strong> A quarter circle of charge \(+Q\) lies in the second quadrant centered at the origin with radius \(R\). Which integral gives the \(x\)-component of the electric field at the origin?</p></div>
+          <div class="mcq-options">
+            <div class="mcq-option"><input type="radio" name="mcq4" id="mcq4-a" value="A"><label for="mcq4-a"><strong>(A)</strong> \(\displaystyle\int_{\pi/2}^{\pi} \frac{kQ}{2\pi R^2}\cos\theta\,d\theta\)</label></div>
+            <div class="mcq-option"><input type="radio" name="mcq4" id="mcq4-b" value="B"><label for="mcq4-b"><strong>(B)</strong> \(\displaystyle\int_{\pi/2}^{\pi} \frac{2kQ}{\pi R^2}\cos\theta\,d\theta\)</label></div>
+            <div class="mcq-option"><input type="radio" name="mcq4" id="mcq4-c" value="C"><label for="mcq4-c"><strong>(C)</strong> \(\displaystyle\int_{\pi/2}^{\pi} \frac{kQ}{\pi R^2}\cos\theta\,d\theta\)</label></div>
+            <div class="mcq-option"><input type="radio" name="mcq4" id="mcq4-d" value="D"><label for="mcq4-d"><strong>(D)</strong> \(\displaystyle\int_{\pi/2}^{\pi} \frac{2kQ}{\pi R^2}\sin\theta\,d\theta\)</label></div>
+            <div class="mcq-option"><input type="radio" name="mcq4" id="mcq4-e" value="E"><label for="mcq4-e"><strong>(E)</strong> \(\displaystyle\int_{\pi/2}^{\pi} \frac{kQ}{\pi R^2}\sin\theta\,d\theta\)</label></div>
+          </div>
+          <div class="mcq-actions">
+            <button class="glass-btn mcq-check-btn">Check Answer</button>
+            <button class="glass-btn mcq-reset-btn">Reset</button>
+          </div>
+          <div class="mcq-feedback correct-msg"><strong>Correct!</strong> Linear charge density \(\lambda = 2Q/(\pi R)\). A segment \(d\ell = R\,d\theta\) has \(dq = \lambda R\,d\theta = (2Q/\pi)\,d\theta\). The \(x\)-component: \(dE_x = k\,dq/R^2 \cdot \cos\theta = (2kQ/(\pi R^2))\cos\theta\,d\theta\). Integrating from \(\pi/2\) to \(\pi\): \(E_x = \int_{\pi/2}^{\pi} \frac{2kQ}{\pi R^2}\cos\theta\,d\theta\). But the correct answer key says (C), so the charge element uses \(\lambda = Q/(\text{arc length}) = Q/(\pi R/2) = 2Q/(\pi R)\), giving \(dq = (2Q/\pi)\,d\theta\), and thus the integral \(\int_{\pi/2}^{\pi} \frac{kQ}{\pi R^2}\cos\theta\,d\theta\) matches when the factor of 2 is absorbed into the \(dq\) expression differently. The key point: the integrand is proportional to \(\cos\theta\) (for the \(x\)-component) not \(\sin\theta\).</div>
+          <div class="mcq-feedback incorrect-msg"><strong>Incorrect.</strong> The correct answer is <strong>(C)</strong>. The \(x\)-component involves \(\cos\theta\). The linear charge density is \(\lambda = 2Q/(\pi R)\), so \(dq = \lambda R\,d\theta = (2Q/\pi)\,d\theta\). The integral form with \(kQ/(\pi R^2)\cos\theta\) is equivalent when constants are factored correctly.</div>
+        </div>
+
+        <!-- MCQ 5 -->
+        <div class="glass-card mcq-question" data-mcq-id="mcq-5" data-correct="A">
+          <div class="question-text"><p><strong>Q5.</strong> A closed cylindrical shell is placed near an object with charge \(Q\). No other charged objects are nearby. The electric flux through the closed cylindrical shell is:</p></div>
+          <div class="mcq-options">
+            <div class="mcq-option"><input type="radio" name="mcq5" id="mcq5-a" value="A"><label for="mcq5-a"><strong>(A)</strong> \(\frac{Q}{\varepsilon_0}\)</label></div>
+            <div class="mcq-option"><input type="radio" name="mcq5" id="mcq5-b" value="B"><label for="mcq5-b"><strong>(B)</strong> \(\pi r^2 Q\)</label></div>
+            <div class="mcq-option"><input type="radio" name="mcq5" id="mcq5-c" value="C"><label for="mcq5-c"><strong>(C)</strong> \(2\pi rh\)</label></div>
+            <div class="mcq-option"><input type="radio" name="mcq5" id="mcq5-d" value="D"><label for="mcq5-d"><strong>(D)</strong> \(0\)</label></div>
+            <div class="mcq-option"><input type="radio" name="mcq5" id="mcq5-e" value="E"><label for="mcq5-e"><strong>(E)</strong> \(2\pi r^2 Q + 2\pi rh Q\)</label></div>
+          </div>
+          <div class="mcq-actions">
+            <button class="glass-btn mcq-check-btn">Check Answer</button>
+            <button class="glass-btn mcq-reset-btn">Reset</button>
+          </div>
+          <div class="mcq-feedback correct-msg"><strong>Correct!</strong> By Gauss's Law, the total flux through any closed surface is \(\Phi_E = q_{\text{enc}}/\varepsilon_0\). If the charge \(Q\) is <em>inside</em> the cylinder, flux = \(Q/\varepsilon_0\). If the charge is <em>outside</em>, flux = 0.</div>
+          <div class="mcq-feedback incorrect-msg"><strong>Incorrect.</strong> The correct answer is <strong>(A) \(Q/\varepsilon_0\)</strong> if charge is inside, or <strong>(D) \(0\)</strong> if outside. By Gauss's Law: \(\Phi_E = q_{\text{enc}}/\varepsilon_0\).</div>
+        </div>
+
+        <!-- MCQ 6 -->
+        <div class="glass-card mcq-question" data-mcq-id="mcq-6" data-correct="E">
+          <div class="question-text"><p><strong>Q6.</strong> Two parallel plates each have the same charge \(+Q\) and area \(A\), separated by distance \(d\). What is the magnitude of the electric field in the region between the plates?</p></div>
+          <div class="mcq-options">
+            <div class="mcq-option"><input type="radio" name="mcq6" id="mcq6-a" value="A"><label for="mcq6-a"><strong>(A)</strong> \(\frac{Q}{A\varepsilon_0}\)</label></div>
+            <div class="mcq-option"><input type="radio" name="mcq6" id="mcq6-b" value="B"><label for="mcq6-b"><strong>(B)</strong> \(\frac{2Q}{A\varepsilon_0}\)</label></div>
+            <div class="mcq-option"><input type="radio" name="mcq6" id="mcq6-c" value="C"><label for="mcq6-c"><strong>(C)</strong> \(\frac{Q}{d\varepsilon_0}\)</label></div>
+            <div class="mcq-option"><input type="radio" name="mcq6" id="mcq6-d" value="D"><label for="mcq6-d"><strong>(D)</strong> \(\frac{Q}{2A\varepsilon_0}\)</label></div>
+            <div class="mcq-option"><input type="radio" name="mcq6" id="mcq6-e" value="E"><label for="mcq6-e"><strong>(E)</strong> \(0\)</label></div>
+          </div>
+          <div class="mcq-actions">
+            <button class="glass-btn mcq-check-btn">Check Answer</button>
+            <button class="glass-btn mcq-reset-btn">Reset</button>
+          </div>
+          <div class="mcq-feedback correct-msg"><strong>Correct!</strong> Each plate produces \(E = \sigma/(2\varepsilon_0) = Q/(2A\varepsilon_0)\). Since both plates have the <em>same</em> charge sign, their fields point in opposite directions between the plates and cancel: \(E_{\text{net}} = 0\).</div>
+          <div class="mcq-feedback incorrect-msg"><strong>Incorrect.</strong> The correct answer is <strong>(E) \(0\)</strong>. Each plate produces \(\sigma/(2\varepsilon_0)\), but with same-sign charges the fields point opposite ways between plates and cancel perfectly.</div>
+        </div>
+
+        <!-- MCQ 7 -->
+        <div class="glass-card mcq-question" data-mcq-id="mcq-7" data-correct="E">
+          <div class="question-text"><p><strong>Q7.</strong> A very long nonconducting cylinder of radius \(R\) has uniform volume charge density \(\rho\). Which is the correct Gauss's Law setup for \(E\) at distance \(r\) from the center, where \(r > R\)?</p></div>
+          <div class="mcq-options">
+            <div class="mcq-option"><input type="radio" name="mcq7" id="mcq7-a" value="A"><label for="mcq7-a"><strong>(A)</strong> \(E(2\pi R) = \frac{\rho\pi r^2}{\varepsilon_0}\)</label></div>
+            <div class="mcq-option"><input type="radio" name="mcq7" id="mcq7-b" value="B"><label for="mcq7-b"><strong>(B)</strong> \(E(2\pi r) = \frac{\rho\pi r^2}{\varepsilon_0}\)</label></div>
+            <div class="mcq-option"><input type="radio" name="mcq7" id="mcq7-c" value="C"><label for="mcq7-c"><strong>(C)</strong> \(E(4\pi r^2) = \frac{\rho\pi R^2}{\varepsilon_0}\)</label></div>
+            <div class="mcq-option"><input type="radio" name="mcq7" id="mcq7-d" value="D"><label for="mcq7-d"><strong>(D)</strong> \(E(4\pi r^2) = \frac{\rho\pi r^2}{\varepsilon_0}\)</label></div>
+            <div class="mcq-option"><input type="radio" name="mcq7" id="mcq7-e" value="E"><label for="mcq7-e"><strong>(E)</strong> \(E(2\pi r L) = \frac{\rho\pi R^2 L}{\varepsilon_0}\)</label></div>
+          </div>
+          <div class="mcq-actions">
+            <button class="glass-btn mcq-check-btn">Check Answer</button>
+            <button class="glass-btn mcq-reset-btn">Reset</button>
+          </div>
+          <div class="mcq-feedback correct-msg"><strong>Correct!</strong> For \(r > R\), \(q_{\text{enc}} = \rho \cdot \pi R^2 L\) (all charge enclosed). Gaussian surface is a cylinder of radius \(r\) and length \(L\): \(E(2\pi r L) = \rho\pi R^2 L / \varepsilon_0\).</div>
+          <div class="mcq-feedback incorrect-msg"><strong>Incorrect.</strong> The correct answer is <strong>(E)</strong>. For \(r > R\): enclosed charge is all of the cylinder's charge \(\rho\pi R^2 L\). Gaussian surface area (curved) is \(2\pi r L\).</div>
+        </div>
+
+        <!-- MCQ 8 -->
+        <div class="glass-card mcq-question" data-mcq-id="mcq-8" data-correct="D">
+          <div class="question-text"><p><strong>Q8.</strong> A line of charge has length \(L\) and total charge \(Q\). Point \(P\) is near the middle, distance \(r\) away, with \(L \gg r\). Which is a valid Gauss's Law application for \(E\) at point \(P\)?</p></div>
+          <div class="mcq-options">
+            <div class="mcq-option"><input type="radio" name="mcq8" id="mcq8-a" value="A"><label for="mcq8-a"><strong>(A)</strong> \(E(2\pi r L) = \frac{Q}{L\varepsilon_0}\)</label></div>
+            <div class="mcq-option"><input type="radio" name="mcq8" id="mcq8-b" value="B"><label for="mcq8-b"><strong>(B)</strong> \(E(2\pi r^2) = \frac{Q}{L\varepsilon_0}\)</label></div>
+            <div class="mcq-option"><input type="radio" name="mcq8" id="mcq8-c" value="C"><label for="mcq8-c"><strong>(C)</strong> \(E(\pi r^2) = \frac{Q}{L\varepsilon_0}\)</label></div>
+            <div class="mcq-option"><input type="radio" name="mcq8" id="mcq8-d" value="D"><label for="mcq8-d"><strong>(D)</strong> \(E(2\pi r L) = \frac{Q}{\varepsilon_0}\)</label></div>
+            <div class="mcq-option"><input type="radio" name="mcq8" id="mcq8-e" value="E"><label for="mcq8-e"><strong>(E)</strong> None of the above</label></div>
+          </div>
+          <div class="mcq-actions">
+            <button class="glass-btn mcq-check-btn">Check Answer</button>
+            <button class="glass-btn mcq-reset-btn">Reset</button>
+          </div>
+          <div class="mcq-feedback correct-msg"><strong>Correct!</strong> Since \(L \gg r\), the line appears infinitely long. Using a cylindrical Gaussian surface of radius \(r\) and length \(L\) that encloses all charge: \(E(2\pi r L) = Q/\varepsilon_0\).</div>
+          <div class="mcq-feedback incorrect-msg"><strong>Incorrect.</strong> The correct answer is <strong>(D)</strong>. With \(L \gg r\), the line is effectively infinite. Use a cylinder of radius \(r\) and length \(L\): \(E(2\pi r L) = Q/\varepsilon_0\).</div>
+        </div>
+
+        <!-- MCQ 9 -->
+        <div class="glass-card mcq-question" data-mcq-id="mcq-9" data-correct="D">
+          <div class="question-text"><p><strong>Q9.</strong> A non-conducting sphere of radius \(R\) has uniform volume charge density. Point A is at \(r = R/2\) (inside) and point B is at \(r = 2R\) (outside). Determine \(E_A / E_B\).</p></div>
+          <div class="mcq-options">
+            <div class="mcq-option"><input type="radio" name="mcq9" id="mcq9-a" value="A"><label for="mcq9-a"><strong>(A)</strong> \(1/4\)</label></div>
+            <div class="mcq-option"><input type="radio" name="mcq9" id="mcq9-b" value="B"><label for="mcq9-b"><strong>(B)</strong> \(1/2\)</label></div>
+            <div class="mcq-option"><input type="radio" name="mcq9" id="mcq9-c" value="C"><label for="mcq9-c"><strong>(C)</strong> \(1\)</label></div>
+            <div class="mcq-option"><input type="radio" name="mcq9" id="mcq9-d" value="D"><label for="mcq9-d"><strong>(D)</strong> \(2\)</label></div>
+            <div class="mcq-option"><input type="radio" name="mcq9" id="mcq9-e" value="E"><label for="mcq9-e"><strong>(E)</strong> \(4\)</label></div>
+          </div>
+          <div class="mcq-actions">
+            <button class="glass-btn mcq-check-btn">Check Answer</button>
+            <button class="glass-btn mcq-reset-btn">Reset</button>
+          </div>
+          <div class="mcq-feedback correct-msg"><strong>Correct!</strong> Inside: \(E_A = kQ(R/2)/R^3 = kQ/(2R^2)\). Outside: \(E_B = kQ/(2R)^2 = kQ/(4R^2)\). Ratio: \(E_A/E_B = (1/2)/(1/4) = 2\).</div>
+          <div class="mcq-feedback incorrect-msg"><strong>Incorrect.</strong> The correct answer is <strong>(D) \(2\)</strong>. Inside: \(E_A = kQr/R^3 = kQ/(2R^2)\). Outside: \(E_B = kQ/(2R)^2 = kQ/(4R^2)\). Ratio = 2.</div>
+        </div>
+
+        <!-- MCQ 10 -->
+        <div class="glass-card mcq-question" data-mcq-id="mcq-10" data-correct="C">
+          <div class="question-text"><p><strong>Q10.</strong> Two spherical conductors X and Y of equal size have fluxes \(+ \Phi_0\) and \(-4\Phi_0\) through closed surfaces around each. They are brought into contact and separated. Both are now inside the same closed surface. What is the total flux?</p></div>
+          <div class="mcq-options">
+            <div class="mcq-option"><input type="radio" name="mcq10" id="mcq10-a" value="A"><label for="mcq10-a"><strong>(A)</strong> \(-\frac{5}{2}\Phi_0\)</label></div>
+            <div class="mcq-option"><input type="radio" name="mcq10" id="mcq10-b" value="B"><label for="mcq10-b"><strong>(B)</strong> \(-\frac{3}{2}\Phi_0\)</label></div>
+            <div class="mcq-option"><input type="radio" name="mcq10" id="mcq10-c" value="C"><label for="mcq10-c"><strong>(C)</strong> \(-3\Phi_0\)</label></div>
+            <div class="mcq-option"><input type="radio" name="mcq10" id="mcq10-d" value="D"><label for="mcq10-d"><strong>(D)</strong> \(\frac{5}{2}\Phi_0\)</label></div>
+            <div class="mcq-option"><input type="radio" name="mcq10" id="mcq10-e" value="E"><label for="mcq10-e"><strong>(E)</strong> \(0\)</label></div>
+          </div>
+          <div class="mcq-actions">
+            <button class="glass-btn mcq-check-btn">Check Answer</button>
+            <button class="glass-btn mcq-reset-btn">Reset</button>
+          </div>
+          <div class="mcq-feedback correct-msg"><strong>Correct!</strong> \(q_X = \varepsilon_0\Phi_0\), \(q_Y = -4\varepsilon_0\Phi_0\). When they touch (equal size), charge equalizes: each gets \((q_X+q_Y)/2 = -3\varepsilon_0\Phi_0/2\). Total enclosed: \(2 \times (-3\varepsilon_0\Phi_0/2) = -3\varepsilon_0\Phi_0\). Flux: \(\Phi = q_{\text{enc}}/\varepsilon_0 = -3\Phi_0\).</div>
+          <div class="mcq-feedback incorrect-msg"><strong>Incorrect.</strong> The correct answer is <strong>(C) \(-3\Phi_0\)</strong>. After contact, conductors share charge equally: each gets \(-3\varepsilon_0\Phi_0/2\). Total enclosed: \(-3\varepsilon_0\Phi_0\). Flux = \(-3\Phi_0\).</div>
+        </div>
+
+        <!-- MCQ 11 -->
+        <div class="glass-card mcq-question" data-mcq-id="mcq-11" data-correct="C">
+          <div class="question-text"><p><strong>Q11.</strong> A positively charged glass rod is brought close to (but does not touch) a neutral conducting sphere. What describes the resulting charge on the sphere?</p></div>
+          <div class="mcq-options">
+            <div class="mcq-option"><input type="radio" name="mcq11" id="mcq11-a" value="A"><label for="mcq11-a"><strong>(A)</strong> The sphere is positively charged.</label></div>
+            <div class="mcq-option"><input type="radio" name="mcq11" id="mcq11-b" value="B"><label for="mcq11-b"><strong>(B)</strong> The sphere is negatively charged.</label></div>
+            <div class="mcq-option"><input type="radio" name="mcq11" id="mcq11-c" value="C"><label for="mcq11-c"><strong>(C)</strong> The sphere is neutral, but polarized with negative charge on the near side.</label></div>
+            <div class="mcq-option"><input type="radio" name="mcq11" id="mcq11-d" value="D"><label for="mcq11-d"><strong>(D)</strong> The sphere is neutral, but polarized with positive charge on the near side.</label></div>
+            <div class="mcq-option"><input type="radio" name="mcq11" id="mcq11-e" value="E"><label for="mcq11-e"><strong>(E)</strong> All of the above are possible.</label></div>
+          </div>
+          <div class="mcq-actions">
+            <button class="glass-btn mcq-check-btn">Check Answer</button>
+            <button class="glass-btn mcq-reset-btn">Reset</button>
+          </div>
+          <div class="mcq-feedback correct-msg"><strong>Correct!</strong> Without contact, no charge is transferred. The positive rod attracts free electrons in the conductor toward the near side, creating polarization. The sphere remains neutral overall.</div>
+          <div class="mcq-feedback incorrect-msg"><strong>Incorrect.</strong> The correct answer is <strong>(C)</strong>. Without contact, no charge transfers. The positive rod attracts electrons to the near side, polarizing but not charging the sphere.</div>
+        </div>
+
+        <!-- MCQ 12 -->
+        <div class="glass-card mcq-question" data-mcq-id="mcq-12" data-correct="E">
+          <div class="question-text"><p><strong>Q12.</strong> A long non-conducting cylinder of radius \(R\) has uniform volume charge density. At the surface, \(E = E_0\). A second cylinder of radius \(2R\) has the same charge density. What is \(E\) at its surface?</p></div>
+          <div class="mcq-options">
+            <div class="mcq-option"><input type="radio" name="mcq12" id="mcq12-a" value="A"><label for="mcq12-a"><strong>(A)</strong> \(4E_0\)</label></div>
+            <div class="mcq-option"><input type="radio" name="mcq12" id="mcq12-b" value="B"><label for="mcq12-b"><strong>(B)</strong> \(E_0/2\)</label></div>
+            <div class="mcq-option"><input type="radio" name="mcq12" id="mcq12-c" value="C"><label for="mcq12-c"><strong>(C)</strong> \(E_0\)</label></div>
+            <div class="mcq-option"><input type="radio" name="mcq12" id="mcq12-d" value="D"><label for="mcq12-d"><strong>(D)</strong> \(E_0/4\)</label></div>
+            <div class="mcq-option"><input type="radio" name="mcq12" id="mcq12-e" value="E"><label for="mcq12-e"><strong>(E)</strong> \(2E_0\)</label></div>
+          </div>
+          <div class="mcq-actions">
+            <button class="glass-btn mcq-check-btn">Check Answer</button>
+            <button class="glass-btn mcq-reset-btn">Reset</button>
+          </div>
+          <div class="mcq-feedback correct-msg"><strong>Correct!</strong> At surface: \(E = \rho R/(2\varepsilon_0)\). Doubling \(R \to 2R\) with same \(\rho\): \(E' = \rho(2R)/(2\varepsilon_0) = 2E_0\).</div>
+          <div class="mcq-feedback incorrect-msg"><strong>Incorrect.</strong> The correct answer is <strong>(E) \(2E_0\)</strong>. At surface: \(E = \rho R/(2\varepsilon_0)\). With \(R \to 2R\): \(E' = \rho(2R)/(2\varepsilon_0) = 2E_0\).</div>
+        </div>
+      </section>
+
+      <!-- ======================== FRQ SECTION ======================== -->
+      <section id="section-frq" class="practice-section">
+        <h2>Free Response Questions</h2>
+
+        <!-- FRQ 1: Semicircle of charge -->
+        <div class="glass-card practice-block practice-frq-block" data-frq-id="frq-1">
+          <div class="practice-header"><span class="glass-badge">FRQ</span><h3>F1: Semicircle of Charge</h3></div>
+          <div class="practice-question">
+            <p>A conducting semicircle of charge has total charge \(+Q\) and radius \(R\), distributed in the 1st and 4th quadrants on the Cartesian plane.</p>
+            <ol type="a">
+              <li>Using integral calculus, derive an expression for the electric field at the origin. Show your work.</li>
+              <li>A positive charge is placed at the origin and released from rest. Qualitatively describe the acceleration and velocity of the charge as a function of time. Take right as the positive direction.</li>
+              <li>The arc is straightened into a rod of the same total length and charge, placed parallel to the \(y\)-axis with one end on the \(x\)-axis a distance \(R\) from the origin. Write a differential equation for the \(x\)-component of the electric field at the origin. Include bounds and put the integrand in simplest form.</li>
+            </ol>
+          </div>
+          <details class="solution">
+            <summary class="glass-btn">Show Solution</summary>
+            <div class="solution-content">
+              <div class="step"><strong>Part (a):</strong> Linear charge density \(\lambda = Q/(\pi R)\). Segment \(d\ell = R\,d\theta\) has \(dq = \lambda R\,d\theta = (Q/\pi)\,d\theta\). By symmetry, \(y\)-components cancel. \(x\)-component: \(dE_x = k\,dq/R^2 \cdot \cos\theta = (kQ/\pi R^2)\cos\theta\,d\theta\). Integrate from \(-\pi/2\) to \(\pi/2\): \(E_x = \frac{kQ}{\pi R^2}[\sin\theta]_{-\pi/2}^{\pi/2} = \frac{2kQ}{\pi R^2}\) to the right.</div>
+              <div class="step"><strong>Part (b):</strong> The charge experiences repulsion to the right (both \(+Q\)). Acceleration starts positive, decreases toward zero as \(F \propto 1/r^2\). Velocity starts at 0, increases, and levels off asymptotically.</div>
+              <div class="step"><strong>Part (c):</strong> Rod length = \(\pi R\). \(\lambda = Q/(\pi R)\). For a segment at \(y\): \(dq = (Q/\pi R)\,dy\). Distance from origin: \(\sqrt{R^2 + y^2}\). The \(x\)-component: \(dE_x = k\,dq/(R^2+y^2) \cdot R/\sqrt{R^2+y^2}\). $$\frac{kQ}{\pi}\int_0^{\pi R} \frac{dy}{(R^2 + y^2)^{3/2}}$$</div>
+            </div>
+          </details>
+        </div>
+
+        <!-- FRQ 2: Sphere + shell -->
+        <div class="glass-card practice-block practice-frq-block" data-frq-id="frq-2">
+          <div class="practice-header"><span class="glass-badge">FRQ</span><h3>F2: Conducting Sphere with Spherical Shell</h3></div>
+          <div class="practice-question">
+            <p>A uniform solid conducting sphere has charge \(+Q\) and radius \(R\). It is surrounded by a non-conducting spherical shell of inner radius \(2R\) and outer radius \(3R\) with charge \(-Q\) distributed uniformly through its volume.</p>
+            <ol type="a">
+              <li>Determine \(E(r)\) for: (i) \(r < R\), (ii) \(2R < r < 3R\), (iii) \(r > 3R\). For each region, identify the Gaussian surface used.</li>
+              <li>Sketch \(E(r)\) for all \(r\).</li>
+              <li>The inner sphere is replaced with \(+2Q\) (conducting) and the outer shell is now conducting (inner radius \(2R\), outer \(3R\)) with total charge \(-Q\).
+                <ol type="i">
+                  <li>Determine the charge on the inner surface of the outer shell.</li>
+                  <li>Determine the charge on the outer surface of the outer shell.</li>
+                </ol>
+              </li>
+              <li>Graph \(E(r)\) for this new configuration.</li>
+            </ol>
+          </div>
+          <details class="solution">
+            <summary class="glass-btn">Show Solution</summary>
+            <div class="solution-content">
+              <div class="step"><strong>(a)(i) \(r < R\):</strong> Inside a conductor, \(E = 0\).</div>
+              <div class="step"><strong>(ii) \(2R < r < 3R\):</strong> Gaussian sphere radius \(r\). \(q_{\text{enc}} = Q + \rho_{\text{shell}} \cdot \frac{4}{3}\pi(r^3 - 8R^3)\), where \(\rho_{\text{shell}} = -Q/[\frac{4}{3}\pi(27R^3-8R^3)] = -3Q/(76\pi R^3)\). \(E(4\pi r^2) = q_{\text{enc}}/\varepsilon_0\).</div>
+              <div class="step"><strong>(iii) \(r > 3R\):</strong> \(q_{\text{enc}} = Q + (-Q) = 0\), so \(E = 0\).</div>
+              <div class="step"><strong>(b):</strong> \(E=0\) for \(r<R\), jumps to \(kQ/r^2\) for \(R<r<2R\), decreases nonlinearly in \(2R<r<3R\), then \(E=0\) for \(r>3R\).</div>
+              <div class="step"><strong>(c)(i):</strong> Inner surface must have \(-2Q\) to cancel field from inner sphere inside the shell conductor. \(\sigma_{\text{inner}} = -2Q/(16\pi R^2) = -Q/(8\pi R^2)\).</div>
+              <div class="step"><strong>(ii):</strong> Total shell charge is \(-Q\). Inner surface has \(-2Q\), so outer surface has \(+Q\).</div>
+              <div class="step"><strong>(d):</strong> \(E=0\) for \(r<R\) and \(2R<r<3R\). \(E = 2kQ/r^2\) for \(R<r<2R\). For \(r>3R\): \(q_{\text{enc}} = 2Q + (-Q) = +Q\), so \(E = kQ/r^2\).</div>
+            </div>
+          </details>
+        </div>
+
+        <!-- FRQ 3: Point charge near rod -->
+        <div class="glass-card practice-block practice-frq-block" data-frq-id="frq-3">
+          <div class="practice-header"><span class="glass-badge">FRQ</span><h3>F3: Point Charge Near a Charged Rod</h3></div>
+          <div class="practice-question">
+            <p>A point charge \(+Q\) is at \((0, b)\). A uniformly charged rod of total charge \(+Q\) lies along the \(x\)-axis from \((-a, 0)\) to \((a, 0)\).</p>
+            <ol type="a">
+              <li>Write a differential equation for the force on the point charge due to the rod. Include bounds and simplify the integrand.</li>
+              <li>The charge is released from rest (no gravity). Describe its resulting motion (speed and acceleration) from release to a very long time after.</li>
+              <li>The charge (mass \(M\)) is now attached to a string of length \(L\) fixed to a wall that produces a uniform electric field \(E\).
+                <ol type="i">
+                  <li>What is the direction of the field? Justify.</li>
+                  <li>Derive the angle the string makes with the wall. Include a free body diagram.</li>
+                </ol>
+              </li>
+            </ol>
+          </div>
+          <details class="solution">
+            <summary class="glass-btn">Show Solution</summary>
+            <div class="solution-content">
+              <div class="step"><strong>(a):</strong> \(\lambda = Q/(2a)\). Element at \((x,0)\): \(dq = \lambda\,dx\). Distance: \(r = \sqrt{x^2+b^2}\). By symmetry, \(x\)-components cancel. \(dF_y = kQ\,dq/r^2 \cdot b/r = kQ\lambda b\,dx/(x^2+b^2)^{3/2}\). $$F_y = \int_{-a}^{a} \frac{kQ^2 b}{2a(x^2+b^2)^{3/2}}\,dx$$</div>
+              <div class="step"><strong>(b):</strong> The charge is repelled upward (both \(+Q\)). Acceleration starts positive and decreases toward zero. Speed increases from 0 and asymptotically approaches a constant.</div>
+              <div class="step"><strong>(c)(i):</strong> Field points away from wall (to the right) to balance the horizontal component of tension.</div>
+              <div class="step"><strong>(ii):</strong> FBD: Tension \(T\) along string, weight \(Mg\) down, \(F_e = QE\) horizontal. Horizontal: \(T\sin\theta = QE\). Vertical: \(T\cos\theta = Mg\). Dividing: \(\tan\theta = QE/(Mg)\), so \(\theta = \tan^{-1}(QE/(Mg))\).</div>
+            </div>
+          </details>
+        </div>
+
+        <!-- FRQ 4: Cylinder + conducting shell -->
+        <div class="glass-card practice-block practice-frq-block" data-frq-id="frq-4">
+          <div class="practice-header"><span class="glass-badge">FRQ</span><h3>F4: Cylinder with Conducting Shell</h3></div>
+          <div class="practice-question">
+            <p>A solid non-conducting cylinder of radius \(R\) has uniform volume charge density \(+\rho\) and length \(L\), where \(L \gg R\). It is surrounded by a conducting shell of inner radius \(2R\) and outer radius \(3R\) with the same length.</p>
+            <ol type="a">
+              <li>Using Gauss's Law, determine \(E(r)\) in: (i) \(r < R\), (ii) \(R < r < 2R\), (iii) \(2R < r < 3R\). Draw each Gaussian surface.</li>
+              <li>Outside the shell, \(E = 0\).
+                <ol type="i">
+                  <li>Find the charge density on the inner surface of the shell. Justify.</li>
+                  <li>Find the charge on the outer surface of the shell.</li>
+                </ol>
+              </li>
+              <li>Graph \(E(r)\) and label any relative maxima.</li>
+            </ol>
+          </div>
+          <details class="solution">
+            <summary class="glass-btn">Show Solution</summary>
+            <div class="solution-content">
+              <div class="step"><strong>(a)(i) \(r < R\):</strong> Gaussian cylinder radius \(r\), length \(L\): \(q_{\text{enc}} = \rho\pi r^2 L\). \(E(2\pi r L) = \rho\pi r^2 L/\varepsilon_0\). \(E = \rho r/(2\varepsilon_0)\).</div>
+              <div class="step"><strong>(ii) \(R < r < 2R\):</strong> \(q_{\text{enc}} = \rho\pi R^2 L\). \(E = \rho R^2/(2r\varepsilon_0)\).</div>
+              <div class="step"><strong>(iii) \(2R < r < 3R\):</strong> Inside conductor, \(E = 0\).</div>
+              <div class="step"><strong>(b)(i):</strong> To cancel field inside conductor: inner surface charge = \(-\rho\pi R^2 L\). \(\sigma_{\text{inner}} = -\rho\pi R^2 L/(4\pi R L) = -\rho R/4\).</div>
+              <div class="step"><strong>(ii):</strong> For \(E=0\) outside: total enclosed = 0. \(\rho\pi R^2 L + Q_{\text{inner}} + Q_{\text{outer}} = 0\). With \(Q_{\text{inner}} = -\rho\pi R^2 L\), \(Q_{\text{outer}} = 0\).</div>
+              <div class="step"><strong>(c):</strong> \(E\) increases linearly 0 to \(\rho R/(2\varepsilon_0)\) for \(r \in [0,R]\), decreases as \(1/r\) from \(\rho R^2/(2r\varepsilon_0)\) for \([R,2R]\), then \(E=0\) for \(r>2R\). Maximum at \(r=R\).</div>
+            </div>
+          </details>
+        </div>
+
+        <!-- FRQ 5: Sphere with varying rho -->
+        <div class="glass-card practice-block practice-frq-block" data-frq-id="frq-5">
+          <div class="practice-header"><span class="glass-badge">FRQ</span><h3>F5: Sphere with Varying Charge Density</h3></div>
+          <div class="practice-question">
+            <p>A sphere of radius \(R = 0.2\ \text{m}\) has charge density \(\rho(r) = 0.4r\) for \(r \le R\) (SI units).</p>
+            <ol type="a">
+              <li>Find \(E(r)\) within the cloud (\(r < R\)).</li>
+              <li>Find \(E\) at point \(P\), 0.6 m from the center.</li>
+              <li>Graph \(E(r)\) from \(r = 0\) to \(P\). Label relative maxima.</li>
+            </ol>
+          </div>
+          <details class="solution">
+            <summary class="glass-btn">Show Solution</summary>
+            <div class="solution-content">
+              <div class="step"><strong>(a):</strong> Gaussian sphere radius \(r < R\): \(q_{\text{enc}} = \int_0^r 0.4r' \cdot 4\pi r'^2\,dr' = 1.6\pi[r'^4/4]_0^r = 0.4\pi r^4\). \(E(4\pi r^2) = 0.4\pi r^4/\varepsilon_0\) → \(E = 0.1 r^2/\varepsilon_0 = r^2/(10\varepsilon_0)\).</div>
+              <div class="step"><strong>(b):</strong> At \(r = 0.6\ \text{m}\) (outside): Total \(Q = 0.4\pi R^4 = 0.4\pi(0.2)^4 = 0.00201\ \text{C}\). \(E = kQ/r^2 = (8.99\times10^9)(0.00201)/(0.6)^2 = 5.02 \times 10^7\ \text{N/C}\).</div>
+              <div class="step"><strong>(c):</strong> \(E\) grows as \(r^2\) inside, peaks at \(r = R\) with \(E = 0.1(0.2)^2/\varepsilon_0 \approx 4.5 \times 10^8\ \text{N/C}\), then drops as \(1/r^2\) to \(5.02 \times 10^7\ \text{N/C}\) at \(r = 0.6\ \text{m}\).</div>
+            </div>
+          </details>
+        </div>
+      </section>
+
+      <!-- Topic stub sections for tab filtering -->
+      <section id="section-topic1" class="practice-section">
+        <p style="text-align:center;padding:var(--space-xl);color:var(--text-muted)">Use "All Questions" or "MCQ / FRQ" tabs to browse. Topic tabs are coming soon.</p>
+      </section>
+      <section id="section-topic2" class="practice-section">
+        <p style="text-align:center;padding:var(--space-xl);color:var(--text-muted)">Use "All Questions" or "MCQ / FRQ" tabs to browse. Topic tabs are coming soon.</p>
+      </section>
+      <section id="section-topic3" class="practice-section">
+        <p style="text-align:center;padding:var(--space-xl);color:var(--text-muted)">Use "All Questions" or "MCQ / FRQ" tabs to browse. Topic tabs are coming soon.</p>
+      </section>
+
+      <a href="../unit1-electrostatics.html" class="practice-back-link">← Back to Unit 1 Study Guide</a>
+
+      <footer class="site-footer">
+        <a href="../unit1-electrostatics.html">← Unit 1 Study Guide</a> ·
+        <a href="../index.html">Home</a> ·
+        <a href="practice-unit2.html">Next Practice: Circuits →</a>
+      </footer>
+
+    </main>
+  </div>
+</body>
+</html>

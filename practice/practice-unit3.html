@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Practice 3: Magnetism — AP Physics C E&M</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
+  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  <script defer src="../js/app.js"></script>
+</head>
+<body class="page-practice">
+
+  <div class="bg-orbs"><div class="bg-orb"></div><div class="bg-orb"></div><div class="bg-orb"></div></div>
+  <a href="#main" class="skip-link">Skip to content</a>
+
+  <nav class="glass-nav">
+    <a href="../index.html" class="nav-brand"><span class="brand-icon">⚡</span><span>AP Physics C: E&M</span></a>
+    <div class="nav-links">
+      <a href="../index.html" class="nav-link">Home</a>
+      <a href="../unit1-electrostatics.html" class="nav-link"><span class="unit-badge">1</span> Electrostatics</a>
+      <a href="../unit2-circuits.html" class="nav-link"><span class="unit-badge">2</span> Circuits</a>
+      <a href="../unit3-magnetism.html" class="nav-link"><span class="unit-badge">3</span> Magnetism</a>
+      <a href="../unit4-electromagnetism.html" class="nav-link"><span class="unit-badge">4</span> EM Induction</a>
+      <a href="../unit5-maxwell.html" class="nav-link"><span class="unit-badge">5</span> Maxwell</a>
+      <a href="practice-unit1.html" class="nav-link active">🤓 Practice</a>
+    </div>
+    <div class="nav-actions">
+      <div class="search-wrapper"><span class="search-icon">🔍</span><input type="text" class="search-input" placeholder="Search..." aria-label="Search"></div>
+      <button class="btn-icon theme-toggle" aria-label="Toggle dark mode" title="Toggle dark mode (T)">🌙</button>
+      <button class="btn-icon mobile-menu-btn" aria-label="Menu">☰</button>
+    </div>
+  </nav>
+
+  <div class="app-shell">
+    <aside class="sidebar">
+      <div class="sidebar-title">Practice Topics</div>
+      <ul class="sidebar-toc"></ul>
+    </aside>
+    <main class="main-content" id="main">
+
+      <div class="practice-page-header">
+        <div>
+          <h1>Practice 3: Magnetic Fields</h1>
+          <p style="color:var(--text-muted)">10 MCQ + 5 FRQ · Covers Magnetic Forces, Biot-Savart Law, Ampere's Law, Solenoids, and Torque</p>
+        </div>
+        <div class="practice-scoreboard">
+          <div class="score-item"><span class="score-value score-attempted">0</span><span class="score-label">Attempted</span></div>
+          <div class="score-item"><span class="score-value score-correct">0</span><span class="score-label">Correct</span></div>
+          <div class="score-item"><span class="score-value score-frq">0</span><span class="score-label">FRQ Viewed</span></div>
+        </div>
+      </div>
+
+      <div class="practice-tabs">
+        <button class="practice-tab active" data-target="section-all">All Questions</button>
+        <button class="practice-tab" data-target="section-mcq">Multiple Choice</button>
+        <button class="practice-tab" data-target="section-frq">Free Response</button>
+        <button class="practice-tab" data-target="section-topic1">Forces &amp; Motion</button>
+        <button class="practice-tab" data-target="section-topic2">Biot-Savart &amp; Ampere</button>
+        <button class="practice-tab" data-target="section-topic3">Torque &amp; Dipoles</button>
+      </div>
+
+      <section id="section-mcq" class="practice-section">
+        <h2>Multiple Choice Questions</h2>
+
+        <div class="glass-card mcq-question" data-mcq-id="mcq-1" data-correct="D">
+          <div class="question-text"><p><strong>Q1.</strong> A proton moves with velocity \(\vec{v}\) in a uniform magnetic field \(\vec{B}\) directed into the page, tracing a circle of radius \(r\). If replaced by an alpha particle (charge \(+2e\), mass \(4m_p\)) at the same speed, what is the new radius?</p></div>
+          <div class="mcq-options">
+            <div class="mcq-option"><input type="radio" name="mcq1" id="mcq1-a" value="A"><label for="mcq1-a"><strong>(A)</strong> \(r/2\)</label></div>
+            <div class="mcq-option"><input type="radio" name="mcq1" id="mcq1-b" value="B"><label for="mcq1-b"><strong>(B)</strong> \(r\)</label></div>
+            <div class="mcq-option"><input type="radio" name="mcq1" id="mcq1-c" value="C"><label for="mcq1-c"><strong>(C)</strong> \(r/4\)</label></div>
+            <div class="mcq-option"><input type="radio" name="mcq1" id="mcq1-d" value="D"><label for="mcq1-d"><strong>(D)</strong> \(2r\)</label></div>
+            <div class="mcq-option"><input type="radio" name="mcq1" id="mcq1-e" value="E"><label for="mcq1-e"><strong>(E)</strong> \(4r\)</label></div>
+          </div>
+          <div class="mcq-actions">
+            <button class="glass-btn mcq-check-btn">Check Answer</button>
+            <button class="glass-btn mcq-reset-btn">Reset</button>
+          </div>
+          <div class="mcq-feedback correct-msg"><strong>Correct!</strong> \(r = mv/(qB)\). For alpha: \(r_\alpha = (4m_p)v/(2eB) = 2(m_p v/eB) = 2r\). The radius doubles because mass quadruples but charge only doubles.</div>
+          <div class="mcq-feedback incorrect-msg"><strong>Incorrect.</strong> The correct answer is <strong>(D) \(2r\)</strong>. \(r = mv/(qB)\). Alpha: \(m \to 4m_p\), \(q \to 2e\), so \(r_\alpha = 4m_p v/(2eB) = 2r\).</div>
+        </div>
+
+        <div class="glass-card mcq-question" data-mcq-id="mcq-2" data-correct="A">
+          <div class="question-text"><p><strong>Q2.</strong> An electron moves north in a region where \(\vec{B}\) points east. The magnetic force on the electron is directed:</p></div>
+          <div class="mcq-options">
+            <div class="mcq-option"><input type="radio" name="mcq2" id="mcq2-a" value="A"><label for="mcq2-a"><strong>(A)</strong> Up (out of the ground).</label></div>
+            <div class="mcq-option"><input type="radio" name="mcq2" id="mcq2-b" value="B"><label for="mcq2-b"><strong>(B)</strong> Down (into the ground).</label></div>
+            <div class="mcq-option"><input type="radio" name="mcq2" id="mcq2-c" value="C"><label for="mcq2-c"><strong>(C)</strong> North.</label></div>
+            <div class="mcq-option"><input type="radio" name="mcq2" id="mcq2-d" value="D"><label for="mcq2-d"><strong>(D)</strong> South.</label></div>
+            <div class="mcq-option"><input type="radio" name="mcq2" id="mcq2-e" value="E"><label for="mcq2-e"><strong>(E)</strong> West.</label></div>
+          </div>
+          <div class="mcq-actions">
+            <button class="glass-btn mcq-check-btn">Check Answer</button>
+            <button class="glass-btn mcq-reset-btn">Reset</button>
+          </div>
+          <div class="mcq-feedback correct-msg"><strong>Correct!</strong> \(\vec{F} = q\vec{v} \times \vec{B}\). RHR: \(\vec{v}\) (north) × \(\vec{B}\) (east) = down. But \(q = -e\), so force is reversed: <strong>up</strong> (out of ground).</div>
+          <div class="mcq-feedback incorrect-msg"><strong>Incorrect.</strong> The correct answer is <strong>(A) Up</strong>. \(\vec{v}\) north × \(\vec{B}\) east = down by RHR, but electron has negative charge → force is up.</div>
+        </div>
+
+        <div class="glass-card mcq-question" data-mcq-id="mcq-3" data-correct="B">
+          <div class="question-text"><p><strong>Q3.</strong> A straight wire of length \(L\) carries current \(I\) at angle \(\theta\) to a uniform field \(\vec{B}\). The magnitude of the magnetic force is:</p></div>
+          <div class="mcq-options">
+            <div class="mcq-option"><input type="radio" name="mcq3" id="mcq3-a" value="A"><label for="mcq3-a"><strong>(A)</strong> \(ILB\cos\theta\)</label></div>
+            <div class="mcq-option"><input type="radio" name="mcq3" id="mcq3-b" value="B"><label for="mcq3-b"><strong>(B)</strong> \(ILB\sin\theta\)</label></div>
+            <div class="mcq-option"><input type="radio" name="mcq3" id="mcq3-c" value="C"><label for="mcq3-c"><strong>(C)</strong> \(ILB\tan\theta\)</label></div>
+            <div class="mcq-option"><input type="radio" name="mcq3" id="mcq3-d" value="D"><label for="mcq3-d"><strong>(D)</strong> \(ILB\)</label></div>
+            <div class="mcq-option"><input type="radio" name="mcq3" id="mcq3-e" value="E"><label for="mcq3-e"><strong>(E)</strong> \(0\)</label></div>
+          </div>
+          <div class="mcq-actions">
+            <button class="glass-btn mcq-check-btn">Check Answer</button>
+            <button class="glass-btn mcq-reset-btn">Reset</button>
+          </div>
+          <div class="mcq-feedback correct-msg"><strong>Correct!</strong> \(\vec{F} = I\vec{L} \times \vec{B}\), magnitude \(F = ILB\sin\theta\) where \(\theta\) is the angle between the wire direction and \(\vec{B}\).</div>
+          <div class="mcq-feedback incorrect-msg"><strong>Incorrect.</strong> The correct answer is <strong>(B) \(ILB\sin\theta\)</strong>. Cross product: \(|\vec{F}| = I|\vec{L}||\vec{B}|\sin\theta\).</div>
+        </div>
+
+        <div class="glass-card mcq-question" data-mcq-id="mcq-4" data-correct="A">
+          <div class="question-text"><p><strong>Q4.</strong> Two long parallel wires carry equal currents \(I\) in the same direction. The force between them is:</p></div>
+          <div class="mcq-options">
+            <div class="mcq-option"><input type="radio" name="mcq4" id="mcq4-a" value="A"><label for="mcq4-a"><strong>(A)</strong> Attractive, magnitude \(\frac{\mu_0 I^2}{2\pi d}\) per unit length.</label></div>
+            <div class="mcq-option"><input type="radio" name="mcq4" id="mcq4-b" value="B"><label for="mcq4-b"><strong>(B)</strong> Repulsive, magnitude \(\frac{\mu_0 I^2}{2\pi d}\) per unit length.</label></div>
+            <div class="mcq-option"><input type="radio" name="mcq4" id="mcq4-c" value="C"><label for="mcq4-c"><strong>(C)</strong> Zero — forces cancel.</label></div>
+            <div class="mcq-option"><input type="radio" name="mcq4" id="mcq4-d" value="D"><label for="mcq4-d"><strong>(D)</strong> Attractive if \(d\) is small, repulsive if large.</label></div>
+            <div class="mcq-option"><input type="radio" name="mcq4" id="mcq4-e" value="E"><label for="mcq4-e"><strong>(E)</strong> Depends on the wire radius.</label></div>
+          </div>
+          <div class="mcq-actions">
+            <button class="glass-btn mcq-check-btn">Check Answer</button>
+            <button class="glass-btn mcq-reset-btn">Reset</button>
+          </div>
+          <div class="mcq-feedback correct-msg"><strong>Correct!</strong> Parallel currents in the same direction attract. Wire 1's B field at wire 2: using \(\vec{F} = I_2\vec{L} \times \vec{B}_1\) gives force toward wire 1. Opposite currents repel.</div>
+          <div class="mcq-feedback incorrect-msg"><strong>Incorrect.</strong> The correct answer is <strong>(A) Attractive</strong>. Same direction → attract; opposite directions → repel. \(F/L = \mu_0 I^2/(2\pi d)\).</div>
+        </div>
+
+        <div class="glass-card mcq-question" data-mcq-id="mcq-5" data-correct="D">
+          <div class="question-text"><p><strong>Q5.</strong> A circular loop of wire (radius \(R\)) carries current \(I\). The magnetic field at the center is:</p></div>
+          <div class="mcq-options">
+            <div class="mcq-option"><input type="radio" name="mcq5" id="mcq5-a" value="A"><label for="mcq5-a"><strong>(A)</strong> \(\frac{\mu_0 I}{R}\)</label></div>
+            <div class="mcq-option"><input type="radio" name="mcq5" id="mcq5-b" value="B"><label for="mcq5-b"><strong>(B)</strong> \(\frac{\mu_0 I}{4\pi R}\)</label></div>
+            <div class="mcq-option"><input type="radio" name="mcq5" id="mcq5-c" value="C"><label for="mcq5-c"><strong>(C)</strong> \(\frac{\mu_0 I}{\pi R}\)</label></div>
+            <div class="mcq-option"><input type="radio" name="mcq5" id="mcq5-d" value="D"><label for="mcq5-d"><strong>(D)</strong> \(\frac{\mu_0 I}{2R}\)</label></div>
+            <div class="mcq-option"><input type="radio" name="mcq5" id="mcq5-e" value="E"><label for="mcq5-e"><strong>(E)</strong> \(\frac{\mu_0 I}{2\pi R}\)</label></div>
+          </div>
+          <div class="mcq-actions">
+            <button class="glass-btn mcq-check-btn">Check Answer</button>
+            <button class="glass-btn mcq-reset-btn">Reset</button>
+          </div>
+          <div class="mcq-feedback correct-msg"><strong>Correct!</strong> Biot-Savart: \(dB = \frac{\mu_0}{4\pi}\frac{I d\vec{\ell} \times \hat{r}}{r^2}\). All \(d\vec{\ell} \perp \hat{r}\) at center, integrate around \(2\pi R\): \(B = \frac{\mu_0 I}{4\pi R^2} \cdot 2\pi R = \frac{\mu_0 I}{2R}\).</div>
+          <div class="mcq-feedback incorrect-msg"><strong>Incorrect.</strong> The correct answer is <strong>(D) \(\mu_0 I/(2R)\)</strong>. Integrate Biot-Savart around the circle.</div>
+        </div>
+
+        <div class="glass-card mcq-question" data-mcq-id="mcq-6" data-correct="A">
+          <div class="question-text"><p><strong>Q6.</strong> Ampere's Law applied to a toroidal solenoid with \(N\) turns and current \(I\) gives, at distance \(r\) within the toroid:</p></div>
+          <div class="mcq-options">
+            <div class="mcq-option"><input type="radio" name="mcq6" id="mcq6-a" value="A"><label for="mcq6-a"><strong>(A)</strong> \(B = \frac{\mu_0 NI}{2\pi r}\)</label></div>
+            <div class="mcq-option"><input type="radio" name="mcq6" id="mcq6-b" value="B"><label for="mcq6-b"><strong>(B)</strong> \(B = \mu_0 nI\)</label></div>
+            <div class="mcq-option"><input type="radio" name="mcq6" id="mcq6-c" value="C"><label for="mcq6-c"><strong>(C)</strong> \(B = \frac{\mu_0 I}{2\pi r}\)</label></div>
+            <div class="mcq-option"><input type="radio" name="mcq6" id="mcq6-d" value="D"><label for="mcq6-d"><strong>(D)</strong> \(B = 0\)</label></div>
+            <div class="mcq-option"><input type="radio" name="mcq6" id="mcq6-e" value="E"><label for="mcq6-e"><strong>(E)</strong> \(B = \frac{\mu_0 NI}{r}\)</label></div>
+          </div>
+          <div class="mcq-actions">
+            <button class="glass-btn mcq-check-btn">Check Answer</button>
+            <button class="glass-btn mcq-reset-btn">Reset</button>
+          </div>
+          <div class="mcq-feedback correct-msg"><strong>Correct!</strong> Circular Amperian loop of radius \(r\): \(\oint \vec{B} \cdot d\vec{\ell} = B(2\pi r) = \mu_0 NI\). So \(B = \mu_0 NI/(2\pi r)\). Outside the toroid, \(B = 0\).</div>
+          <div class="mcq-feedback incorrect-msg"><strong>Incorrect.</strong> The correct answer is <strong>(A) \(\mu_0 NI/(2\pi r)\)</strong>. Amperian loop encloses \(N\) turns: \(B(2\pi r) = \mu_0 NI\).</div>
+        </div>
+
+        <div class="glass-card mcq-question" data-mcq-id="mcq-7" data-correct="B">
+          <div class="question-text"><p><strong>Q7.</strong> For an ideal infinitely long solenoid with \(n\) turns per unit length and current \(I\), the magnetic field outside the solenoid is:</p></div>
+          <div class="mcq-options">
+            <div class="mcq-option"><input type="radio" name="mcq7" id="mcq7-a" value="A"><label for="mcq7-a"><strong>(A)</strong> \(\mu_0 nI/2\)</label></div>
+            <div class="mcq-option"><input type="radio" name="mcq7" id="mcq7-b" value="B"><label for="mcq7-b"><strong>(B)</strong> \(0\)</label></div>
+            <div class="mcq-option"><input type="radio" name="mcq7" id="mcq7-c" value="C"><label for="mcq7-c"><strong>(C)</strong> \(\mu_0 nI\)</label></div>
+            <div class="mcq-option"><input type="radio" name="mcq7" id="mcq7-d" value="D"><label for="mcq7-d"><strong>(D)</strong> \(\mu_0 I/(2\pi r)\)</label></div>
+            <div class="mcq-option"><input type="radio" name="mcq7" id="mcq7-e" value="E"><label for="mcq7-e"><strong>(E)</strong> Depends on solenoid radius.</label></div>
+          </div>
+          <div class="mcq-actions">
+            <button class="glass-btn mcq-check-btn">Check Answer</button>
+            <button class="glass-btn mcq-reset-btn">Reset</button>
+          </div>
+          <div class="mcq-feedback correct-msg"><strong>Correct!</strong> For an ideal solenoid, Ampere's Law on a rectangular loop shows \(B = 0\) outside and \(B = \mu_0 nI\) inside (uniform).</div>
+          <div class="mcq-feedback incorrect-msg"><strong>Incorrect.</strong> The correct answer is <strong>(B) \(0\)</strong>. Ideal solenoid: uniform \(B = \mu_0 nI\) inside, \(B = 0\) outside.</div>
+        </div>
+
+        <div class="glass-card mcq-question" data-mcq-id="mcq-8" data-correct="C">
+          <div class="question-text"><p><strong>Q8.</strong> A current loop in a uniform magnetic field experiences maximum torque when its plane is:</p></div>
+          <div class="mcq-options">
+            <div class="mcq-option"><input type="radio" name="mcq8" id="mcq8-a" value="A"><label for="mcq8-a"><strong>(A)</strong> Perpendicular to \(\vec{B}\).</label></div>
+            <div class="mcq-option"><input type="radio" name="mcq8" id="mcq8-b" value="B"><label for="mcq8-b"><strong>(B)</strong> At 45° to \(\vec{B}\).</label></div>
+            <div class="mcq-option"><input type="radio" name="mcq8" id="mcq8-c" value="C"><label for="mcq8-c"><strong>(C)</strong> Parallel to \(\vec{B}\).</label></div>
+            <div class="mcq-option"><input type="radio" name="mcq8" id="mcq8-d" value="D"><label for="mcq8-d"><strong>(D)</strong> Torque is independent of orientation.</label></div>
+            <div class="mcq-option"><input type="radio" name="mcq8" id="mcq8-e" value="E"><label for="mcq8-e"><strong>(E)</strong> No torque in a uniform field.</label></div>
+          </div>
+          <div class="mcq-actions">
+            <button class="glass-btn mcq-check-btn">Check Answer</button>
+            <button class="glass-btn mcq-reset-btn">Reset</button>
+          </div>
+          <div class="mcq-feedback correct-msg"><strong>Correct!</strong> \(\vec{\tau} = \vec{\mu} \times \vec{B} = I\vec{A} \times \vec{B}\). \(\tau = \mu B\sin\phi\) where \(\phi\) = angle between \(\vec{\mu}\) (normal to plane) and \(\vec{B}\). Max at \(\phi = 90^\circ\) — area vector \(\perp \vec{B}\) — which means the plane is <strong>parallel</strong> to \(\vec{B}\).</div>
+          <div class="mcq-feedback incorrect-msg"><strong>Incorrect.</strong> The correct answer is <strong>(C) Parallel to \(\vec{B}\)</strong>. \(\tau = \mu B\sin\phi\), max when \(\vec{\mu} \perp \vec{B}\), meaning the plane (perpendicular to \(\vec{\mu}\)) is parallel to \(\vec{B}\).</div>
+        </div>
+
+        <div class="glass-card mcq-question" data-mcq-id="mcq-9" data-correct="E">
+          <div class="question-text"><p><strong>Q9.</strong> A charged particle passes undeflected through crossed \(\vec{E}\) and \(\vec{B}\) fields at speed \(v = E/B\). This device is a:</p></div>
+          <div class="mcq-options">
+            <div class="mcq-option"><input type="radio" name="mcq9" id="mcq9-a" value="A"><label for="mcq9-a"><strong>(A)</strong> Cyclotron.</label></div>
+            <div class="mcq-option"><input type="radio" name="mcq9" id="mcq9-b" value="B"><label for="mcq9-b"><strong>(B)</strong> Mass spectrometer.</label></div>
+            <div class="mcq-option"><input type="radio" name="mcq9" id="mcq9-c" value="C"><label for="mcq9-c"><strong>(C)</strong> Magnetron.</label></div>
+            <div class="mcq-option"><input type="radio" name="mcq9" id="mcq9-d" value="D"><label for="mcq9-d"><strong>(D)</strong> Synchrotron.</label></div>
+            <div class="mcq-option"><input type="radio" name="mcq9" id="mcq9-e" value="E"><label for="mcq9-e"><strong>(E)</strong> Velocity selector.</label></div>
+          </div>
+          <div class="mcq-actions">
+            <button class="glass-btn mcq-check-btn">Check Answer</button>
+            <button class="glass-btn mcq-reset-btn">Reset</button>
+          </div>
+          <div class="mcq-feedback correct-msg"><strong>Correct!</strong> Crossed \(\vec{E} \perp \vec{B}\) fields: \(qE = qvB\) when \(v = E/B\), so only particles at that speed pass undeflected. Used as the first stage in mass spectrometers.</div>
+          <div class="mcq-feedback incorrect-msg"><strong>Incorrect.</strong> The correct answer is <strong>(E) Velocity selector</strong>. Crossed \(\vec{E}\) and \(\vec{B}\): \(qE = qvB\) → \(v = E/B\).</div>
+        </div>
+
+        <div class="glass-card mcq-question" data-mcq-id="mcq-10" data-correct="C">
+          <div class="question-text"><p><strong>Q10.</strong> The field \(B = \frac{\mu_0 I}{2\pi r}\) around a long straight wire is most directly derived from:</p></div>
+          <div class="mcq-options">
+            <div class="mcq-option"><input type="radio" name="mcq10" id="mcq10-a" value="A"><label for="mcq10-a"><strong>(A)</strong> Gauss's Law for magnetism.</label></div>
+            <div class="mcq-option"><input type="radio" name="mcq10" id="mcq10-b" value="B"><label for="mcq10-b"><strong>(B)</strong> Faraday's Law.</label></div>
+            <div class="mcq-option"><input type="radio" name="mcq10" id="mcq10-c" value="C"><label for="mcq10-c"><strong>(C)</strong> Ampere's Law with a circular Amperian loop.</label></div>
+            <div class="mcq-option"><input type="radio" name="mcq10" id="mcq10-d" value="D"><label for="mcq10-d"><strong>(D)</strong> Biot-Savart Law only; Ampere's Law doesn't apply.</label></div>
+            <div class="mcq-option"><input type="radio" name="mcq10" id="mcq10-e" value="E"><label for="mcq10-e"><strong>(E)</strong> Lenz's Law.</label></div>
+          </div>
+          <div class="mcq-actions">
+            <button class="glass-btn mcq-check-btn">Check Answer</button>
+            <button class="glass-btn mcq-reset-btn">Reset</button>
+          </div>
+          <div class="mcq-feedback correct-msg"><strong>Correct!</strong> Ampere's Law: \(\oint \vec{B} \cdot d\vec{\ell} = B(2\pi r) = \mu_0 I\), so \(B = \mu_0 I/(2\pi r)\). The cylindrical symmetry makes Ampere's Law the simplest derivation.</div>
+          <div class="mcq-feedback incorrect-msg"><strong>Incorrect.</strong> The correct answer is <strong>(C)</strong>. Ampere's Law: \(B(2\pi r) = \mu_0 I\) → \(B = \mu_0 I/(2\pi r)\).</div>
+        </div>
+      </section>
+
+      <section id="section-frq" class="practice-section">
+        <h2>Free Response Questions</h2>
+
+        <div class="glass-card practice-block practice-frq-block" data-frq-id="frq-1">
+          <div class="practice-header"><span class="glass-badge">FRQ</span><h3>F1: Cyclotron Motion</h3></div>
+          <div class="practice-question">
+            <p>A proton (\(m = 1.67\times10^{-27}\ \text{kg}\), \(q = 1.6\times10^{-19}\ \text{C}\)) enters a uniform \(B = 0.50\ \text{T}\) (into page) with \(v = 2.0\times10^6\ \text{m/s}\) perpendicular to \(\vec{B}\).</p>
+            <ol type="a">
+              <li>Determine the radius of the proton's circular path.</li>
+              <li>Calculate the period of the motion.</li>
+              <li>Find the work done by the magnetic force over one revolution. Explain.</li>
+              <li>The proton is replaced by a deuteron (same charge, twice the mass) at the same speed. Find the new period.</li>
+            </ol>
+          </div>
+          <details class="solution">
+            <summary class="glass-btn">Show Solution</summary>
+            <div class="solution-content">
+              <div class="step"><strong>(a):</strong> \(r = \frac{mv}{qB} = \frac{(1.67\times10^{-27})(2.0\times10^6)}{(1.6\times10^{-19})(0.50)} = 4.18\times10^{-2}\ \text{m} = 4.18\ \text{cm}\).</div>
+              <div class="step"><strong>(b):</strong> \(T = \frac{2\pi r}{v} = \frac{2\pi m}{qB} = \frac{2\pi(1.67\times10^{-27})}{(1.6\times10^{-19})(0.50)} = 1.31\times10^{-7}\ \text{s}\). Note: period is independent of speed!</div>
+              <div class="step"><strong>(c):</strong> \(W = 0\). Magnetic force is always perpendicular to velocity (\(\vec{F} = q\vec{v} \times \vec{B} \perp \vec{v}\)), so it does zero work. It changes direction but not speed.</div>
+              <div class="step"><strong>(d):</strong> \(T = 2\pi m/(qB)\). With \(m \to 2m\): \(T_{\text{new}} = 2T = 2.62\times10^{-7}\ \text{s}\).</div>
+            </div>
+          </details>
+        </div>
+
+        <div class="glass-card practice-block practice-frq-block" data-frq-id="frq-2">
+          <div class="practice-header"><span class="glass-badge">FRQ</span><h3>F2: Biot-Savart — Semicircular Arc</h3></div>
+          <div class="practice-question">
+            <p>A wire carries current \(I\) and is bent into a semicircular arc of radius \(R\) in the \(xy\)-plane, with straight segments extending radially outward from the center.</p>
+            <ol type="a">
+              <li>Use the Biot-Savart Law to derive \(\vec{B}\) at the center of curvature.</li>
+              <li>What is the direction of \(\vec{B}\)?</li>
+              <li>If the arc is extended to a full circle, compare the field to part (a).</li>
+            </ol>
+          </div>
+          <details class="solution">
+            <summary class="glass-btn">Show Solution</summary>
+            <div class="solution-content">
+              <div class="step"><strong>(a):</strong> Biot-Savart: \(d\vec{B} = \frac{\mu_0}{4\pi}\frac{I d\vec{\ell} \times \hat{r}}{r^2}\). Arc: \(d\ell = R\,d\theta\), \(d\vec{\ell} \times \hat{r}\) magnitude = \(R\,d\theta\). \(dB = \frac{\mu_0 I}{4\pi R^2}R\,d\theta = \frac{\mu_0 I}{4\pi R}d\theta\). Integrate \(\theta: 0 \to \pi\): \(B = \frac{\mu_0 I}{4R}\). Straight segments: \(d\vec{\ell} \parallel \hat{r}\) → contribution = 0.</div>
+              <div class="step"><strong>(b):</strong> RHR: current in \(+\theta\) direction, \(d\vec{\ell} \times \hat{r}\) points into page (\(-z\) direction).</div>
+              <div class="step"><strong>(c):</strong> Full circle: integrate \(0 \to 2\pi\): \(B = \frac{\mu_0 I}{2R}\), exactly twice the semicircle result.</div>
+            </div>
+          </details>
+        </div>
+
+        <div class="glass-card practice-block practice-frq-block" data-frq-id="frq-3">
+          <div class="practice-header"><span class="glass-badge">FRQ</span><h3>F3: Ampere's Law — Coaxial Cable</h3></div>
+          <div class="practice-question">
+            <p>A coaxial cable: inner solid cylinder (radius \(a\)) carries \(I\) out of page; outer thin cylindrical shell (radius \(b\)) carries \(I\) into page. Both currents uniformly distributed.</p>
+            <ol type="a">
+              <li>Use Ampere's Law to find \(B(r)\) for: (i) \(r < a\), (ii) \(a < r < b\), (iii) \(r > b\).</li>
+              <li>Sketch \(B(r)\) from \(r = 0\) to \(r = 2b\).</li>
+              <li>Where is the magnetic field maximum?</li>
+            </ol>
+          </div>
+          <details class="solution">
+            <summary class="glass-btn">Show Solution</summary>
+            <div class="solution-content">
+              <div class="step"><strong>(a)(i) \(r < a\):</strong> \(I_{\text{enc}} = I(\pi r^2)/(\pi a^2) = Ir^2/a^2\). \(B(2\pi r) = \mu_0 Ir^2/a^2\) → \(B = \frac{\mu_0 I r}{2\pi a^2}\).</div>
+              <div class="step"><strong>(ii) \(a < r < b\):</strong> \(I_{\text{enc}} = I\). \(B = \frac{\mu_0 I}{2\pi r}\).</div>
+              <div class="step"><strong>(iii) \(r > b\):</strong> \(I_{\text{enc}} = I - I = 0\). \(B = 0\).</div>
+              <div class="step"><strong>(b):</strong> \(B\) increases linearly from 0 to \(\frac{\mu_0 I}{2\pi a}\) at \(r = a\), then decreases as \(1/r\) for \(a < r < b\), then drops to 0 at \(r = b\) and stays zero.</div>
+              <div class="step"><strong>(c):</strong> Maximum at \(r = a\) (surface of inner conductor): \(B_{\text{max}} = \frac{\mu_0 I}{2\pi a}\).</div>
+            </div>
+          </details>
+        </div>
+
+        <div class="glass-card practice-block practice-frq-block" data-frq-id="frq-4">
+          <div class="practice-header"><span class="glass-badge">FRQ</span><h3>F4: Current Loop Torque</h3></div>
+          <div class="practice-question">
+            <p>A rectangular loop has sides \(a = 0.10\ \text{m}\), \(b = 0.15\ \text{m}\), carries \(I = 2.0\ \text{A}\), and is in \(B = 0.30\ \text{T}\). The area vector makes a 30° angle with \(\vec{B}\).</p>
+            <ol type="a">
+              <li>Calculate the magnetic dipole moment (magnitude and direction).</li>
+              <li>Find the torque on the loop.</li>
+              <li>Find the potential energy of the loop.</li>
+              <li>If released from rest, describe the subsequent motion.</li>
+            </ol>
+          </div>
+          <details class="solution">
+            <summary class="glass-btn">Show Solution</summary>
+            <div class="solution-content">
+              <div class="step"><strong>(a):</strong> \(\mu = NIA = (1)(2.0)(0.10 \times 0.15) = 0.030\ \text{A}\cdot\text{m}^2\). Direction: perpendicular to plane by RHR (curl fingers with current).</div>
+              <div class="step"><strong>(b):</strong> \(\tau = \mu B\sin\phi = (0.030)(0.30)\sin(30^\circ) = 0.0045\ \text{N}\cdot\text{m}\).</div>
+              <div class="step"><strong>(c):</strong> \(U = -\vec{\mu}\cdot\vec{B} = -\mu B\cos\phi = -(0.030)(0.30)\cos(30^\circ) = -7.79 \times 10^{-3}\ \text{J}\).</div>
+              <div class="step"><strong>(d):</strong> Torque rotates loop to align \(\vec{\mu}\) with \(\vec{B}\) (minimum energy). The loop oscillates about this equilibrium due to inertia (simple harmonic for small angles).</div>
+            </div>
+          </details>
+        </div>
+
+        <div class="glass-card practice-block practice-frq-block" data-frq-id="frq-5">
+          <div class="practice-header"><span class="glass-badge">FRQ</span><h3>F5: Mass Spectrometer</h3></div>
+          <div class="practice-question">
+            <p>Singly ionized atoms (\(q = +e\)) pass through a velocity selector (\(E = 5000\ \text{V/m}\), \(B_1 = 0.20\ \text{T}\)) then enter \(B_2 = 0.80\ \text{T}\) where they follow semicircular paths of radius \(r\).</p>
+            <ol type="a">
+              <li>What speed passes the velocity selector undeflected?</li>
+              <li>Derive an expression for mass in terms of \(r\), \(e\), \(B_1\), \(B_2\), and \(E\).</li>
+              <li>Two isotopes strike the detector 4.0 mm apart. If the lighter one has \(r = 10.0\ \text{cm}\), find the mass difference in atomic mass units.</li>
+            </ol>
+          </div>
+          <details class="solution">
+            <summary class="glass-btn">Show Solution</summary>
+            <div class="solution-content">
+              <div class="step"><strong>(a):</strong> \(v = E/B_1 = 5000/0.20 = 2.5 \times 10^4\ \text{m/s}\).</div>
+              <div class="step"><strong>(b):</strong> In \(B_2\): \(r = mv/(eB_2)\), with \(v = E/B_1\): \(m = \frac{eB_2 r}{v} = \frac{eB_1 B_2 r}{E}\).</div>
+              <div class="step"><strong>(c):</strong> \(m \propto r\), so \(\Delta m/m = \Delta r/r = 0.004/0.10 = 0.04\). Lighter: \(m_1 = \frac{(1.6\times10^{-19})(0.20)(0.80)(0.10)}{5000} = 5.12\times10^{-25}\ \text{kg}\). \(\Delta m = 0.04 \times 5.12\times10^{-25} = 2.05\times10^{-26}\ \text{kg} \times \frac{1\ \text{u}}{1.66\times10^{-27}\ \text{kg}} = 12.3\ \text{u}\).</div>
+            </div>
+          </details>
+        </div>
+      </section>
+
+      <section id="section-topic1" class="practice-section">
+        <p style="text-align:center;padding:var(--space-xl);color:var(--text-muted)">Use "All Questions" or "MCQ / FRQ" tabs to browse. Topic tabs are coming soon.</p>
+      </section>
+      <section id="section-topic2" class="practice-section">
+        <p style="text-align:center;padding:var(--space-xl);color:var(--text-muted)">Use "All Questions" or "MCQ / FRQ" tabs to browse. Topic tabs are coming soon.</p>
+      </section>
+      <section id="section-topic3" class="practice-section">
+        <p style="text-align:center;padding:var(--space-xl);color:var(--text-muted)">Use "All Questions" or "MCQ / FRQ" tabs to browse. Topic tabs are coming soon.</p>
+      </section>
+
+      <a href="../unit3-magnetism.html" class="practice-back-link">← Back to Unit 3 Study Guide</a>
+
+      <footer class="site-footer">
+        <a href="practice-unit2.html">← Previous: Circuits</a> ·
+        <a href="../index.html">Home</a> ·
+        <a href="practice-unit4.html">Next Practice: EM Induction →</a>
+      </footer>
+
+    </main>
+  </div>
+</body>
+</html>

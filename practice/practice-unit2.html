@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Practice 2: Circuits — AP Physics C E&M</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
+  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  <script defer src="../js/app.js"></script>
+</head>
+<body class="page-practice">
+
+  <div class="bg-orbs"><div class="bg-orb"></div><div class="bg-orb"></div><div class="bg-orb"></div></div>
+  <a href="#main" class="skip-link">Skip to content</a>
+
+  <nav class="glass-nav">
+    <a href="../index.html" class="nav-brand"><span class="brand-icon">⚡</span><span>AP Physics C: E&M</span></a>
+    <div class="nav-links">
+      <a href="../index.html" class="nav-link">Home</a>
+      <a href="../unit1-electrostatics.html" class="nav-link"><span class="unit-badge">1</span> Electrostatics</a>
+      <a href="../unit2-circuits.html" class="nav-link"><span class="unit-badge">2</span> Circuits</a>
+      <a href="../unit3-magnetism.html" class="nav-link"><span class="unit-badge">3</span> Magnetism</a>
+      <a href="../unit4-electromagnetism.html" class="nav-link"><span class="unit-badge">4</span> EM Induction</a>
+      <a href="../unit5-maxwell.html" class="nav-link"><span class="unit-badge">5</span> Maxwell</a>
+      <a href="practice-unit1.html" class="nav-link active">🤓 Practice</a>
+    </div>
+    <div class="nav-actions">
+      <div class="search-wrapper"><span class="search-icon">🔍</span><input type="text" class="search-input" placeholder="Search..." aria-label="Search"></div>
+      <button class="btn-icon theme-toggle" aria-label="Toggle dark mode" title="Toggle dark mode (T)">🌙</button>
+      <button class="btn-icon mobile-menu-btn" aria-label="Menu">☰</button>
+    </div>
+  </nav>
+
+  <div class="app-shell">
+    <aside class="sidebar">
+      <div class="sidebar-title">Practice Topics</div>
+      <ul class="sidebar-toc"></ul>
+    </aside>
+    <main class="main-content" id="main">
+
+      <div class="practice-page-header">
+        <div>
+          <h1>Practice 2: Electric Circuits</h1>
+          <p style="color:var(--text-muted)">10 MCQ + 5 FRQ · Covers Ohm's Law, Kirchhoff's Rules, RC Circuits, Power, and Resistivity</p>
+        </div>
+        <div class="practice-scoreboard">
+          <div class="score-item"><span class="score-value score-attempted">0</span><span class="score-label">Attempted</span></div>
+          <div class="score-item"><span class="score-value score-correct">0</span><span class="score-label">Correct</span></div>
+          <div class="score-item"><span class="score-value score-frq">0</span><span class="score-label">FRQ Viewed</span></div>
+        </div>
+      </div>
+
+      <div class="practice-tabs">
+        <button class="practice-tab active" data-target="section-all">All Questions</button>
+        <button class="practice-tab" data-target="section-mcq">Multiple Choice</button>
+        <button class="practice-tab" data-target="section-frq">Free Response</button>
+        <button class="practice-tab" data-target="section-topic1">DC Circuits</button>
+        <button class="practice-tab" data-target="section-topic2">RC Circuits</button>
+        <button class="practice-tab" data-target="section-topic3">Power &amp; Resistivity</button>
+      </div>
+
+      <section id="section-mcq" class="practice-section">
+        <h2>Multiple Choice Questions</h2>
+
+        <div class="glass-card mcq-question" data-mcq-id="mcq-1" data-correct="C">
+          <div class="question-text"><p><strong>Q1.</strong> A light bulb rated at 100 W operates at 120 V. What is its resistance when lit?</p></div>
+          <div class="mcq-options">
+            <div class="mcq-option"><input type="radio" name="mcq1" id="mcq1-a" value="A"><label for="mcq1-a"><strong>(A)</strong> \(0.83\ \Omega\)</label></div>
+            <div class="mcq-option"><input type="radio" name="mcq1" id="mcq1-b" value="B"><label for="mcq1-b"><strong>(B)</strong> \(100\ \Omega\)</label></div>
+            <div class="mcq-option"><input type="radio" name="mcq1" id="mcq1-c" value="C"><label for="mcq1-c"><strong>(C)</strong> \(144\ \Omega\)</label></div>
+            <div class="mcq-option"><input type="radio" name="mcq1" id="mcq1-d" value="D"><label for="mcq1-d"><strong>(D)</strong> \(120\ \Omega\)</label></div>
+            <div class="mcq-option"><input type="radio" name="mcq1" id="mcq1-e" value="E"><label for="mcq1-e"><strong>(E)</strong> \(14.4\ \Omega\)</label></div>
+          </div>
+          <div class="mcq-actions">
+            <button class="glass-btn mcq-check-btn">Check Answer</button>
+            <button class="glass-btn mcq-reset-btn">Reset</button>
+          </div>
+          <div class="mcq-feedback correct-msg"><strong>Correct!</strong> \(P = V^2/R\), so \(R = V^2/P = (120)^2/100 = 14400/100 = 144\ \Omega\).</div>
+          <div class="mcq-feedback incorrect-msg"><strong>Incorrect.</strong> The correct answer is <strong>(C) \(144\ \Omega\)</strong>. Using \(P = V^2/R\): \(R = (120)^2/100 = 144\ \Omega\).</div>
+        </div>
+
+        <div class="glass-card mcq-question" data-mcq-id="mcq-2" data-correct="D">
+          <div class="question-text"><p><strong>Q2.</strong> A computer draws 0.5 A at 120 V for 8 hours per day. If electricity costs $0.12 per kWh, what is the monthly (30 day) cost?</p></div>
+          <div class="mcq-options">
+            <div class="mcq-option"><input type="radio" name="mcq2" id="mcq2-a" value="A"><label for="mcq2-a"><strong>(A)</strong> $0.72</label></div>
+            <div class="mcq-option"><input type="radio" name="mcq2" id="mcq2-b" value="B"><label for="mcq2-b"><strong>(B)</strong> $1.44</label></div>
+            <div class="mcq-option"><input type="radio" name="mcq2" id="mcq2-c" value="C"><label for="mcq2-c"><strong>(C)</strong> $14.40</label></div>
+            <div class="mcq-option"><input type="radio" name="mcq2" id="mcq2-d" value="D"><label for="mcq2-d"><strong>(D)</strong> $1.73</label></div>
+            <div class="mcq-option"><input type="radio" name="mcq2" id="mcq2-e" value="E"><label for="mcq2-e"><strong>(E)</strong> $17.28</label></div>
+          </div>
+          <div class="mcq-actions">
+            <button class="glass-btn mcq-check-btn">Check Answer</button>
+            <button class="glass-btn mcq-reset-btn">Reset</button>
+          </div>
+          <div class="mcq-feedback correct-msg"><strong>Correct!</strong> Power: \(P = IV = 0.5 \times 120 = 60\ \text{W} = 0.06\ \text{kW}\). Daily energy: \(0.06 \times 8 = 0.48\ \text{kWh}\). Monthly: \(0.48 \times 30 = 14.4\ \text{kWh}\). Cost: \(14.4 \times \$0.12 = \$1.73\).</div>
+          <div class="mcq-feedback incorrect-msg"><strong>Incorrect.</strong> The correct answer is <strong>(D) $1.73</strong>. \(P = 0.5 \times 120 = 60\ \text{W}\). Monthly kWh: \(0.06 \times 8 \times 30 = 14.4\ \text{kWh}\). Cost: \(14.4 \times \$0.12 = \$1.73\).</div>
+        </div>
+
+        <div class="glass-card mcq-question" data-mcq-id="mcq-3" data-correct="A">
+          <div class="question-text"><p><strong>Q3.</strong> How many electrons pass through a resistor in 2.0 s if the current is 3.0 A? (\(e = 1.6 \times 10^{-19}\ \text{C}\))</p></div>
+          <div class="mcq-options">
+            <div class="mcq-option"><input type="radio" name="mcq3" id="mcq3-a" value="A"><label for="mcq3-a"><strong>(A)</strong> \(3.75 \times 10^{19}\)</label></div>
+            <div class="mcq-option"><input type="radio" name="mcq3" id="mcq3-b" value="B"><label for="mcq3-b"><strong>(B)</strong> \(1.875 \times 10^{19}\)</label></div>
+            <div class="mcq-option"><input type="radio" name="mcq3" id="mcq3-c" value="C"><label for="mcq3-c"><strong>(C)</strong> \(6.0 \times 10^{19}\)</label></div>
+            <div class="mcq-option"><input type="radio" name="mcq3" id="mcq3-d" value="D"><label for="mcq3-d"><strong>(D)</strong> \(9.6 \times 10^{19}\)</label></div>
+            <div class="mcq-option"><input type="radio" name="mcq3" id="mcq3-e" value="E"><label for="mcq3-e"><strong>(E)</strong> \(1.5 \times 10^{19}\)</label></div>
+          </div>
+          <div class="mcq-actions">
+            <button class="glass-btn mcq-check-btn">Check Answer</button>
+            <button class="glass-btn mcq-reset-btn">Reset</button>
+          </div>
+          <div class="mcq-feedback correct-msg"><strong>Correct!</strong> \(Q = It = 3.0 \times 2.0 = 6.0\ \text{C}\). \(N = Q/e = 6.0/(1.6 \times 10^{-19}) = 3.75 \times 10^{19}\).</div>
+          <div class="mcq-feedback incorrect-msg"><strong>Incorrect.</strong> The correct answer is <strong>(A) \(3.75 \times 10^{19}\)</strong>. \(Q = It = 6.0\ \text{C}\), \(N = Q/e = 3.75 \times 10^{19}\).</div>
+        </div>
+
+        <div class="glass-card mcq-question" data-mcq-id="mcq-4" data-correct="B">
+          <div class="question-text"><p><strong>Q4.</strong> Two identical resistors are connected first in series, then in parallel, to the same battery. The ratio of total power in parallel to total power in series is:</p></div>
+          <div class="mcq-options">
+            <div class="mcq-option"><input type="radio" name="mcq4" id="mcq4-a" value="A"><label for="mcq4-a"><strong>(A)</strong> \(1/2\)</label></div>
+            <div class="mcq-option"><input type="radio" name="mcq4" id="mcq4-b" value="B"><label for="mcq4-b"><strong>(B)</strong> \(4\)</label></div>
+            <div class="mcq-option"><input type="radio" name="mcq4" id="mcq4-c" value="C"><label for="mcq4-c"><strong>(C)</strong> \(2\)</label></div>
+            <div class="mcq-option"><input type="radio" name="mcq4" id="mcq4-d" value="D"><label for="mcq4-d"><strong>(D)</strong> \(1/4\)</label></div>
+            <div class="mcq-option"><input type="radio" name="mcq4" id="mcq4-e" value="E"><label for="mcq4-e"><strong>(E)</strong> \(1\)</label></div>
+          </div>
+          <div class="mcq-actions">
+            <button class="glass-btn mcq-check-btn">Check Answer</button>
+            <button class="glass-btn mcq-reset-btn">Reset</button>
+          </div>
+          <div class="mcq-feedback correct-msg"><strong>Correct!</strong> Series: \(R_{\text{eq}} = 2R\), \(P_s = V^2/(2R)\). Parallel: \(R_{\text{eq}} = R/2\), \(P_p = V^2/(R/2) = 2V^2/R\). Ratio: \(P_p/P_s = (2V^2/R)/(V^2/2R) = 4\).</div>
+          <div class="mcq-feedback incorrect-msg"><strong>Incorrect.</strong> The correct answer is <strong>(B) \(4\)</strong>. Series: \(R_{\text{eq}} = 2R\). Parallel: \(R_{\text{eq}} = R/2\). Ratio = \((V^2/(R/2))/(V^2/(2R)) = 4\).</div>
+        </div>
+
+        <div class="glass-card mcq-question" data-mcq-id="mcq-5" data-correct="C">
+          <div class="question-text"><p><strong>Q5.</strong> Bulb A is in series with the parallel combination of bulbs B and C. Switch S shorts out bulb C when closed. When S is closed, what happens to bulb A?</p></div>
+          <div class="mcq-options">
+            <div class="mcq-option"><input type="radio" name="mcq5" id="mcq5-a" value="A"><label for="mcq5-a"><strong>(A)</strong> Stays the same.</label></div>
+            <div class="mcq-option"><input type="radio" name="mcq5" id="mcq5-b" value="B"><label for="mcq5-b"><strong>(B)</strong> Gets dimmer.</label></div>
+            <div class="mcq-option"><input type="radio" name="mcq5" id="mcq5-c" value="C"><label for="mcq5-c"><strong>(C)</strong> Gets brighter.</label></div>
+            <div class="mcq-option"><input type="radio" name="mcq5" id="mcq5-d" value="D"><label for="mcq5-d"><strong>(D)</strong> Goes out.</label></div>
+            <div class="mcq-option"><input type="radio" name="mcq5" id="mcq5-e" value="E"><label for="mcq5-e"><strong>(E)</strong> Cannot be determined.</label></div>
+          </div>
+          <div class="mcq-actions">
+            <button class="glass-btn mcq-check-btn">Check Answer</button>
+            <button class="glass-btn mcq-reset-btn">Reset</button>
+          </div>
+          <div class="mcq-feedback correct-msg"><strong>Correct!</strong> With S open: \(R_{\text{eq}} = R + (R \parallel R) = 1.5R\). Current = \(V/1.5R\). With S closed: C shorted, \(R_{\text{eq}} = R + 0 = R\). Current increases to \(V/R\). Bulb A gets brighter.</div>
+          <div class="mcq-feedback incorrect-msg"><strong>Incorrect.</strong> The correct answer is <strong>(C)</strong>. Closing S shorts bulb C, reducing \(R_{\text{eq}}\) from \(1.5R\) to \(R\). More current flows, so bulb A gets brighter.</div>
+        </div>
+
+        <div class="glass-card mcq-question" data-mcq-id="mcq-6" data-correct="D">
+          <div class="question-text"><p><strong>Q6.</strong> A tungsten wire has resistance \(R_0\) at 20°C with \(\alpha = 4.5 \times 10^{-3}\ \text{°C}^{-1}\). At what temperature is its resistance \(2R_0\)?</p></div>
+          <div class="mcq-options">
+            <div class="mcq-option"><input type="radio" name="mcq6" id="mcq6-a" value="A"><label for="mcq6-a"><strong>(A)</strong> \(20\ \text{°C}\)</label></div>
+            <div class="mcq-option"><input type="radio" name="mcq6" id="mcq6-b" value="B"><label for="mcq6-b"><strong>(B)</strong> \(222\ \text{°C}\)</label></div>
+            <div class="mcq-option"><input type="radio" name="mcq6" id="mcq6-c" value="C"><label for="mcq6-c"><strong>(C)</strong> \(202\ \text{°C}\)</label></div>
+            <div class="mcq-option"><input type="radio" name="mcq6" id="mcq6-d" value="D"><label for="mcq6-d"><strong>(D)</strong> \(242\ \text{°C}\)</label></div>
+            <div class="mcq-option"><input type="radio" name="mcq6" id="mcq6-e" value="E"><label for="mcq6-e"><strong>(E)</strong> \(444\ \text{°C}\)</label></div>
+          </div>
+          <div class="mcq-actions">
+            <button class="glass-btn mcq-check-btn">Check Answer</button>
+            <button class="glass-btn mcq-reset-btn">Reset</button>
+          </div>
+          <div class="mcq-feedback correct-msg"><strong>Correct!</strong> \(R = R_0[1 + \alpha(T - T_0)]\). \(2 = 1 + 4.5\times10^{-3}(T-20)\). \(T-20 = 1/(4.5\times10^{-3}) = 222\). \(T = 242\ \text{°C}\).</div>
+          <div class="mcq-feedback incorrect-msg"><strong>Incorrect.</strong> The correct answer is <strong>(D) 242 °C</strong>. \(2 = 1 + \alpha(T-20)\), so \(T-20 = 1/\alpha = 222\), \(T = 242\ \text{°C}\).</div>
+        </div>
+
+        <div class="glass-card mcq-question" data-mcq-id="mcq-7" data-correct="D">
+          <div class="question-text"><p><strong>Q7.</strong> Two wires have equal length and resistance. Wire X is aluminum (\(\rho_{\text{Al}} = 2.82\times10^{-8}\ \Omega\cdot\text{m}\)), wire Y is copper (\(\rho_{\text{Cu}} = 1.72\times10^{-8}\ \Omega\cdot\text{m}\)). What is \(d_X/d_Y\)?</p></div>
+          <div class="mcq-options">
+            <div class="mcq-option"><input type="radio" name="mcq7" id="mcq7-a" value="A"><label for="mcq7-a"><strong>(A)</strong> \(0.78\)</label></div>
+            <div class="mcq-option"><input type="radio" name="mcq7" id="mcq7-b" value="B"><label for="mcq7-b"><strong>(B)</strong> \(1.64\)</label></div>
+            <div class="mcq-option"><input type="radio" name="mcq7" id="mcq7-c" value="C"><label for="mcq7-c"><strong>(C)</strong> \(0.61\)</label></div>
+            <div class="mcq-option"><input type="radio" name="mcq7" id="mcq7-d" value="D"><label for="mcq7-d"><strong>(D)</strong> \(1.28\)</label></div>
+            <div class="mcq-option"><input type="radio" name="mcq7" id="mcq7-e" value="E"><label for="mcq7-e"><strong>(E)</strong> \(2.82\)</label></div>
+          </div>
+          <div class="mcq-actions">
+            <button class="glass-btn mcq-check-btn">Check Answer</button>
+            <button class="glass-btn mcq-reset-btn">Reset</button>
+          </div>
+          <div class="mcq-feedback correct-msg"><strong>Correct!</strong> \(R = \rho L/A = 4\rho L/(\pi d^2)\). For equal \(R\) and \(L\): \(d \propto \sqrt{\rho}\). \(d_X/d_Y = \sqrt{2.82\times10^{-8}/1.72\times10^{-8}} = \sqrt{1.64} = 1.28\).</div>
+          <div class="mcq-feedback incorrect-msg"><strong>Incorrect.</strong> The correct answer is <strong>(D) 1.28</strong>. \(d \propto \sqrt{\rho}\) for equal \(R, L\). \(d_X/d_Y = \sqrt{2.82/1.72} = 1.28\).</div>
+        </div>
+
+        <div class="glass-card mcq-question" data-mcq-id="mcq-8" data-correct="B">
+          <div class="question-text"><p><strong>Q8.</strong> Unknown resistor \(X\) in parallel with \(Y = 20\ \Omega\) gives \(R_{\text{eq}} = 15\ \Omega\). Find \(X\).</p></div>
+          <div class="mcq-options">
+            <div class="mcq-option"><input type="radio" name="mcq8" id="mcq8-a" value="A"><label for="mcq8-a"><strong>(A)</strong> \(30\ \Omega\)</label></div>
+            <div class="mcq-option"><input type="radio" name="mcq8" id="mcq8-b" value="B"><label for="mcq8-b"><strong>(B)</strong> \(60\ \Omega\)</label></div>
+            <div class="mcq-option"><input type="radio" name="mcq8" id="mcq8-c" value="C"><label for="mcq8-c"><strong>(C)</strong> \(5\ \Omega\)</label></div>
+            <div class="mcq-option"><input type="radio" name="mcq8" id="mcq8-d" value="D"><label for="mcq8-d"><strong>(D)</strong> \(12\ \Omega\)</label></div>
+            <div class="mcq-option"><input type="radio" name="mcq8" id="mcq8-e" value="E"><label for="mcq8-e"><strong>(E)</strong> \(10\ \Omega\)</label></div>
+          </div>
+          <div class="mcq-actions">
+            <button class="glass-btn mcq-check-btn">Check Answer</button>
+            <button class="glass-btn mcq-reset-btn">Reset</button>
+          </div>
+          <div class="mcq-feedback correct-msg"><strong>Correct!</strong> \(1/15 = 1/X + 1/20\) → \(1/X = 1/15 - 1/20 = (4-3)/60 = 1/60\) → \(X = 60\ \Omega\).</div>
+          <div class="mcq-feedback incorrect-msg"><strong>Incorrect.</strong> The correct answer is <strong>(B) \(60\ \Omega\)</strong>. \(1/15 = 1/X + 1/20\) → \(1/X = 1/15 - 1/20 = 1/60\) → \(X = 60\ \Omega\).</div>
+        </div>
+
+        <div class="glass-card mcq-question" data-mcq-id="mcq-9" data-correct="E">
+          <div class="question-text"><p><strong>Q9.</strong> In an RC circuit, the capacitor is initially uncharged. At \(t = 0\), the switch is closed. How does the current through the resistor change with time?</p></div>
+          <div class="mcq-options">
+            <div class="mcq-option"><input type="radio" name="mcq9" id="mcq9-a" value="A"><label for="mcq9-a"><strong>(A)</strong> Increases exponentially to a constant value.</label></div>
+            <div class="mcq-option"><input type="radio" name="mcq9" id="mcq9-b" value="B"><label for="mcq9-b"><strong>(B)</strong> Remains constant.</label></div>
+            <div class="mcq-option"><input type="radio" name="mcq9" id="mcq9-c" value="C"><label for="mcq9-c"><strong>(C)</strong> Increases linearly.</label></div>
+            <div class="mcq-option"><input type="radio" name="mcq9" id="mcq9-d" value="D"><label for="mcq9-d"><strong>(D)</strong> Decreases linearly to zero.</label></div>
+            <div class="mcq-option"><input type="radio" name="mcq9" id="mcq9-e" value="E"><label for="mcq9-e"><strong>(E)</strong> Decreases exponentially to zero.</label></div>
+          </div>
+          <div class="mcq-actions">
+            <button class="glass-btn mcq-check-btn">Check Answer</button>
+            <button class="glass-btn mcq-reset-btn">Reset</button>
+          </div>
+          <div class="mcq-feedback correct-msg"><strong>Correct!</strong> Charging RC: \(I(t) = (\mathcal{E}/R)e^{-t/RC}\). Current starts at \(\mathcal{E}/R\) and decays exponentially to zero as the capacitor charges.</div>
+          <div class="mcq-feedback incorrect-msg"><strong>Incorrect.</strong> The correct answer is <strong>(E)</strong>. \(I(t) = (\mathcal{E}/R)e^{-t/RC}\), decaying exponentially from max to zero.</div>
+        </div>
+
+        <div class="glass-card mcq-question" data-mcq-id="mcq-10" data-correct="A">
+          <div class="question-text"><p><strong>Q10.</strong> A capacitor \(C\) charged to \(V_0\) discharges through \(R\). After \(t = RC\), the energy stored is what fraction of its initial energy?</p></div>
+          <div class="mcq-options">
+            <div class="mcq-option"><input type="radio" name="mcq10" id="mcq10-a" value="A"><label for="mcq10-a"><strong>(A)</strong> \(e^{-2}\)</label></div>
+            <div class="mcq-option"><input type="radio" name="mcq10" id="mcq10-b" value="B"><label for="mcq10-b"><strong>(B)</strong> \(e^{-1}\)</label></div>
+            <div class="mcq-option"><input type="radio" name="mcq10" id="mcq10-c" value="C"><label for="mcq10-c"><strong>(C)</strong> \(1 - e^{-1}\)</label></div>
+            <div class="mcq-option"><input type="radio" name="mcq10" id="mcq10-d" value="D"><label for="mcq10-d"><strong>(D)</strong> \(1/2\)</label></div>
+            <div class="mcq-option"><input type="radio" name="mcq10" id="mcq10-e" value="E"><label for="mcq10-e"><strong>(E)</strong> \(3/8\)</label></div>
+          </div>
+          <div class="mcq-actions">
+            <button class="glass-btn mcq-check-btn">Check Answer</button>
+            <button class="glass-btn mcq-reset-btn">Reset</button>
+          </div>
+          <div class="mcq-feedback correct-msg"><strong>Correct!</strong> Discharging: \(V(t) = V_0 e^{-t/RC}\). At \(t = RC\): \(V = V_0/e\). Energy \(U = \frac{1}{2}CV^2\), so \(U/U_0 = (V/V_0)^2 = e^{-2} \approx 0.135\).</div>
+          <div class="mcq-feedback incorrect-msg"><strong>Incorrect.</strong> The correct answer is <strong>(A) \(e^{-2}\)</strong>. \(V = V_0 e^{-1}\) at \(t=RC\). \(U \propto V^2\), so fraction = \(e^{-2} \approx 0.135\).</div>
+        </div>
+      </section>
+
+      <section id="section-frq" class="practice-section">
+        <h2>Free Response Questions</h2>
+
+        <div class="glass-card practice-block practice-frq-block" data-frq-id="frq-1">
+          <div class="practice-header"><span class="glass-badge">FRQ</span><h3>F1: RC Circuit Analysis</h3></div>
+          <div class="practice-question">
+            <p>A battery \(\mathcal{E} = 12\ \text{V}\) (negligible internal resistance) is in series with \(R = 100\ \text{k}\Omega\) and an initially uncharged \(C = 50\ \mu\text{F}\).</p>
+            <ol type="a">
+              <li>Determine the time constant \(\tau\) of the circuit.</li>
+              <li>Derive \(q(t)\) for the capacitor.</li>
+              <li>Calculate the current at \(t = 2.0\ \text{s}\).</li>
+              <li>Find when the capacitor reaches 99% of its final charge.</li>
+              <li>Sketch \(q(t)\) and \(I(t)\) on labeled axes.</li>
+            </ol>
+          </div>
+          <details class="solution">
+            <summary class="glass-btn">Show Solution</summary>
+            <div class="solution-content">
+              <div class="step"><strong>(a):</strong> \(\tau = RC = (100\times10^3)(50\times10^{-6}) = 5.0\ \text{s}\).</div>
+              <div class="step"><strong>(b):</strong> Loop rule: \(\mathcal{E} - IR - q/C = 0\), \(I = dq/dt\). DE: \(\mathcal{E} = R\,dq/dt + q/C\). Solution: \(q(t) = C\mathcal{E}(1 - e^{-t/RC}) = 600\ \mu\text{C}(1 - e^{-t/5.0})\).</div>
+              <div class="step"><strong>(c):</strong> \(I(t) = (\mathcal{E}/R)e^{-t/RC} = (1.2\times10^{-4})e^{-2.0/5.0} = 1.2\times10^{-4} \times 0.670 = 8.04\times10^{-5}\ \text{A} = 80.4\ \mu\text{A}\).</div>
+              <div class="step"><strong>(d):</strong> \(0.99 = 1 - e^{-t/\tau}\) → \(e^{-t/\tau} = 0.01\) → \(t = -\tau\ln(0.01) = 5.0 \times 4.605 = 23.0\ \text{s}\).</div>
+              <div class="step"><strong>(e):</strong> \(q(t)\) rises asymptotically to \(600\ \mu\text{C}\). \(I(t)\) decays exponentially from \(120\ \mu\text{A}\) to 0. At \(\tau = 5\ \text{s}\): \(q = 0.632\,C\mathcal{E}\), \(I = 0.368\,I_0\).</div>
+            </div>
+          </details>
+        </div>
+
+        <div class="glass-card practice-block practice-frq-block" data-frq-id="frq-2">
+          <div class="practice-header"><span class="glass-badge">FRQ</span><h3>F2: Ammeter & Voltmeter Design</h3></div>
+          <div class="practice-question">
+            <p>A galvanometer has internal resistance \(r = 20\ \Omega\) and full-scale deflection at \(I_g = 1\ \text{mA}\).</p>
+            <ol type="a">
+              <li>Design an ammeter reading up to \(1\ \text{A}\) using a shunt resistor. Draw the circuit and calculate the shunt value.</li>
+              <li>Design a voltmeter reading up to \(10\ \text{V}\) using a multiplier resistor. Draw the circuit and calculate the multiplier value.</li>
+              <li>Why must an ideal ammeter have zero resistance and an ideal voltmeter infinite resistance?</li>
+            </ol>
+          </div>
+          <details class="solution">
+            <summary class="glass-btn">Show Solution</summary>
+            <div class="solution-content">
+              <div class="step"><strong>(a):</strong> Shunt \(R_s\) in parallel with galvanometer. \(I_s = 1 - 0.001 = 0.999\ \text{A}\). \(V = I_g r = 0.001 \times 20 = 0.02\ \text{V}\). \(R_s = V/I_s = 0.02/0.999 = 0.0200\ \Omega\).</div>
+              <div class="step"><strong>(b):</strong> Multiplier \(R_m\) in series: \(10 = 0.001(20 + R_m)\) → \(R_m = 10000 - 20 = 9980\ \Omega\).</div>
+              <div class="step"><strong>(c):</strong> Ammeter in series: if \(R \neq 0\), it changes the current being measured. Voltmeter in parallel: if \(R \neq \infty\), it draws current and changes the voltage being measured.</div>
+            </div>
+          </details>
+        </div>
+
+        <div class="glass-card practice-block practice-frq-block" data-frq-id="frq-3">
+          <div class="practice-header"><span class="glass-badge">FRQ</span><h3>F3: Kirchhoff's Rules</h3></div>
+          <div class="practice-question">
+            <p>A circuit has \(\mathcal{E}_1 = 12\ \text{V}\) (\(r_1 = 1\ \Omega\)) in the left branch, \(\mathcal{E}_2 = 6\ \text{V}\) (\(r_2 = 1\ \Omega\)) in the right branch, and \(R_1 + R_2 = 6\ \Omega\) in the middle branch connecting top and bottom junctions.</p>
+            <ol type="a">
+              <li>Label all currents and write Kirchhoff's junction and loop equations.</li>
+              <li>Solve for all three branch currents.</li>
+              <li>Calculate the power delivered by each battery. Is battery 2 being charged or discharged?</li>
+            </ol>
+          </div>
+          <details class="solution">
+            <summary class="glass-btn">Show Solution</summary>
+            <div class="solution-content">
+              <div class="step"><strong>(a):</strong> \(I_1\) up through \(r_1\), \(I_2\) up through \(r_2\), \(I_3\) down through middle. Junction: \(I_1 + I_2 = I_3\). Left loop: \(12 - I_1(1) - I_3(6) = 0\). Right loop: \(6 - I_2(1) - I_3(6) = 0\).</div>
+              <div class="step"><strong>(b):</strong> From loops: \(I_1 = 12 - 6I_3\), \(I_2 = 6 - 6I_3\). Junction: \((12-6I_3) + (6-6I_3) = I_3\) → \(18 = 13I_3\) → \(I_3 = 1.385\ \text{A}\). \(I_1 = 3.69\ \text{A}\), \(I_2 = -2.31\ \text{A}\) (flows opposite assumed direction).</div>
+              <div class="step"><strong>(c):</strong> \(P_1 = \mathcal{E}_1 I_1 = 12 \times 3.69 = 44.3\ \text{W}\) (delivering). \(P_2 = 6 \times 2.31 = 13.9\ \text{W}\). Current enters + terminal of battery 2 → being <strong>charged</strong>.</div>
+            </div>
+          </details>
+        </div>
+
+        <div class="glass-card practice-block practice-frq-block" data-frq-id="frq-4">
+          <div class="practice-header"><span class="glass-badge">FRQ</span><h3>F4: Bridge Circuit Analysis</h3></div>
+          <div class="practice-question">
+            <p>Four identical resistors \(R = 12\ \Omega\) form a bridge: \(R\) between A-B, B-C, A-D, D-C, with a wire between B and D. Battery of \(24\ \text{V}\) connected from A to C.</p>
+            <ol type="a">
+              <li>Find the equivalent resistance between A and C.</li>
+              <li>Calculate the total current from the battery.</li>
+              <li>Find the current in the wire connecting B and D.</li>
+              <li>Determine the power dissipated in each resistor.</li>
+            </ol>
+          </div>
+          <details class="solution">
+            <summary class="glass-btn">Show Solution</summary>
+            <div class="solution-content">
+              <div class="step"><strong>(a):</strong> By symmetry, V_B = V_D. No current in B-D wire. Each path: \(2R = 24\ \Omega\) in series. Two paths in parallel: \(R_{\text{eq}} = 24/2 = 12\ \Omega\).</div>
+              <div class="step"><strong>(b):</strong> \(I_{\text{total}} = V/R_{\text{eq}} = 24/12 = 2.0\ \text{A}\).</div>
+              <div class="step"><strong>(c):</strong> V_B = V_D, so \(I_{BD} = 0\).</div>
+              <div class="step"><strong>(d):</strong> Current splits equally: 1.0 A per branch. \(P = I^2R = 1.0^2 \times 12 = 12\ \text{W}\) each. Total = 48 W (\(P_{\text{total}} = VI = 24 \times 2 = 48\ \text{W}\)).</div>
+            </div>
+          </details>
+        </div>
+
+        <div class="glass-card practice-block practice-frq-block" data-frq-id="frq-5">
+          <div class="practice-header"><span class="glass-badge">FRQ</span><h3>F5: Resistivity & Drift Velocity</h3></div>
+          <div class="practice-question">
+            <p>A copper wire (\(\rho = 1.72 \times 10^{-8}\ \Omega\cdot\text{m}\), \(n = 8.5 \times 10^{28}\ \text{m}^{-3}\)) has \(L = 2.0\ \text{m}\), \(d = 1.0\ \text{mm}\), and carries \(I = 3.0\ \text{A}\).</p>
+            <ol type="a">
+              <li>Calculate the resistance of the wire.</li>
+              <li>Find the drift velocity of electrons in the wire.</li>
+              <li>Calculate the electric field inside the wire.</li>
+              <li>If the wire is cut in half and the halves are connected in parallel to the same voltage, by what factor does power change?</li>
+            </ol>
+          </div>
+          <details class="solution">
+            <summary class="glass-btn">Show Solution</summary>
+            <div class="solution-content">
+              <div class="step"><strong>(a):</strong> \(A = \pi(0.5\times10^{-3})^2 = 7.854\times10^{-7}\ \text{m}^2\). \(R = \rho L/A = (1.72\times10^{-8})(2.0)/(7.854\times10^{-7}) = 0.0438\ \Omega\).</div>
+              <div class="step"><strong>(b):</strong> \(v_d = I/(neA) = 3.0/[(8.5\times10^{28})(1.6\times10^{-19})(7.854\times10^{-7})] = 2.81 \times 10^{-4}\ \text{m/s}\).</div>
+              <div class="step"><strong>(c):</strong> \(E = \rho J = \rho I/A = (1.72\times10^{-8})(3.0/7.854\times10^{-7}) = 0.0657\ \text{V/m}\). Or \(E = V/L = IR/L = 0.0657\ \text{V/m}\).</div>
+              <div class="step"><strong>(d):</strong> Each half: \(R_{\text{half}} = R/2\). Parallel: \(R_{\text{new}} = R/4\). \(P_{\text{new}}/P_0 = (V^2/R_{\text{new}})/(V^2/R) = 4\). Power increases by factor of 4.</div>
+            </div>
+          </details>
+        </div>
+      </section>
+
+      <section id="section-topic1" class="practice-section">
+        <p style="text-align:center;padding:var(--space-xl);color:var(--text-muted)">Use "All Questions" or "MCQ / FRQ" tabs to browse. Topic tabs are coming soon.</p>
+      </section>
+      <section id="section-topic2" class="practice-section">
+        <p style="text-align:center;padding:var(--space-xl);color:var(--text-muted)">Use "All Questions" or "MCQ / FRQ" tabs to browse. Topic tabs are coming soon.</p>
+      </section>
+      <section id="section-topic3" class="practice-section">
+        <p style="text-align:center;padding:var(--space-xl);color:var(--text-muted)">Use "All Questions" or "MCQ / FRQ" tabs to browse. Topic tabs are coming soon.</p>
+      </section>
+
+      <a href="../unit2-circuits.html" class="practice-back-link">← Back to Unit 2 Study Guide</a>
+
+      <footer class="site-footer">
+        <a href="practice-unit1.html">← Previous: Electrostatics</a> ·
+        <a href="../index.html">Home</a> ·
+        <a href="practice-unit3.html">Next Practice: Magnetism →</a>
+      </footer>
+
+    </main>
+  </div>
+</body>
+</html>

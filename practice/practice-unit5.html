@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Practice 5: Maxwell's Equations — AP Physics C E&M</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
+  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  <script defer src="../js/app.js"></script>
+</head>
+<body class="page-practice">
+
+  <div class="bg-orbs"><div class="bg-orb"></div><div class="bg-orb"></div><div class="bg-orb"></div></div>
+  <a href="#main" class="skip-link">Skip to content</a>
+
+  <nav class="glass-nav">
+    <a href="../index.html" class="nav-brand"><span class="brand-icon">⚡</span><span>AP Physics C: E&M</span></a>
+    <div class="nav-links">
+      <a href="../index.html" class="nav-link">Home</a>
+      <a href="../unit1-electrostatics.html" class="nav-link"><span class="unit-badge">1</span> Electrostatics</a>
+      <a href="../unit2-circuits.html" class="nav-link"><span class="unit-badge">2</span> Circuits</a>
+      <a href="../unit3-magnetism.html" class="nav-link"><span class="unit-badge">3</span> Magnetism</a>
+      <a href="../unit4-electromagnetism.html" class="nav-link"><span class="unit-badge">4</span> EM Induction</a>
+      <a href="../unit5-maxwell.html" class="nav-link"><span class="unit-badge">5</span> Maxwell</a>
+      <a href="practice-unit1.html" class="nav-link active">🤓 Practice</a>
+    </div>
+    <div class="nav-actions">
+      <div class="search-wrapper"><span class="search-icon">🔍</span><input type="text" class="search-input" placeholder="Search..." aria-label="Search"></div>
+      <button class="btn-icon theme-toggle" aria-label="Toggle dark mode" title="Toggle dark mode (T)">🌙</button>
+      <button class="btn-icon mobile-menu-btn" aria-label="Menu">☰</button>
+    </div>
+  </nav>
+
+  <div class="app-shell">
+    <aside class="sidebar">
+      <div class="sidebar-title">Practice Topics</div>
+      <ul class="sidebar-toc"></ul>
+    </aside>
+    <main class="main-content" id="main">
+
+      <div class="practice-page-header">
+        <div>
+          <h1>Practice 5: Maxwell's Equations</h1>
+          <p style="color:var(--text-muted)">8 MCQ + 3 FRQ · Covers Maxwell's Four Equations, Displacement Current, EM Waves, and Unification of E&M</p>
+        </div>
+        <div class="practice-scoreboard">
+          <div class="score-item"><span class="score-value score-attempted">0</span><span class="score-label">Attempted</span></div>
+          <div class="score-item"><span class="score-value score-correct">0</span><span class="score-label">Correct</span></div>
+          <div class="score-item"><span class="score-value score-frq">0</span><span class="score-label">FRQ Viewed</span></div>
+        </div>
+      </div>
+
+      <div class="practice-tabs">
+        <button class="practice-tab active" data-target="section-all">All Questions</button>
+        <button class="practice-tab" data-target="section-mcq">Multiple Choice</button>
+        <button class="practice-tab" data-target="section-frq">Free Response</button>
+        <button class="practice-tab" data-target="section-topic1">The Four Equations</button>
+        <button class="practice-tab" data-target="section-topic2">Displacement Current</button>
+        <button class="practice-tab" data-target="section-topic3">EM Waves</button>
+      </div>
+
+      <!-- MCQ SECTION -->
+      <section id="section-mcq" class="practice-section">
+        <h2>Multiple Choice Questions</h2>
+
+        <div class="glass-card mcq-question" data-mcq-id="mcq-1" data-correct="C">
+          <div class="question-text"><p><strong>Q1.</strong> Which of Maxwell's equations states that there are no magnetic monopoles?</p></div>
+          <div class="mcq-options">
+            <div class="mcq-option"><input type="radio" name="mcq1" id="mcq1-a" value="A"><label for="mcq1-a"><strong>(A)</strong> \(\oint \vec{E} \cdot d\vec{A} = \frac{q_{\text{enc}}}{\varepsilon_0}\)</label></div>
+            <div class="mcq-option"><input type="radio" name="mcq1" id="mcq1-b" value="B"><label for="mcq1-b"><strong>(B)</strong> \(\oint \vec{E} \cdot d\vec{\ell} = -\frac{d\Phi_B}{dt}\)</label></div>
+            <div class="mcq-option"><input type="radio" name="mcq1" id="mcq1-c" value="C"><label for="mcq1-c"><strong>(C)</strong> \(\oint \vec{B} \cdot d\vec{A} = 0\)</label></div>
+            <div class="mcq-option"><input type="radio" name="mcq1" id="mcq1-d" value="D"><label for="mcq1-d"><strong>(D)</strong> \(\oint \vec{B} \cdot d\vec{\ell} = \mu_0 I_{\text{enc}} + \mu_0\varepsilon_0 \frac{d\Phi_E}{dt}\)</label></div>
+            <div class="mcq-option"><input type="radio" name="mcq1" id="mcq1-e" value="E"><label for="mcq1-e"><strong>(E)</strong> None of the above.</label></div>
+          </div>
+          <div class="mcq-actions">
+            <button class="glass-btn mcq-check-btn">Check Answer</button>
+            <button class="glass-btn mcq-reset-btn">Reset</button>
+          </div>
+          <div class="mcq-feedback correct-msg"><strong>Correct!</strong> Gauss's Law for magnetism: \(\oint \vec{B} \cdot d\vec{A} = 0\). The net magnetic flux through any closed surface is zero — magnetic field lines form closed loops with no beginning or end.</div>
+          <div class="mcq-feedback incorrect-msg"><strong>Incorrect.</strong> The correct answer is <strong>(C)</strong>. Gauss's Law for magnetism: \(\oint \vec{B} \cdot d\vec{A} = 0\) — no magnetic monopoles exist.</div>
+        </div>
+
+        <div class="glass-card mcq-question" data-mcq-id="mcq-2" data-correct="D">
+          <div class="question-text"><p><strong>Q2.</strong> The displacement current term \(\mu_0\varepsilon_0\,d\Phi_E/dt\) in Ampere-Maxwell Law is needed because:</p></div>
+          <div class="mcq-options">
+            <div class="mcq-option"><input type="radio" name="mcq2" id="mcq2-a" value="A"><label for="mcq2-a"><strong>(A)</strong> It makes the equations symmetric with gravity.</label></div>
+            <div class="mcq-option"><input type="radio" name="mcq2" id="mcq2-b" value="B"><label for="mcq2-b"><strong>(B)</strong> It accounts for energy loss in circuits.</label></div>
+            <div class="mcq-option"><input type="radio" name="mcq2" id="mcq2-c" value="C"><label for="mcq2-c"><strong>(C)</strong> It was added for mathematical beauty with no physical consequence.</label></div>
+            <div class="mcq-option"><input type="radio" name="mcq2" id="mcq2-d" value="D"><label for="mcq2-d"><strong>(D)</strong> Without it, Ampere's Law violates charge conservation in regions with changing electric fields (e.g., between capacitor plates).</label></div>
+            <div class="mcq-option"><input type="radio" name="mcq2" id="mcq2-e" value="E"><label for="mcq2-e"><strong>(E)</strong> It explains the photoelectric effect.</label></div>
+          </div>
+          <div class="mcq-actions">
+            <button class="glass-btn mcq-check-btn">Check Answer</button>
+            <button class="glass-btn mcq-reset-btn">Reset</button>
+          </div>
+          <div class="mcq-feedback correct-msg"><strong>Correct!</strong> In a charging capacitor, Ampere's Law without displacement current gives \(B\) on one side of the plates but zero on the other (ambiguous). The displacement current \(\varepsilon_0\,d\Phi_E/dt\) resolves this inconsistency and ensures continuity of current.</div>
+          <div class="mcq-feedback incorrect-msg"><strong>Incorrect.</strong> The correct answer is <strong>(D)</strong>. The displacement current resolves the inconsistency in Ampere's Law for circuits with capacitors — maintaining charge conservation.</div>
+        </div>
+
+        <div class="glass-card mcq-question" data-mcq-id="mcq-3" data-correct="B">
+          <div class="question-text"><p><strong>Q3.</strong> An electromagnetic wave travels in vacuum. The E-field is given by \(E_y = E_0\sin(kx - \omega t)\). The B-field is:</p></div>
+          <div class="mcq-options">
+            <div class="mcq-option"><input type="radio" name="mcq3" id="mcq3-a" value="A"><label for="mcq3-a"><strong>(A)</strong> \(B_x = B_0\sin(kx - \omega t)\)</label></div>
+            <div class="mcq-option"><input type="radio" name="mcq3" id="mcq3-b" value="B"><label for="mcq3-b"><strong>(B)</strong> \(B_z = B_0\sin(kx - \omega t)\) where \(B_0 = E_0/c\)</label></div>
+            <div class="mcq-option"><input type="radio" name="mcq3" id="mcq3-c" value="C"><label for="mcq3-c"><strong>(C)</strong> \(B_y = B_0\cos(kx - \omega t)\) where \(B_0 = cE_0\)</label></div>
+            <div class="mcq-option"><input type="radio" name="mcq3" id="mcq3-d" value="D"><label for="mcq3-d"><strong>(D)</strong> \(B_z = B_0\cos(kx - \omega t)\) where \(B_0 = E_0/c\)</label></div>
+            <div class="mcq-option"><input type="radio" name="mcq3" id="mcq3-e" value="E"><label for="mcq3-e"><strong>(E)</strong> There is no B-field in vacuum.</label></div>
+          </div>
+          <div class="mcq-actions">
+            <button class="glass-btn mcq-check-btn">Check Answer</button>
+            <button class="glass-btn mcq-reset-btn">Reset</button>
+          </div>
+          <div class="mcq-feedback correct-msg"><strong>Correct!</strong> In EM waves: \(\vec{E} \perp \vec{B} \perp \vec{v}\) (direction of propagation). \(\vec{E}\) is along \(y\), propagation is along \(x\), so \(\vec{B}\) must be along \(z\). Both are in phase: \(\sin(kx-\omega t)\) with \(E_0 = cB_0\).</div>
+          <div class="mcq-feedback incorrect-msg"><strong>Incorrect.</strong> The correct answer is <strong>(B)</strong>. \(\vec{E} \perp \vec{B} \perp \hat{x}\) (propagation direction). \(\vec{E}\) along \(y\) → \(\vec{B}\) along \(z\). \(E_0/B_0 = c\).</div>
+        </div>
+
+        <div class="glass-card mcq-question" data-mcq-id="mcq-4" data-correct="E">
+          <div class="question-text"><p><strong>Q4.</strong> The speed of electromagnetic waves in vacuum is \(c = 1/\sqrt{\mu_0\varepsilon_0}\). This result comes directly from:</p></div>
+          <div class="mcq-options">
+            <div class="mcq-option"><input type="radio" name="mcq4" id="mcq4-a" value="A"><label for="mcq4-a"><strong>(A)</strong> Gauss's Law alone.</label></div>
+            <div class="mcq-option"><input type="radio" name="mcq4" id="mcq4-b" value="B"><label for="mcq4-b"><strong>(B)</strong> Faraday's Law alone.</label></div>
+            <div class="mcq-option"><input type="radio" name="mcq4" id="mcq4-c" value="C"><label for="mcq4-c"><strong>(C)</strong> Ampere's Law alone.</label></div>
+            <div class="mcq-option"><input type="radio" name="mcq4" id="mcq4-d" value="D"><label for="mcq4-d"><strong>(D)</strong> The Lorentz force law.</label></div>
+            <div class="mcq-option"><input type="radio" name="mcq4" id="mcq4-e" value="E"><label for="mcq4-e"><strong>(E)</strong> Combining Faraday's Law and the Ampere-Maxwell Law in vacuum.</label></div>
+          </div>
+          <div class="mcq-actions">
+            <button class="glass-btn mcq-check-btn">Check Answer</button>
+            <button class="glass-btn mcq-reset-btn">Reset</button>
+          </div>
+          <div class="mcq-feedback correct-msg"><strong>Correct!</strong> Taking the curl of Faraday's Law and substituting from Ampere-Maxwell (or vice versa) yields the wave equation: \(\nabla^2\vec{E} = \mu_0\varepsilon_0\,\partial^2\vec{E}/\partial t^2\), giving wave speed \(v = 1/\sqrt{\mu_0\varepsilon_0} = c\).</div>
+          <div class="mcq-feedback incorrect-msg"><strong>Incorrect.</strong> The correct answer is <strong>(E)</strong>. Combining Faraday's Law and Ampere-Maxwell Law gives the EM wave equation with \(c = 1/\sqrt{\mu_0\varepsilon_0}\).</div>
+        </div>
+
+        <div class="glass-card mcq-question" data-mcq-id="mcq-5" data-correct="A">
+          <div class="question-text"><p><strong>Q5.</strong> A parallel-plate capacitor with circular plates of radius \(R = 5.0\ \text{cm}\) is being charged with current \(I = 2.0\ \text{A}\). The displacement current density between the plates is:</p></div>
+          <div class="mcq-options">
+            <div class="mcq-option"><input type="radio" name="mcq5" id="mcq5-a" value="A"><label for="mcq5-a"><strong>(A)</strong> \(255\ \text{A/m}^2\)</label></div>
+            <div class="mcq-option"><input type="radio" name="mcq5" id="mcq5-b" value="B"><label for="mcq5-b"><strong>(B)</strong> \(2.0\ \text{A/m}^2\)</label></div>
+            <div class="mcq-option"><input type="radio" name="mcq5" id="mcq5-c" value="C"><label for="mcq5-c"><strong>(C)</strong> \(80\ \text{A/m}^2\)</label></div>
+            <div class="mcq-option"><input type="radio" name="mcq5" id="mcq5-d" value="D"><label for="mcq5-d"><strong>(D)</strong> \(800\ \text{A/m}^2\)</label></div>
+            <div class="mcq-option"><input type="radio" name="mcq5" id="mcq5-e" value="E"><label for="mcq5-e"><strong>(E)</strong> \(0\) — displacement current is only a theoretical concept.</label></div>
+          </div>
+          <div class="mcq-actions">
+            <button class="glass-btn mcq-check-btn">Check Answer</button>
+            <button class="glass-btn mcq-reset-btn">Reset</button>
+          </div>
+          <div class="mcq-feedback correct-msg"><strong>Correct!</strong> Displacement current \(I_d = I = 2.0\ \text{A}\). Area: \(A = \pi R^2 = \pi(0.05)^2 = 7.85\times10^{-3}\ \text{m}^2\). \(J_d = I_d/A = 2.0/(7.85\times10^{-3}) = 255\ \text{A/m}^2\).</div>
+          <div class="mcq-feedback incorrect-msg"><strong>Incorrect.</strong> The correct answer is <strong>(A) \(255\ \text{A/m}^2\)</strong>. \(I_d = I = 2.0\ \text{A}\), \(J_d = I/A = 2.0/[\pi(0.05)^2] = 255\ \text{A/m}^2\).</div>
+        </div>
+
+        <div class="glass-card mcq-question" data-mcq-id="mcq-6" data-correct="B">
+          <div class="question-text"><p><strong>Q6.</strong> In an EM wave, the Poynting vector \(\vec{S} = \frac{1}{\mu_0}\vec{E} \times \vec{B}\) represents:</p></div>
+          <div class="mcq-options">
+            <div class="mcq-option"><input type="radio" name="mcq6" id="mcq6-a" value="A"><label for="mcq6-a"><strong>(A)</strong> The direction of the electric field.</label></div>
+            <div class="mcq-option"><input type="radio" name="mcq6" id="mcq6-b" value="B"><label for="mcq6-b"><strong>(B)</strong> The energy flux (power per unit area) and direction of energy propagation.</label></div>
+            <div class="mcq-option"><input type="radio" name="mcq6" id="mcq6-c" value="C"><label for="mcq6-c"><strong>(C)</strong> The momentum of the EM wave.</label></div>
+            <div class="mcq-option"><input type="radio" name="mcq6" id="mcq6-d" value="D"><label for="mcq6-d"><strong>(D)</strong> The force on a charged particle.</label></div>
+            <div class="mcq-option"><input type="radio" name="mcq6" id="mcq6-e" value="E"><label for="mcq6-e"><strong>(E)</strong> The polarization direction.</label></div>
+          </div>
+          <div class="mcq-actions">
+            <button class="glass-btn mcq-check-btn">Check Answer</button>
+            <button class="glass-btn mcq-reset-btn">Reset</button>
+          </div>
+          <div class="mcq-feedback correct-msg"><strong>Correct!</strong> Poynting vector \(\vec{S} = \vec{E} \times \vec{B}/\mu_0\) gives the instantaneous energy flux (W/m²) and points in the direction of energy propagation. For a sinusoidal wave, the time-averaged intensity is \(I = S_{\text{avg}} = \frac{1}{2}c\varepsilon_0 E_0^2\).</div>
+          <div class="mcq-feedback incorrect-msg"><strong>Incorrect.</strong> The correct answer is <strong>(B)</strong>. \(\vec{S}\) is the energy flux vector — power per unit area propagating in direction of \(\vec{E} \times \vec{B}\).</div>
+        </div>
+
+        <div class="glass-card mcq-question" data-mcq-id="mcq-7" data-correct="D">
+          <div class="question-text"><p><strong>Q7.</strong> Which of Maxwell's equations, in integral form, describes how a changing magnetic field produces an electric field?</p></div>
+          <div class="mcq-options">
+            <div class="mcq-option"><input type="radio" name="mcq7" id="mcq7-a" value="A"><label for="mcq7-a"><strong>(A)</strong> \(\oint \vec{E} \cdot d\vec{A} = q_{\text{enc}}/\varepsilon_0\)</label></div>
+            <div class="mcq-option"><input type="radio" name="mcq7" id="mcq7-b" value="B"><label for="mcq7-b"><strong>(B)</strong> \(\oint \vec{B} \cdot d\vec{A} = 0\)</label></div>
+            <div class="mcq-option"><input type="radio" name="mcq7" id="mcq7-c" value="C"><label for="mcq7-c"><strong>(C)</strong> \(\oint \vec{B} \cdot d\vec{\ell} = \mu_0 I_{\text{enc}} + \mu_0\varepsilon_0\,d\Phi_E/dt\)</label></div>
+            <div class="mcq-option"><input type="radio" name="mcq7" id="mcq7-d" value="D"><label for="mcq7-d"><strong>(D)</strong> \(\oint \vec{E} \cdot d\vec{\ell} = -d\Phi_B/dt\)</label></div>
+            <div class="mcq-option"><input type="radio" name="mcq7" id="mcq7-e" value="E"><label for="mcq7-e"><strong>(E)</strong> \(\vec{F} = q(\vec{E} + \vec{v} \times \vec{B})\)</label></div>
+          </div>
+          <div class="mcq-actions">
+            <button class="glass-btn mcq-check-btn">Check Answer</button>
+            <button class="glass-btn mcq-reset-btn">Reset</button>
+          </div>
+          <div class="mcq-feedback correct-msg"><strong>Correct!</strong> Faraday's Law: \(\oint \vec{E} \cdot d\vec{\ell} = -\frac{d\Phi_B}{dt}\). A changing magnetic flux induces a circulating (non-conservative) electric field.</div>
+          <div class="mcq-feedback incorrect-msg"><strong>Incorrect.</strong> The correct answer is <strong>(D)</strong>. Faraday's Law: \(\oint \vec{E} \cdot d\vec{\ell} = -d\Phi_B/dt\). Changing B → induced E.</div>
+        </div>
+
+        <div class="glass-card mcq-question" data-mcq-id="mcq-8" data-correct="C">
+          <div class="question-text"><p><strong>Q8.</strong> An EM wave has peak electric field \(E_0 = 100\ \text{V/m}\). The average intensity (power per unit area) is:</p></div>
+          <div class="mcq-options">
+            <div class="mcq-option"><input type="radio" name="mcq8" id="mcq8-a" value="A"><label for="mcq8-a"><strong>(A)</strong> \(26.5\ \text{W/m}^2\)</label></div>
+            <div class="mcq-option"><input type="radio" name="mcq8" id="mcq8-b" value="B"><label for="mcq8-b"><strong>(B)</strong> \(8.85 \times 10^{-10}\ \text{W/m}^2\)</label></div>
+            <div class="mcq-option"><input type="radio" name="mcq8" id="mcq8-c" value="C"><label for="mcq8-c"><strong>(C)</strong> \(13.3\ \text{W/m}^2\)</label></div>
+            <div class="mcq-option"><input type="radio" name="mcq8" id="mcq8-d" value="D"><label for="mcq8-d"><strong>(D)</strong> \(100\ \text{W/m}^2\)</label></div>
+            <div class="mcq-option"><input type="radio" name="mcq8" id="mcq8-e" value="E"><label for="mcq8-e"><strong>(E)</strong> \(5.0 \times 10^7\ \text{W/m}^2\)</label></div>
+          </div>
+          <div class="mcq-actions">
+            <button class="glass-btn mcq-check-btn">Check Answer</button>
+            <button class="glass-btn mcq-reset-btn">Reset</button>
+          </div>
+          <div class="mcq-feedback correct-msg"><strong>Correct!</strong> \(I = S_{\text{avg}} = \frac{1}{2}c\varepsilon_0 E_0^2 = \frac{1}{2}(3\times10^8)(8.85\times10^{-12})(100)^2 = 13.3\ \text{W/m}^2\).</div>
+          <div class="mcq-feedback incorrect-msg"><strong>Incorrect.</strong> The correct answer is <strong>(C) \(13.3\ \text{W/m}^2\)</strong>. \(I = \frac{1}{2}c\varepsilon_0 E_0^2 = 0.5(3\times10^8)(8.85\times10^{-12})(10^4) = 13.3\ \text{W/m}^2\).</div>
+        </div>
+      </section>
+
+      <!-- FRQ SECTION -->
+      <section id="section-frq" class="practice-section">
+        <h2>Free Response Questions</h2>
+
+        <div class="glass-card practice-block practice-frq-block" data-frq-id="frq-1">
+          <div class="practice-header"><span class="glass-badge">FRQ</span><h3>F1: Displacement Current in a Capacitor</h3></div>
+          <div class="practice-question">
+            <p>A parallel-plate capacitor with circular plates of radius \(R = 0.10\ \text{m}\) and separation \(d = 2.0\ \text{mm}\) is connected to an AC source: \(V(t) = V_0\sin(\omega t)\) with \(V_0 = 100\ \text{V}\) and \(\omega = 500\ \text{rad/s}\).</p>
+            <ol type="a">
+              <li>Find the conduction current \(I(t)\) in the wires.</li>
+              <li>Calculate the displacement current between the plates and show it equals the conduction current.</li>
+              <li>Use the Ampere-Maxwell Law to find \(B\) at \(r = 0.05\ \text{m}\) (between plates) as a function of time.</li>
+              <li>Find the maximum value of this magnetic field.</li>
+            </ol>
+          </div>
+          <details class="solution">
+            <summary class="glass-btn">Show Solution</summary>
+            <div class="solution-content">
+              <div class="step"><strong>(a):</strong> \(C = \varepsilon_0 A/d = \varepsilon_0\pi R^2/d = (8.85\times10^{-12})\pi(0.10)^2/(0.002) = 1.39\times10^{-10}\ \text{F}\). \(Q = CV = CV_0\sin(\omega t)\). \(I = dQ/dt = CV_0\omega\cos(\omega t) = (1.39\times10^{-10})(100)(500)\cos(500t) = 6.95\times10^{-6}\cos(500t)\ \text{A}\).</div>
+              <div class="step"><strong>(b):</strong> \(E = V/d = (V_0/d)\sin(\omega t)\). \(\Phi_E = EA = (V_0/d)\pi R^2\sin(\omega t)\). \(I_d = \varepsilon_0\,d\Phi_E/dt = \varepsilon_0(V_0/d)\pi R^2\omega\cos(\omega t) = (\varepsilon_0\pi R^2/d)V_0\omega\cos(\omega t) = CV_0\omega\cos(\omega t) = I(t)\). ✓</div>
+              <div class="step"><strong>(c):</strong> Ampere-Maxwell: \(\oint \vec{B} \cdot d\vec{\ell} = \mu_0 I_{d,\text{enc}}\). For \(r < R\): \(I_{d,\text{enc}} = I_d(\pi r^2)/(\pi R^2) = I_d(r^2/R^2)\). \(B(2\pi r) = \mu_0 I_d(r^2/R^2)\) → \(B = \frac{\mu_0 I_d r}{2\pi R^2} = \frac{\mu_0 CV_0\omega r}{2\pi R^2}\cos(\omega t)\).</div>
+              <div class="step"><strong>(d):</strong> At \(r = 0.05\ \text{m}\): \(B_{\text{max}} = \frac{(4\pi\times10^{-7})(6.95\times10^{-6})(0.05)}{2\pi(0.10)^2} = 6.95\times10^{-12}\ \text{T}\).</div>
+            </div>
+          </details>
+        </div>
+
+        <div class="glass-card practice-block practice-frq-block" data-frq-id="frq-2">
+          <div class="practice-header"><span class="glass-badge">FRQ</span><h3>F2: Deriving the EM Wave Equation</h3></div>
+          <div class="practice-question">
+            <p>Starting from Maxwell's equations in vacuum (no charges, no currents):</p>
+            <ol type="a">
+              <li>Write all four Maxwell equations in vacuum.</li>
+              <li>Take the curl of Faraday's Law and substitute from the Ampere-Maxwell Law to derive the wave equation for \(\vec{E}\).</li>
+              <li>Identify the wave speed and show that \(c = 1/\sqrt{\mu_0\varepsilon_0}\).</li>
+              <li>Explain why this result was historically significant — what did Maxwell predict?</li>
+            </ol>
+          </div>
+          <details class="solution">
+            <summary class="glass-btn">Show Solution</summary>
+            <div class="solution-content">
+              <div class="step"><strong>(a) Vacuum Maxwell:</strong> (1) \(\nabla \cdot \vec{E} = 0\) (2) \(\nabla \cdot \vec{B} = 0\) (3) \(\nabla \times \vec{E} = -\partial\vec{B}/\partial t\) (4) \(\nabla \times \vec{B} = \mu_0\varepsilon_0\,\partial\vec{E}/\partial t\).</div>
+              <div class="step"><strong>(b):</strong> \(\nabla \times (\nabla \times \vec{E}) = \nabla \times (-\partial\vec{B}/\partial t) = -\frac{\partial}{\partial t}(\nabla \times \vec{B}) = -\frac{\partial}{\partial t}(\mu_0\varepsilon_0\,\partial\vec{E}/\partial t) = -\mu_0\varepsilon_0\,\partial^2\vec{E}/\partial t^2\). Using vector identity and \(\nabla \cdot \vec{E} = 0\): \(\nabla \times (\nabla \times \vec{E}) = \nabla(\nabla \cdot \vec{E}) - \nabla^2\vec{E} = -\nabla^2\vec{E}\). So \(\nabla^2\vec{E} = \mu_0\varepsilon_0\,\partial^2\vec{E}/\partial t^2\).</div>
+              <div class="step"><strong>(c):</strong> Wave equation: \(\partial^2\vec{E}/\partial x^2 = \mu_0\varepsilon_0\,\partial^2\vec{E}/\partial t^2\). Speed: \(v = 1/\sqrt{\mu_0\varepsilon_0} = 1/\sqrt{(4\pi\times10^{-7})(8.85\times10^{-12})} = 2.998\times10^8\ \text{m/s} = c\).</div>
+              <div class="step"><strong>(d):</strong> Maxwell predicted that light is an electromagnetic wave — unifying optics with electricity and magnetism. The speed calculated from purely electromagnetic constants (\(\mu_0, \varepsilon_0\)) matched the measured speed of light, which was a monumental discovery.</div>
+            </div>
+          </details>
+        </div>
+
+        <div class="glass-card practice-block practice-frq-block" data-frq-id="frq-3">
+          <div class="practice-header"><span class="glass-badge">FRQ</span><h3>F3: EM Wave Properties</h3></div>
+          <div class="practice-question">
+            <p>A plane EM wave in vacuum has \(\vec{E}(x,t) = 50\,\hat{y}\sin(2.0\times10^7 x - 6.0\times10^{15} t)\ \text{V/m}\).</p>
+            <ol type="a">
+              <li>Determine the direction of propagation, wavelength, and frequency.</li>
+              <li>Write the corresponding magnetic field \(\vec{B}(x,t)\).</li>
+              <li>Calculate the Poynting vector \(\vec{S}(x,t)\) and the average intensity.</li>
+              <li>What is the radiation pressure this wave would exert on a perfectly absorbing surface?</li>
+            </ol>
+          </div>
+          <details class="solution">
+            <summary class="glass-btn">Show Solution</summary>
+            <div class="solution-content">
+              <div class="step"><strong>(a):</strong> Propagation: \(+x\) direction (sign of \(kx-\omega t\)). \(k = 2.0\times10^7\ \text{rad/m}\). \(\lambda = 2\pi/k = 2\pi/(2.0\times10^7) = 3.14\times10^{-7}\ \text{m} = 314\ \text{nm}\) (UV). \(f = \omega/(2\pi) = 6.0\times10^{15}/(2\pi) = 9.55\times10^{14}\ \text{Hz}\). Verify: \(c = \lambda f = (3.14\times10^{-7})(9.55\times10^{14}) = 3.0\times10^8\ \text{m/s}\).</div>
+              <div class="step"><strong>(b):</strong> \(\vec{E} \times \vec{B}\) gives direction of propagation (\(+x\)). \(\vec{E}\) along \(y\) → \(\vec{B}\) along \(z\). \(B_0 = E_0/c = 50/(3\times10^8) = 1.67\times10^{-7}\ \text{T}\). \(\vec{B} = 1.67\times10^{-7}\,\hat{z}\sin(2.0\times10^7 x - 6.0\times10^{15} t)\ \text{T}\).</div>
+              <div class="step"><strong>(c):</strong> \(\vec{S} = \frac{1}{\mu_0}\vec{E} \times \vec{B} = \frac{E_0 B_0}{\mu_0}\sin^2(kx - \omega t)\,\hat{x} = \frac{(50)(1.67\times10^{-7})}{4\pi\times10^{-7}}\sin^2(\ldots)\,\hat{x} = 6.63\sin^2(\ldots)\,\hat{x}\ \text{W/m}^2\). Average: \(I = S_{\text{avg}} = \frac{1}{2} \times 6.63 = 3.32\ \text{W/m}^2\).</div>
+              <div class="step"><strong>(d):</strong> Perfect absorber: \(P_{\text{rad}} = I/c = 3.32/(3\times10^8) = 1.11\times10^{-8}\ \text{Pa}\). (Perfect reflector would be twice this.)</div>
+            </div>
+          </details>
+        </div>
+      </section>
+
+      <section id="section-topic1" class="practice-section">
+        <p style="text-align:center;padding:var(--space-xl);color:var(--text-muted)">Use "All Questions" or "MCQ / FRQ" tabs to browse. Topic tabs are coming soon.</p>
+      </section>
+      <section id="section-topic2" class="practice-section">
+        <p style="text-align:center;padding:var(--space-xl);color:var(--text-muted)">Use "All Questions" or "MCQ / FRQ" tabs to browse. Topic tabs are coming soon.</p>
+      </section>
+      <section id="section-topic3" class="practice-section">
+        <p style="text-align:center;padding:var(--space-xl);color:var(--text-muted)">Use "All Questions" or "MCQ / FRQ" tabs to browse. Topic tabs are coming soon.</p>
+      </section>
+
+      <a href="../unit5-maxwell.html" class="practice-back-link">← Back to Unit 5 Study Guide</a>
+
+      <footer class="site-footer">
+        <a href="practice-unit4.html">← Previous: EM Induction</a> ·
+        <a href="../index.html">Home</a>
+      </footer>
+
+    </main>
+  </div>
+</body>
+</html>

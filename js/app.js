@@ -55,6 +55,14 @@
     { id: 'unit5', file: 'unit5-maxwell.html', num: 5, label: 'Maxwell', weight: '14-17%' }
   ];
 
+  const PRACTICE_PAGES = [
+    { id: 'practice1', file: 'practice/practice-unit1.html', label: 'Practice 1: Electrostatics', unitKey: 'unit1' },
+    { id: 'practice2', file: 'practice/practice-unit2.html', label: 'Practice 2: Circuits', unitKey: 'unit2' },
+    { id: 'practice3', file: 'practice/practice-unit3.html', label: 'Practice 3: Magnetism', unitKey: 'unit3' },
+    { id: 'practice4', file: 'practice/practice-unit4.html', label: 'Practice 4: EM Induction', unitKey: 'unit4' },
+    { id: 'practice5', file: 'practice/practice-unit5.html', label: 'Practice 5: Maxwell', unitKey: 'unit5' }
+  ];
+
   function getCurrentPageFile() {
     const path = window.location.pathname;
     return path.substring(path.lastIndexOf('/') + 1) || 'index.html';
@@ -102,7 +110,9 @@
       const current = getCurrentPageFile();
       document.querySelectorAll('.nav-link').forEach(link => {
         const href = link.getAttribute('href');
-        link.classList.toggle('active', href === current);
+        // Check both direct match and practice page match (since practice links use relative paths)
+        const practiceFile = href && href.split('/').pop();
+        link.classList.toggle('active', href === current || practiceFile === current || href === 'practice/' + current);
       });
     },
     _bindClicks() {
@@ -234,7 +244,7 @@
     },
     _filter(query) {
       const sections = document.querySelectorAll('.content-section');
-      const practice = document.querySelectorAll('.practice-block');
+      const practice = document.querySelectorAll('.practice-block, .mcq-question, .practice-frq-block');
       const all = [...sections, ...practice];
       all.forEach(el => {
         const text = el.textContent.toLowerCase();
@@ -355,6 +365,220 @@
   };
 
   /* --------------------------------------------------
+     PracticeController — MCQ + FRQ on practice pages
+     -------------------------------------------------- */
+  const PRACTICE_STORAGE_KEY = 'ap-em-practice';
+
+  const PracticeController = {
+    init() {
+      const pageId = this._getCurrentPracticeId();
+      if (!pageId) return;
+
+      this.pageId = pageId;
+      this.state = this._loadState();
+
+      this._bindMCQButtons();
+      this._bindFRQToggles();
+      this._bindTabNavigation();
+      this._updateScoreboard();
+      this._restoreUIState();
+    },
+
+    _getCurrentPracticeId() {
+      const file = getCurrentPageFile();
+      for (const p of PRACTICE_PAGES) {
+        const practiceFile = p.file.split('/').pop();
+        if (file === practiceFile) return p.id;
+      }
+      return null;
+    },
+
+    _loadState() {
+      try {
+        const data = JSON.parse(localStorage.getItem(PRACTICE_STORAGE_KEY) || '{}');
+        return data[this.pageId] || { mcq: {}, frq: {} };
+      } catch { return { mcq: {}, frq: {} }; }
+    },
+
+    _saveState() {
+      try {
+        const data = JSON.parse(localStorage.getItem(PRACTICE_STORAGE_KEY) || '{}');
+        data[this.pageId] = this.state;
+        localStorage.setItem(PRACTICE_STORAGE_KEY, JSON.stringify(data));
+      } catch { /* quota exceeded */ }
+    },
+
+    /* --- MCQ --- */
+    _bindMCQButtons() {
+      document.querySelectorAll('.mcq-question').forEach(function (q) {
+        const qId = q.getAttribute('data-mcq-id');
+        const checkBtn = q.querySelector('.mcq-check-btn');
+        const resetBtn = q.querySelector('.mcq-reset-btn');
+        const radios = q.querySelectorAll('input[type="radio"]');
+
+        checkBtn.addEventListener('click', function () { PracticeController._checkMCQ(q, qId); });
+        resetBtn.addEventListener('click', function () { PracticeController._resetMCQ(q, qId); });
+
+        radios.forEach(function (r) {
+          r.addEventListener('change', function () {
+            if (!PracticeController.state.mcq[qId]) {
+              PracticeController.state.mcq[qId] = { attempted: true, correct: false, revealed: false };
+            }
+            PracticeController._saveState();
+          });
+        });
+      });
+    },
+
+    _checkMCQ(container, qId) {
+      const selected = container.querySelector('input[type="radio"]:checked');
+      if (!selected) return;
+
+      const chosenValue = selected.value;
+      const correctValue = container.getAttribute('data-correct');
+      const isCorrect = chosenValue === correctValue;
+
+      container.querySelectorAll('input[type="radio"]').forEach(function (r) { r.disabled = true; });
+
+      container.querySelectorAll('.mcq-option').forEach(function (opt) {
+        const input = opt.querySelector('input[type="radio"]');
+        if (input.value === correctValue) opt.classList.add('correct');
+        else if (input.value === chosenValue && !isCorrect) opt.classList.add('incorrect');
+      });
+
+      const correctFeedback = container.querySelector('.mcq-feedback.correct-msg');
+      const incorrectFeedback = container.querySelector('.mcq-feedback.incorrect-msg');
+      if (correctFeedback) correctFeedback.classList.toggle('show', isCorrect);
+      if (incorrectFeedback) incorrectFeedback.classList.toggle('show', !isCorrect);
+
+      this.state.mcq[qId] = {
+        attempted: true,
+        correct: isCorrect,
+        revealed: true,
+        lastAnswer: chosenValue
+      };
+      this._saveState();
+      this._updateScoreboard();
+    },
+
+    _resetMCQ(container, qId) {
+      container.querySelectorAll('input[type="radio"]').forEach(function (r) {
+        r.checked = false; r.disabled = false;
+      });
+      container.querySelectorAll('.mcq-option').forEach(function (opt) {
+        opt.classList.remove('correct', 'incorrect');
+      });
+      container.querySelectorAll('.mcq-feedback').forEach(function (fb) {
+        fb.classList.remove('show');
+      });
+    },
+
+    /* --- FRQ --- */
+    _bindFRQToggles() {
+      document.querySelectorAll('.practice-frq-block details.solution').forEach(function (details) {
+        const block = details.closest('.practice-frq-block');
+        const frqId = block ? block.getAttribute('data-frq-id') : null;
+        if (!frqId) return;
+
+        details.addEventListener('toggle', function () {
+          if (details.open) {
+            if (!PracticeController.state.frq[frqId]) {
+              PracticeController.state.frq[frqId] = { revealed: false };
+            }
+            PracticeController.state.frq[frqId].revealed = true;
+            PracticeController._saveState();
+            PracticeController._updateScoreboard();
+
+            if (typeof MathJax !== 'undefined' && MathJax.typesetPromise) {
+              MathJax.typesetPromise([details.querySelector('.solution-content')]);
+            }
+          }
+        });
+      });
+    },
+
+    /* --- Tab navigation --- */
+    _bindTabNavigation() {
+      document.querySelectorAll('.practice-tab').forEach(function (tab) {
+        tab.addEventListener('click', function () {
+          var target = tab.getAttribute('data-target');
+
+          document.querySelectorAll('.practice-tab').forEach(function (t) { t.classList.remove('active'); });
+          tab.classList.add('active');
+
+          if (target === 'section-all') {
+            document.querySelectorAll('.practice-section').forEach(function (s) { s.classList.remove('hidden'); });
+          } else {
+            document.querySelectorAll('.practice-section').forEach(function (s) { s.classList.add('hidden'); });
+            var targetSection = document.getElementById(target);
+            if (targetSection) targetSection.classList.remove('hidden');
+          }
+        });
+      });
+    },
+
+    /* --- Scoreboard --- */
+    _updateScoreboard() {
+      var attempted = 0, correct = 0, frqRevealed = 0;
+      Object.values(this.state.mcq).forEach(function (e) {
+        if (e.attempted) attempted++;
+        if (e.correct) correct++;
+      });
+      Object.values(this.state.frq).forEach(function (e) {
+        if (e.revealed) frqRevealed++;
+      });
+
+      var attemptedEl = document.querySelector('.score-attempted');
+      var correctEl = document.querySelector('.score-correct');
+      var frqEl = document.querySelector('.score-frq');
+      if (attemptedEl) attemptedEl.textContent = attempted;
+      if (correctEl) correctEl.textContent = correct;
+      if (frqEl) frqEl.textContent = frqRevealed;
+    },
+
+    /* --- Restore UI from saved state --- */
+    _restoreUIState() {
+      var self = this;
+      Object.entries(this.state.mcq).forEach(function (entry) {
+        var qId = entry[0], entryData = entry[1];
+        if (!entryData.revealed) return;
+        var container = document.querySelector('.mcq-question[data-mcq-id="' + qId + '"]');
+        if (!container) return;
+
+        container.querySelectorAll('input[type="radio"]').forEach(function (r) {
+          r.disabled = true;
+          if (r.value === entryData.lastAnswer) r.checked = true;
+        });
+
+        var correctValue = container.getAttribute('data-correct');
+        container.querySelectorAll('.mcq-option').forEach(function (opt) {
+          var input = opt.querySelector('input[type="radio"]');
+          if (input.value === correctValue) opt.classList.add('correct');
+          else if (input.value === entryData.lastAnswer && !entryData.correct) opt.classList.add('incorrect');
+        });
+
+        if (entryData.correct) {
+          var fb = container.querySelector('.mcq-feedback.correct-msg');
+          if (fb) fb.classList.add('show');
+        } else {
+          var fb2 = container.querySelector('.mcq-feedback.incorrect-msg');
+          if (fb2) fb2.classList.add('show');
+        }
+      });
+
+      Object.entries(this.state.frq).forEach(function (entry) {
+        var frqId = entry[0], entryData = entry[1];
+        if (!entryData.revealed) return;
+        var block = document.querySelector('.practice-frq-block[data-frq-id="' + frqId + '"]');
+        if (block) {
+          var details = block.querySelector('details.solution');
+          if (details) details.open = true;
+        }
+      });
+    }
+  };
+
+  /* --------------------------------------------------
      Bootstrap
      -------------------------------------------------- */
   function init() {
@@ -365,6 +589,9 @@
 
     if (document.body.classList.contains('page-landing')) {
       LandingPage.init();
+    } else if (document.body.classList.contains('page-practice')) {
+      PracticeController.init();
+      MobileSidebar.init();
     } else {
       SidebarController.init();
       SectionCollapse.init();

@@ -551,3 +551,108 @@ mjx-container { overflow-x: auto; overflow-y: hidden; max-width: 100%; }
   .glass-card, .glass-btn, .nav-link { transition: none; }
   .unit-card:hover { transform: none; }
 }
+
+/* --------------------------------------------------
+   17. MCQ & Practice Page Styles
+   -------------------------------------------------- */
+
+/* -- Practice page header & scoreboard -- */
+.practice-page-header {
+  display: flex; align-items: center; justify-content: space-between;
+  flex-wrap: wrap; gap: var(--space-md); margin-bottom: var(--space-xl);
+}
+.practice-scoreboard {
+  display: flex; gap: var(--space-lg); align-items: center;
+}
+.score-item {
+  display: flex; flex-direction: column; align-items: center;
+}
+.score-value {
+  font-size: var(--text-xl); font-weight: 700; color: var(--primary);
+}
+.score-label {
+  font-size: var(--text-xs); color: var(--text-muted); text-transform: uppercase;
+}
+
+/* -- Practice sub-navigation tabs -- */
+.practice-tabs {
+  display: flex; gap: var(--space-xs); margin-bottom: var(--space-xl);
+  overflow-x: auto; padding-bottom: var(--space-xs);
+}
+.practice-tab {
+  padding: 8px 18px; border-radius: var(--glass-radius-sm);
+  font-size: var(--text-sm); font-weight: 600;
+  background: var(--glass-bg-light); color: var(--text-secondary);
+  border: var(--glass-border); cursor: pointer;
+  white-space: nowrap; transition: all var(--transition-fast);
+  font-family: var(--font-sans);
+}
+.practice-tab:hover { background: var(--glass-bg); color: var(--text); }
+.practice-tab.active {
+  background: var(--primary); color: #fff; border-color: var(--primary);
+}
+
+/* -- Practice section visibility -- */
+.practice-section.hidden { display: none; }
+
+/* -- MCQ question card -- */
+.mcq-question { margin-bottom: var(--space-lg); }
+.mcq-question .question-text {
+  font-size: var(--text-base); line-height: 1.7; margin-bottom: var(--space-md);
+}
+.mcq-options {
+  display: flex; flex-direction: column; gap: var(--space-sm);
+  margin-bottom: var(--space-md);
+}
+.mcq-option {
+  display: flex; align-items: flex-start; gap: var(--space-sm);
+  padding: 10px 14px; border-radius: var(--glass-radius-sm);
+  background: var(--glass-bg-light); border: var(--glass-border-subtle);
+  cursor: pointer; transition: all var(--transition-fast);
+}
+.mcq-option:hover { background: var(--glass-bg); }
+.mcq-option input[type="radio"] {
+  margin-top: 3px; accent-color: var(--primary); flex-shrink: 0;
+}
+.mcq-option label { cursor: pointer; flex: 1; line-height: 1.5; }
+.mcq-option.correct {
+  background: rgba(34, 197, 94, 0.12); border-color: #22c55e;
+}
+.mcq-option.incorrect {
+  background: rgba(239, 68, 68, 0.12); border-color: #ef4444;
+}
+
+/* -- MCQ feedback messages -- */
+.mcq-feedback {
+  display: none; padding: var(--space-md); border-radius: var(--glass-radius-sm);
+  margin-top: var(--space-sm); font-size: var(--text-sm); line-height: 1.6;
+}
+.mcq-feedback.show { display: block; }
+.mcq-feedback.correct-msg {
+  background: rgba(34, 197, 94, 0.1); border: 1px solid #22c55e;
+  color: #16a34a;
+}
+[data-theme="dark"] .mcq-feedback.correct-msg { color: #4ade80; }
+.mcq-feedback.incorrect-msg {
+  background: rgba(239, 68, 68, 0.1); border: 1px solid #ef4444;
+  color: #dc2626;
+}
+[data-theme="dark"] .mcq-feedback.incorrect-msg { color: #f87171; }
+
+/* -- MCQ action buttons -- */
+.mcq-actions {
+  display: flex; gap: var(--space-sm); margin-top: var(--space-sm);
+}
+
+/* -- FRQ practice block variant -- */
+.practice-frq-block {
+  border-left: 3px solid var(--secondary); margin-bottom: var(--space-lg);
+}
+
+/* -- Practice page back link -- */
+.practice-back-link {
+  display: inline-flex; align-items: center; gap: var(--space-xs);
+  margin-top: var(--space-xl); font-size: var(--text-sm);
+  color: var(--text-secondary);
+}
+.practice-back-link:hover { color: var(--text); }
